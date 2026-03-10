@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Products — Cleaning Su Casa</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  :root{
+    --white:#ffffff;--off-white:#F3F7FF;--light-blue:#E4EDFB;
+    --dark-blue:#053574;--vivid-blue:#023f92;--cyan:#5debf1;
+    --cyan-glow:rgba(93,235,241,0.18);--cyan-line:rgba(93,235,241,0.38);
+    --amber:#F59E0B;--text-dark:#053574;--text-mid:#3A5A8A;
+    --text-soft:#6B85A8;--text-faint:#A8BCCF;--border:rgba(5,53,116,0.09);
+    --grad-blue:linear-gradient(135deg,#053574 0%,#023f92 100%);
+    --grad-dark:linear-gradient(135deg,#020f2a 0%,#053574 55%,#023f92 100%);
+    --grad-subtle:linear-gradient(160deg,#F3F7FF 0%,#e8f0fc 100%);
+  }
+  html{scroll-behavior:smooth}
+  body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden}
+  nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3.5rem;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
+  .nav-logo{font-family:'Playfair Display',serif;font-size:1.38rem;font-weight:700;color:var(--dark-blue);text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
+  .nav-logo span{color:var(--cyan);filter:drop-shadow(0 0 10px rgba(93,235,241,0.7))}
+  .nav-links{display:flex;align-items:center;list-style:none;gap:0;margin:0 1rem}
+  .nav-links>li{position:relative}
+  .nav-links>li>a,.nav-links>li>button{display:inline-flex;align-items:center;gap:0.28rem;text-decoration:none;background:none;border:none;cursor:pointer;color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;padding:0.5rem 0.75rem;border-radius:8px;white-space:nowrap;transition:color 0.2s,background 0.2s}
+  .nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li.open>a,.nav-links>li.open>button{color:var(--dark-blue);background:var(--light-blue)}
+  .nav-links>li>a.active{color:var(--dark-blue);font-weight:700}
+  .nav-chevron{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.25s;flex-shrink:0}
+  .nav-links>li.open .nav-chevron{transform:rotate(180deg)}
+  .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid rgba(5,53,116,0.11);border-radius:16px;padding:0.45rem;box-shadow:0 16px 48px rgba(5,53,116,0.14);min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:300}
+  .nav-links>li.open .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+  .nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:white;border-left:1px solid rgba(5,53,116,0.11);border-top:1px solid rgba(5,53,116,0.11);transform:translateX(-50%) rotate(45deg);border-radius:2px 0 0 0}
+  .nav-dropdown a{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border-radius:10px;text-decoration:none;color:var(--text-mid);font-size:0.84rem;font-weight:500;transition:background 0.18s,color 0.18s}
+  .nav-dropdown a:hover{background:var(--light-blue);color:var(--dark-blue)}
+  .nav-dropdown a .dd-icon{width:34px;height:34px;border-radius:9px;flex-shrink:0;background:var(--light-blue);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background 0.18s}
+  .nav-dropdown a:hover .dd-icon{background:rgba(93,235,241,0.22)}
+  .nav-dropdown a .dd-title{font-weight:600;color:var(--dark-blue);font-size:0.84rem;display:block}
+  .nav-dropdown a .dd-sub{font-size:0.73rem;color:var(--text-soft);display:block;margin-top:0.05rem}
+  .dd-divider{height:1px;background:var(--border);margin:0.3rem 0.5rem}
+  .nav-cta{background:var(--grad-blue);color:white;padding:0.65rem 1.45rem;border-radius:50px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.25s;box-shadow:0 4px 18px rgba(5,53,116,0.28);white-space:nowrap;flex-shrink:0;text-decoration:none;display:inline-block}
+  .nav-cta:hover{box-shadow:0 6px 28px rgba(5,53,116,0.44);transform:translateY(-1px)}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--dark-blue);border-radius:2px;transition:all 0.3s}
+  .nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:white;z-index:199;overflow-y:auto;padding:1rem 1.5rem 3rem;flex-direction:column}
+  .nav-mobile.open{display:flex}
+  .nav-mobile a,.nav-mobile button{display:block;width:100%;text-align:left;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;color:var(--text-mid);text-decoration:none;cursor:pointer;padding:0.85rem 1rem;border-radius:10px;transition:all 0.18s}
+  .nav-mobile a:hover,.nav-mobile button:hover{background:var(--light-blue);color:var(--dark-blue)}
+  .mob-section{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-faint);padding:1rem 1rem 0.3rem}
+  .mob-indent{padding-left:2.2rem!important}
+  .mob-cta{background:var(--grad-blue)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
+  @media(max-width:1100px){nav{padding:0 1.6rem}.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+  /* Page body */
+  .page-hero{padding:9rem 5.5rem 6rem;background:var(--grad-dark);position:relative;overflow:hidden}
+  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(93,235,241,0.1) 0%,transparent 55%);pointer-events:none}
+  .page-hero-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
+  .page-hero-tag::before{content:'';width:20px;height:2px;background:var(--cyan);border-radius:2px;display:block}
+  .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:900;color:white;line-height:1.08;letter-spacing:-0.025em;margin-bottom:1.4rem}
+  .page-hero h1 em{font-style:italic;color:var(--cyan)}
+  .page-hero p{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.62);max-width:560px;font-weight:300;margin-bottom:2.5rem}
+  .btn-primary{background:var(--grad-blue);color:white;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:600;transition:all 0.25s;box-shadow:0 4px 22px rgba(5,53,116,0.32);display:inline-block}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(5,53,116,0.44)}
+  .btn-cyan{background:var(--cyan);color:var(--dark-blue);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(93,235,241,0.3);display:inline-block}
+  .btn-cyan:hover{background:white;transform:translateY(-2px)}
+  .content-section{padding:6rem 5.5rem}
+  .content-section.alt{background:var(--grad-subtle)}
+  .section-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vivid-blue);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
+  .section-tag::before{content:'';width:20px;height:2px;background:var(--cyan);border-radius:2px;display:block}
+  .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--dark-blue);margin-bottom:1.5rem}
+  .section-title em{font-style:italic;color:var(--vivid-blue)}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
+  .feature-card{border-radius:20px;padding:2.2rem;border:1.5px solid var(--border);transition:all 0.3s;position:relative;overflow:hidden}
+  .feature-card:nth-child(odd){background:linear-gradient(145deg,#ffffff,#EBF3FF)}
+  .feature-card:nth-child(even){background:var(--grad-blue);border-color:transparent}
+  .feature-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(5,53,116,0.12)}
+  .feature-card .fc-icon{font-size:2rem;margin-bottom:1rem}
+  .feature-card .fc-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.6rem;color:var(--dark-blue)}
+  .feature-card:nth-child(even) .fc-title{color:white}
+  .feature-card .fc-desc{font-size:0.88rem;line-height:1.7;color:var(--text-mid)}
+  .feature-card:nth-child(even) .fc-desc{color:rgba(255,255,255,0.62)}
+  .cta-strip{padding:5rem 5.5rem;background:var(--grad-blue);display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap}
+  .cta-strip h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:white;line-height:1.2}
+  .cta-strip h2 em{font-style:italic;color:var(--cyan)}
+  footer{background:var(--dark-blue);color:white;padding:3.5rem 5.5rem 2rem}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.3);padding-top:2rem;border-top:1px solid rgba(93,235,241,0.13);margin-top:2rem}
+  @media(max-width:900px){.content-section,.page-hero,.cta-strip{padding:5rem 2rem}.feature-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:580px){.feature-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}}
+</style>
+
+</head>
+<body>
+<nav id="mainNav">
+  <a href="index.html" class="nav-logo">Cleaning <span>Su Casa</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html" class="">Home</a></li>
+    <li id="navServices">
+      <button data-toggle="navServices" aria-expanded="false">
+        Services<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown">
+        <a href="airbnb.html"><span class="dd-icon">🏨</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="residential.html"><span class="dd-icon">🏡</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="commercial.html"><span class="dd-icon">🏢</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+      </div>
+    </li>
+    <li><a href="https://book.cleaningsucasa.com/" class="">Schedule Service</a></li>
+    <li><a href="jobs.html" class="">Job Openings</a></li>
+    <li><a href="products.html" class="active">Products</a></li>
+    <li id="navMore">
+      <button data-toggle="navMore" aria-expanded="false">
+        More<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="nav-dropdown">
+        <a href="about.html"><span class="dd-icon">✨</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="nicol.html"><span class="dd-icon">👤</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <div class="dd-divider"></div>
+        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">🏢</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+      </div>
+    </li>
+  </ul>
+  <a href="https://book.cleaningsucasa.com/" class="nav-cta">Book Now</a>
+  <button class="nav-hamburger" id="hamburger"  aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-mobile" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <div class="mob-section">Services</div>
+  <a href="airbnb.html" class="mob-indent">🏨 &nbsp;Airbnb Cleaning</a>
+  <a href="residential.html" class="mob-indent">🏡 &nbsp;Residential Cleaning</a>
+  <a href="commercial.html" class="mob-indent">🏢 &nbsp;Commercial Cleaning</a>
+  <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
+  <a href="jobs.html">Job Openings</a>
+  <a href="products.html">Products</a>
+  <div class="mob-section">More</div>
+  <a href="about.html" class="mob-indent">About Us</a>
+  <a href="nicol.html" class="mob-indent">Meet Nicol</a>
+  <a href="https://cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
+  <a href="https://book.cleaningsucasa.com/" class="mob-cta">Book a Cleaning</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-tag">Professional Cleaning Products</div>
+  <h1>Products We<br><em>Trust & Use</em></h1>
+  <p>We use only professional-grade, effective cleaning products in every home and business we serve. Explore the products we stand behind.</p>
+  <a href="https://book.cleaningsucasa.com/" class="btn-cyan">Contact Us About Products →</a>
+</section>
+
+
+  <section class="content-section">
+    <div class="section-tag">Our Standards</div>
+    <h2 class="section-title">Products Built for<br><em>Real Results</em></h2>
+    <p style="font-size:1rem;line-height:1.78;color:var(--text-mid);max-width:600px;font-weight:300">Every product we use is selected for effectiveness, safety, and value — because your home deserves the best.</p>
+    <div class="feature-grid">
+        <div class="feature-card">
+          <div class="fc-icon">🧼</div>
+          <div class="fc-title">Effective Formulas</div>
+          <div class="fc-desc">We use products that actually work — cutting through grease, grime, and bacteria efficiently.</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🌿</div>
+          <div class="fc-title">Safer Ingredients</div>
+          <div class="fc-desc">Where possible, we choose products that are safer for your family, pets, and the environment.</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🦠</div>
+          <div class="fc-title">Hospital-Grade Disinfectants</div>
+          <div class="fc-desc">For deep cleans and healthcare facilities, we deploy proven disinfectants that meet rigorous standards.</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">✨</div>
+          <div class="fc-title">Streak-Free Solutions</div>
+          <div class="fc-desc">Our glass and surface cleaners leave no residue — just clarity and shine.</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">🐾</div>
+          <div class="fc-title">Pet-Safe Options</div>
+          <div class="fc-desc">We carry pet-friendly products for homes with animals, so everyone stays safe.</div>
+        </div>
+        <div class="feature-card">
+          <div class="fc-icon">📦</div>
+          <div class="fc-title">Professional Supply</div>
+          <div class="fc-desc">Interested in purchasing products we use? Contact us and we'll connect you with the right suppliers.</div>
+        </div>
+    </div>
+  </section>
+
+<section class="cta-strip">
+  <h2>Ready for a <em>Cleaner Space?</em></h2>
+  <a href="https://book.cleaningsucasa.com/" class="btn-cyan" style="flex-shrink:0">Book Now →</a>
+</section>
+
+<footer>
+  <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:0">
+    <div>
+      <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem">Cleaning <span style="color:var(--cyan)">Su Casa</span></div>
+      <p style="font-size:0.87rem;line-height:1.7;color:rgba(255,255,255,0.38);max-width:240px">Anchorage's trusted cleaning service since 2020. We clean with pride so you can live in comfort.</p>
+    </div>
+    <div>
+      <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">Services</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li><a href="residential.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem;transition:color 0.2s" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Residential</a></li>
+        <li><a href="airbnb.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Airbnb Turnover</a></li>
+        <li><a href="commercial.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Commercial</a></li>
+        <li><a href="https://book.cleaningsucasa.com/" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Move In/Out</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">Company</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li><a href="about.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">About Us</a></li>
+        <li><a href="nicol.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Meet Nicol</a></li>
+        <li><a href="jobs.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Job Openings</a></li>
+        <li><a href="https://cleaningsuoficina.com" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Su Oficina</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">Contact</h4>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
+        <li><a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></li>
+        <li style="color:rgba(255,255,255,0.5);font-size:0.86rem">Anchorage, Alaska</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Cleaning Su Casa. All Rights Reserved.</span>
+    <span>Made with care in Anchorage, AK 💙</span>
+  </div>
+</footer>
+<script>
+(function(){
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-toggle]');
+    if(t){var id=t.getAttribute('data-toggle');var li=document.getElementById(id);var open=li.classList.contains('open');document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});if(!open)li.classList.add('open');return;}
+    if(!e.target.closest('.nav-links')&&!e.target.closest('.nav-hamburger')){document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});}
+    if(e.target.closest('.nav-hamburger')){var menu=document.getElementById('mobileMenu');menu.classList.toggle('open');var bars=document.querySelectorAll('.nav-hamburger span');if(menu.classList.contains('open')){bars[0].style.transform='translateY(7px) rotate(45deg)';bars[1].style.opacity='0';bars[2].style.transform='translateY(-7px) rotate(-45deg)';}else{bars.forEach(function(b){b.style.transform='';b.style.opacity='';});}}
+  });
+  window.addEventListener('scroll',function(){var nav=document.querySelector('nav');if(nav)nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(5,53,116,0.10)':'none';});
+})();
+</script>
+</body>
+</html>
