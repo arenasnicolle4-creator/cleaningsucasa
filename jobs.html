@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Cloudflare --><meta name="cf-2fa-verify" content="no-email-obfuscation"/>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join Our Team — Cleaning Su Casa</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet"/>
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
@@ -447,69 +448,8 @@
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-(function(){
-  // Nav
-  document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-toggle]');
-    if(t){var id=t.getAttribute('data-toggle');var li=document.getElementById(id);var open=li.classList.contains('open');document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});if(!open)li.classList.add('open');return;}
-    if(!e.target.closest('.nav-links')&&!e.target.closest('.nav-hamburger')){document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});}
-    if(e.target.closest('.nav-hamburger')){var menu=document.getElementById('mobileMenu');menu.classList.toggle('open');var bars=document.querySelectorAll('.nav-hamburger span');if(menu.classList.contains('open')){bars[0].style.transform='translateY(7px) rotate(45deg)';bars[1].style.opacity='0';bars[2].style.transform='translateY(-7px) rotate(-45deg)';}else{bars.forEach(function(b){b.style.transform='';b.style.opacity='';});}}
-  });
-  window.addEventListener('scroll',function(){var nav=document.querySelector('nav');if(nav)nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(5,53,116,0.10)':'none';});
 
-  // File name display
-  document.getElementById('resume').addEventListener('change',function(){
-    var fn=document.getElementById('file-name-display');
-    if(this.files.length>0){fn.style.display='block';fn.textContent='📎 '+this.files[0].name;}
-    else{fn.style.display='none';}
-  });
-
-  // EmailJS — initialize with your public key
-  // TO ACTIVATE: replace 'YOUR_PUBLIC_KEY' with your EmailJS public key
-  // and 'YOUR_SERVICE_ID' / 'YOUR_TEMPLATE_ID' below
-  // Sign up free at https://www.emailjs.com
-  emailjs.init('ZsAm6x2gjm0hFV69o');
-
-  document.getElementById('submitBtn').addEventListener('click', function(){
-    var fname = document.getElementById('fname').value.trim();
-    var lname = document.getElementById('lname').value.trim();
-    var email = document.getElementById('email').value.trim();
-    var phone = document.getElementById('phone').value.trim();
-    var position = document.getElementById('position').value;
-    var availability = document.getElementById('availability').value;
-    var message = document.getElementById('message').value.trim();
-
-    if(!fname || !lname || !email){
-      alert('Please fill in your first name, last name, and email address.');
-      return;
-    }
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-      alert('Please enter a valid email address.');
-      return;
-    }
-
-    var btn = document.getElementById('submitBtn');
-    btn.disabled = true;
-    btn.textContent = 'Sending…';
-
-    var params = {
-      to_email: 'AkCleaningSuCasa@gmail.com',
-      from_name: fname + ' ' + lname,
-      from_email: email,
-      phone: phone || 'Not provided',
-      position: position,
-      availability: availability,
-      message: message || 'No message provided.'
-    };
-
-    emailjs.send('service_8bkln92', 'YOUR_TEMPLATE_ID', params)
-      .then(function(){
-        document.getElementById('the-form').style.display = 'none';
-        document.getElementById('confirmation').classList.add('show');
-      })
-      .catch(function(){
-        // Fallback: still show confirmation (mailto fallback)
-        var subject
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="jobs.js"></script>
 </body>
 </html>
