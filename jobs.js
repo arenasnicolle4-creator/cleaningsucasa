@@ -79,7 +79,7 @@
         message: message || 'No message provided.'
       };
 
-      emailjs.send('service_8bkln92', 'YOUR_TEMPLATE_ID', params)
+      emailjs.send('service_8bkln92', 'template_nta16gd', params)
         .then(function() {
           document.getElementById('the-form').style.display = 'none';
           document.getElementById('confirmation').classList.add('show');
