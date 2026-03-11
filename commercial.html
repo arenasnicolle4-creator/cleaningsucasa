@@ -205,21 +205,31 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:1000px){
-      .hero,.offer-intro,.services-section,.service-lists,.cta-band,.industries{padding:5rem 2.5rem}
+      .hero,.offer-intro,.services-section,.service-lists,.cta-band,.industries{padding:5rem 2rem}
       .offer-intro{grid-template-columns:1fr}
       .ind-grid,.services-grid{grid-template-columns:1fr 1fr}
       .list-grid{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
     }
     @media(max-width:620px){
-      .hero{padding:7rem 1.5rem 4rem}
+      .hero{padding:7rem 1.2rem 3.5rem}
+      .hero h1{font-size:clamp(2.6rem,12vw,4rem)!important;line-height:1.1}
+      .hero-sub{font-size:0.92rem}
+      .hero-actions{flex-direction:column;gap:0.8rem}
+      .hero-actions a{text-align:center}
+      .hero-pills{gap:0.4rem}
+      .hero-pill{font-size:0.72rem;padding:0.38rem 0.8rem}
       .ind-grid,.services-grid{grid-template-columns:1fr}
       .offer-stats{grid-template-columns:1fr 1fr}
-      .tab-header{flex-wrap:wrap}
+      .tab-header{flex-wrap:wrap;gap:0.3rem}
+      .tab-btn{font-size:0.78rem;padding:0.65rem 1rem}
+      .offer-intro,.services-section,.service-lists,.cta-band,.industries{padding:3.5rem 1.2rem}
+      .section-title{font-size:1.75rem}
       .footer-grid{grid-template-columns:1fr}
       .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
+  
   </style>
 </head>
 <body>
