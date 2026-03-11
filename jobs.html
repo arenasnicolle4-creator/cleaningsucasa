@@ -166,18 +166,29 @@
 
     /* RESPONSIVE */
     @media(max-width:1000px){
-      .hero,.job-details,.cta-band{padding:5rem 2.5rem}
+      .hero,.job-details,.cta-band{padding:5rem 2rem}
       .job-details{grid-template-columns:1fr}
       .form-wrap{position:static}
       .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
     }
     @media(max-width:620px){
-      .hero{padding:7rem 1.5rem 4rem}
+      .hero{padding:7rem 1.2rem 3.5rem}
+      .hero h1{font-size:clamp(2.4rem,11vw,3.8rem)!important;line-height:1.1}
+      .hero-sub{font-size:0.92rem}
+      .hero-pills{gap:0.4rem}
+      .hero-pill{font-size:0.72rem;padding:0.38rem 0.8rem}
+      .job-details,.cta-band{padding:3.5rem 1.2rem}
       .field-row{grid-template-columns:1fr}
+      .form-wrap{padding:1.8rem 1.4rem;border-radius:20px}
+      .form-title{font-size:1.3rem}
+      .offer-pills{gap:0.4rem}
+      .offer-pill{font-size:0.74rem}
+      .section-title{font-size:1.75rem}
       .footer-grid{grid-template-columns:1fr}
       .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
+  
   </style>
 </head>
 <body>
