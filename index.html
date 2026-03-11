@@ -30,7 +30,7 @@
     }
 
     html { scroll-behavior: smooth; }
-    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
+    body { overflow-x:hidden; font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--text-dark); overflow-x: hidden; }
 
     /* ── NAV ── */
     nav {
@@ -704,26 +704,57 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:900px){
-      nav{padding:0 1.2rem;} .nav-links,.nav-cta{display:none;} .nav-hamburger{display:flex;}
+      nav{padding:0 1.2rem;}
+      .nav-links,.nav-cta{display:none;}
+      .nav-hamburger{display:flex;}
       .hero{grid-template-columns:1fr;min-height:auto;}
-      .hero-left{padding:7rem 2.5rem 3rem;}
-      .hero-right{height:500px;}
-      .pricing,.services,.about,.process,.testimonials,.cta-band{padding:5rem 2.5rem;}
-      .pricing-grid{grid-template-columns:1fr 1fr;max-width:100%;}
+      .hero-left{padding:6rem 1.6rem 3rem;}
+      .hero-right{height:380px;clip-path:none!important;margin-left:0!important;width:100%!important;}
+      .hero-title .glow-text,.hero-title div:first-child{font-size:clamp(3.2rem,11vw,4.8rem)!important;letter-spacing:6px!important;}
+      .hero-title div:nth-child(2){font-size:clamp(3.6rem,13vw,5.6rem)!important;}
+      .hero-sub{font-size:0.96rem;max-width:100%;}
+      .hero-stats{gap:1.8rem;flex-wrap:wrap;}
+      .hero-actions{flex-direction:column;gap:0.8rem;}
+      .hero-actions a{text-align:center;}
+      .hero-cards-grid{max-width:100%;grid-template-columns:1fr 1fr;gap:10px;}
+      .hc-1,.hc-4{grid-column:span 2;}
+      .hc{padding:1.1rem;}
+      .hc-title{font-size:0.82rem;}
+      .hc-label{font-size:0.7rem;}
+      .pricing,.services,.about,.process,.testimonials,.cta-band{padding:4rem 1.6rem;}
+      .pricing-grid{grid-template-columns:1fr;max-width:420px;margin:0 auto;}
       .services-grid,.testimonial-grid{grid-template-columns:1fr 1fr;}
-      .process-steps{grid-template-columns:1fr 1fr;}
+      .process-steps{grid-template-columns:1fr 1fr 1fr;gap:1.2rem;}
       .process-steps::before{display:none;}
-      .about{grid-template-columns:1fr;gap:4rem;}
-      .cta-band{grid-template-columns:1fr;} .cta-actions{align-items:flex-start;}
-      .footer-top{grid-template-columns:1fr 1fr;gap:2.5rem;}
+      .step-desc{display:none;}
+      .step-title{font-size:0.88rem;}
+      .step-num{width:48px;height:48px;font-size:1.1rem;margin-bottom:0.9rem;}
+      .about{grid-template-columns:1fr;gap:3rem;}
+      .cta-band{grid-template-columns:1fr;}
+      .cta-actions{align-items:flex-start;}
+      .footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
     }
     @media(max-width:640px){
-      .pricing-grid,.services-grid,.testimonial-grid,.process-steps{grid-template-columns:1fr;}
-      .hero-stats{gap:1.5rem;}
+      .hero-left{padding:5.5rem 1.2rem 2.5rem;}
+      .hero-title .glow-text,.hero-title div:first-child{font-size:clamp(2.8rem,14vw,4rem)!important;letter-spacing:4px!important;}
+      .hero-title div:nth-child(2){font-size:clamp(3.2rem,16vw,4.8rem)!important;}
+      .hero-right{height:340px;}
+      .hero-cards-grid{gap:8px;}
+      .hc{padding:0.9rem 0.8rem;}
+      .hc-title{font-size:0.78rem;}
+      .pricing-grid,.services-grid,.testimonial-grid{grid-template-columns:1fr;}
+      .process-steps{grid-template-columns:1fr 1fr;gap:1rem;}
+      .step-desc{display:none;}
+      .hero-stats{gap:1.2rem;flex-wrap:wrap;}
+      .stat-num{font-size:1.6rem;}
+      .stat-label{font-size:0.65rem;}
       .footer-top{grid-template-columns:1fr;}
       .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
       .about-visual-panel{grid-template-columns:1fr;}
       .avp-card:nth-child(1),.avp-card:nth-child(4){grid-column:span 1;}
+      .marquee-item{font-size:0.78rem;}
+      .section-title{font-size:1.75rem;}
+      .pricing,.services,.about,.process,.testimonials,.cta-band{padding:3.5rem 1.2rem;}
     }
 
     /* ── SERVICES POPOUT ── */
@@ -1305,7 +1336,7 @@
   </div>
   <div class="cta-actions">
     <a href="https://book.cleaningsucasa.com/" class="btn-cta">Book a Cleaning Today</a>
-    <p class="cta-email">Questions? <a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></p>
+    <p class="cta-email">Questions? <a href="/cdn-cgi/l/email-protection#bffed4fcd3daded1d6d1d8eccafcdeccdeffd8d2ded6d391dcd0d2"><span class="__cf_email__" data-cfemail="c786ac84aba2a6a9aea9a094b284a6b4a687a0aaa6aeabe9a4a8aa">[email&#160;protected]</span></a></p>
   </div>
 </section>
 
@@ -1337,7 +1368,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#d998b29ab5bcb8b7b0b7be8aac9ab8aab899beb4b8b0b5f7bab6b4"><span class="__cf_email__" data-cfemail="66270d250a0307080f080135132507150726010b070f0a4805090b">[email&#160;protected]</span></a></li>
         <li><a href="#">Anchorage, Alaska</a></li>
         <li><a href="https://www.yelp.com/biz/cleaning-su-casa-anchorage">Reviews</a></li>
       </ul>
@@ -1348,9 +1379,9 @@
     <span>Made with care in Anchorage, AK 💙</span>
   </div>
 </footer>
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function() {
-  // Dropdown toggle via event delegation — no inline onclick needed
+  // Dropdown toggle via event delegation - no inline onclick needed
   document.addEventListener('click', function(e) {
     // Dropdown toggle
     var toggleBtn = e.target.closest('[data-toggle]');
@@ -1398,15 +1429,24 @@
     }
   });
 
-  // Fade-up animations
+  // Fade-up on scroll
+  var fadeEls = document.querySelectorAll('.fade-up');
   if ('IntersectionObserver' in window) {
     var obs = new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) { entry.target.classList.add('visible'); obs.unobserve(entry.target); }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.fade-up').forEach(function(el) { obs.observe(el); });
+    }, { threshold: 0.12 });
+    fadeEls.forEach(function(el) { obs.observe(el); });
+  } else {
+    fadeEls.forEach(function(el) { el.classList.add('visible'); });
   }
+
+  // Nav scroll shadow
+  window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (nav) nav.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(5,53,116,0.10)' : 'none';
+  });
 })();
 </script>
 </body>
