@@ -709,12 +709,15 @@
 
     /* ── RESPONSIVE ── */
     @media(max-width:900px){
-      nav{padding:0 1.2rem;background:transparent;backdrop-filter:none;border-bottom:none;box-shadow:none!important;}
+      nav{padding:0 1.2rem;background:linear-gradient(135deg,#020c1f 0%,#053574 100%);backdrop-filter:none;border-bottom:none;overflow:hidden;}
+      nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.7);pointer-events:none;}
+      nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.25);pointer-events:none;}
       .nav-links,.nav-cta{display:none;}
       .nav-hamburger{display:flex;}
       .nav-hamburger span{background:#ffffff;}
-      .hero{grid-template-columns:1fr;min-height:auto;padding-top:0;}
-      .hero-left{padding:5.5rem 1.6rem 3rem;}
+      .nav-deco-rings{display:block!important;}
+      .hero{grid-template-columns:1fr;min-height:auto;}
+      .hero-left{padding:6rem 1.6rem 3rem;}
       .hero-right{height:auto!important;min-height:0!important;clip-path:none!important;margin-left:0!important;width:100%!important;overflow:visible!important;padding:0;}
       .hero-visual{position:relative!important;inset:auto!important;padding:2.5rem 1.4rem 3rem;display:flex;align-items:flex-start;justify-content:center;}
       .hero-corner-tag{display:none;}
@@ -875,6 +878,16 @@
 </div>
 
 <nav id="mainNav">
+  <!-- Mobile-only decorative rings -->
+  <svg class="nav-deco-rings" width="160" height="160" viewBox="0 0 160 160" style="position:absolute;top:-70px;right:60px;pointer-events:none;display:none;">
+    <circle cx="80" cy="80" r="70" fill="none" stroke="#053574" stroke-width="1" opacity="0.7"/>
+    <circle cx="80" cy="80" r="48" fill="none" stroke="#053574" stroke-width="0.6" opacity="0.45"/>
+    <circle cx="80" cy="80" r="26" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.25"/>
+  </svg>
+  <svg class="nav-deco-rings" width="90" height="90" viewBox="0 0 90 90" style="position:absolute;top:-20px;right:10px;pointer-events:none;display:none;">
+    <circle cx="45" cy="45" r="38" fill="none" stroke="#053574" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="45" cy="45" r="22" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.2"/>
+  </svg>
   <ul class="nav-links">
     <!-- Home -->
     <li><a href="index.html" class="active">Home</a></li>
@@ -1516,12 +1529,11 @@
         nav.style.backdropFilter = 'blur(18px)';
         nav.style.borderBottom = '1px solid rgba(5,53,116,0.10)';
         nav.style.boxShadow = '0 4px 30px rgba(5,53,116,0.10)';
-        // switch bars back to dark
         document.querySelectorAll('.nav-hamburger span').forEach(function(s){ s.style.background = '#053574'; });
       } else {
-        nav.style.background = 'transparent';
-        nav.style.backdropFilter = 'none';
-        nav.style.borderBottom = 'none';
+        nav.style.background = '';
+        nav.style.backdropFilter = '';
+        nav.style.borderBottom = '';
         nav.style.boxShadow = 'none';
         document.querySelectorAll('.nav-hamburger span').forEach(function(s){ s.style.background = '#ffffff'; });
       }
