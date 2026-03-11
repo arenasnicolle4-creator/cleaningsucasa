@@ -709,7 +709,20 @@
       .nav-hamburger{display:flex;}
       .hero{grid-template-columns:1fr;min-height:auto;}
       .hero-left{padding:6rem 1.6rem 3rem;}
-      .hero-right{height:380px;clip-path:none!important;margin-left:0!important;width:100%!important;}
+      .hero-right{height:auto!important;min-height:420px;clip-path:none!important;margin-left:0!important;width:100%!important;padding:2rem 1.4rem 2.5rem;}
+      .hero-cards-grid{max-width:100%!important;width:100%;grid-template-columns:1fr 1fr;gap:10px;}
+      .hc-1,.hc-4{grid-column:span 2;}
+      .hc-1{flex-direction:row;align-items:center;gap:0.9rem;}
+      .hc{padding:1rem 0.9rem;}
+      .hc-label{font-size:0.66rem;}
+      .hc-title{font-size:0.82rem;}
+      .hc-value{font-size:1rem!important;}
+      .hc-sub{font-size:0.7rem;}
+      .hc-icon{width:32px!important;height:32px!important;min-width:32px;}
+      .hc-icon svg{width:14px!important;height:14px!important;}
+      .hc-pill{font-size:0.65rem;padding:0.2rem 0.55rem;}
+      .hc-4-location{font-size:0.75rem;}
+      .hc-4-badge{font-size:0.65rem;padding:0.2rem 0.6rem;}
       .hero-title .glow-text,.hero-title div:first-child{font-size:clamp(3.2rem,11vw,4.8rem)!important;letter-spacing:6px!important;}
       .hero-title div:nth-child(2){font-size:clamp(3.6rem,13vw,5.6rem)!important;}
       .hero-sub{font-size:0.96rem;max-width:100%;}
@@ -738,7 +751,13 @@
       .hero-left{padding:5.5rem 1.2rem 2.5rem;}
       .hero-title .glow-text,.hero-title div:first-child{font-size:clamp(2.8rem,14vw,4rem)!important;letter-spacing:4px!important;}
       .hero-title div:nth-child(2){font-size:clamp(3.2rem,16vw,4.8rem)!important;}
-      .hero-right{height:340px;}
+      .hero-right{min-height:360px;padding:1.5rem 1rem 2rem;}
+      .hero-cards-grid{gap:7px;}
+      .hc{padding:0.8rem 0.75rem;}
+      .hc-label{font-size:0.62rem;}
+      .hc-title{font-size:0.76rem;}
+      .hc-value{font-size:0.9rem!important;}
+      .hc-1-text{min-width:0;}
       .hero-cards-grid{gap:8px;}
       .hc{padding:0.9rem 0.8rem;}
       .hc-title{font-size:0.78rem;}
