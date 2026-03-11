@@ -180,19 +180,33 @@
     .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.28);padding-top:2rem;border-top:1px solid rgba(76,175,114,0.15);margin-top:2rem}
 
     /* RESPONSIVE */
-    @media(max-width:1100px){.brands-grid{grid-template-columns:1fr 1fr}.values-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:1100px){
+      .brands-grid{grid-template-columns:1fr 1fr}
+      .values-grid{grid-template-columns:1fr 1fr}
+    }
     @media(max-width:1000px){
-      .hero,.philosophy,.values,.brands,.dark-panel,.cta-band{padding:5rem 2.5rem}
+      .hero,.philosophy,.values,.brands,.dark-panel,.cta-band{padding:5rem 2rem}
       .philosophy,.dark-panel-inner{grid-template-columns:1fr}
       .footer-grid{grid-template-columns:1fr 1fr;gap:2rem}
     }
     @media(max-width:620px){
-      .hero{padding:7rem 1.5rem 4rem}
+      .hero{padding:7rem 1.2rem 3.5rem}
+      .hero h1{font-size:clamp(2.6rem,12vw,4rem)!important;line-height:1.1}
+      .hero-sub{font-size:0.92rem}
+      .hero-actions{flex-direction:column;gap:0.8rem}
+      .hero-actions a{text-align:center}
+      .hero-pills{gap:0.4rem}
+      .hero-pill{font-size:0.72rem;padding:0.38rem 0.8rem}
       .brands-grid,.values-grid,.phil-stats,.cert-grid{grid-template-columns:1fr}
+      .brand-card{padding:1.6rem 1.4rem}
+      .brand-name{font-size:1.1rem}
+      .philosophy,.values,.brands,.dark-panel,.cta-band{padding:3.5rem 1.2rem}
+      .section-title{font-size:1.75rem}
       .footer-grid{grid-template-columns:1fr}
       .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
+  
   </style>
 </head>
 <body>
@@ -512,7 +526,7 @@
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></li>
+        <li><a href="/cdn-cgi/l/email-protection#d495bf97b8b1b5babdbab387a197b5a7b594b3b9b5bdb8fab7bbb9"><span class="__cf_email__" data-cfemail="7f3e143c131a1e111611182c0a3c1e0c1e3f18121e1613511c1012">[email&#160;protected]</span></a></li>
         <li><a href="https://book.cleaningsucasa.com/">Book Online</a></li>
       </ul>
     </div>
@@ -523,7 +537,7 @@
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-toggle]');
@@ -547,7 +561,7 @@
         bars[1].style.opacity='0';
         bars[2].style.transform='translateY(-7px) rotate(-45deg)';
       } else {
-        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+        bars.forEach(function(b){e.style.opacity='';});
       }
     }
   });
