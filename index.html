@@ -779,27 +779,9 @@
       .hc{padding:0.9rem 0.8rem;}
       .hc-title{font-size:0.78rem;}
       .pricing-grid,.services-grid,.testimonial-grid{grid-template-columns:1fr;}
-      /* ── Section dividers on mobile ── */
-      .pricing,.services,.about,.process,.testimonials,.cta-band{
-        border-top:3px solid transparent;
-        position:relative;
-      }
-      .pricing::before,.services::before,.about::before,.testimonials::before{
-        content:'';display:block;
-        width:48px;height:3px;border-radius:2px;
-        background:var(--dark-blue);
-        margin:0 auto 2.2rem;
-      }
-      .process::before{
-        content:'';display:block;
-        width:48px;height:3px;border-radius:2px;
-        background:rgba(93,235,241,0.6);
-        margin:0 auto 2.2rem;
-      }
-      .pricing{background:var(--grad-subtle);}
-      .services{background:var(--white);}
-      .about{background:var(--grad-subtle);}
-      .testimonials{background:var(--white);}
+      /* Deepen the off-white sections on mobile for contrast */
+      .pricing{background:linear-gradient(160deg,#dce8f8 0%,#cddaf4 100%);}
+      .about{background:linear-gradient(160deg,#dce8f8 0%,#cddaf4 100%);}
       .process-steps{grid-template-columns:1fr 1fr;gap:1rem;}
       .step-desc{display:none;}
       .hero-stats{gap:1.2rem;flex-wrap:wrap;}
