@@ -802,7 +802,7 @@
       .hero-cards-grid{gap:8px;}
       .hc{padding:0.9rem 0.8rem;}
       .hc-title{font-size:0.78rem;}
-      .pricing-grid,.services-grid,.testimonial-grid{grid-template-columns:1fr;}
+      .pricing-grid,.testimonial-grid{grid-template-columns:1fr;}
       /* Deepen the off-white sections on mobile for contrast */
       .pricing{background:linear-gradient(160deg,#dce8f8 0%,#cddaf4 100%);}
       .about{background:linear-gradient(160deg,#dce8f8 0%,#cddaf4 100%);}
@@ -1295,38 +1295,38 @@
     <a href="#" class="open-svc-popout section-link">View All →</a>
   </div>
   <div class="services-grid">
-    <div class="service-card fade-up">
-      <div class="service-icon">🏡</div>
+    <div class="service-card fade-up" data-svc="0">
+      <div class="service-icon">&#127969;</div>
       <h3 class="service-name">Residential Cleaning</h3>
       <p class="service-desc">Homes, condos, and apartments cleaned top to bottom using professional-grade products and proven techniques.</p>
       <span class="service-tag">Most Booked</span>
     </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">🔬</div>
+    <div class="service-card fade-up" data-svc="1">
+      <div class="service-icon">&#128300;</div>
       <h3 class="service-name">Deep Cleaning</h3>
       <p class="service-desc">First-time clean? Seasonal reset? Our thorough deep clean targets every surface, nook, and overlooked corner.</p>
       <span class="service-tag">Best Value</span>
     </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">🏢</div>
+    <div class="service-card fade-up" data-svc="2">
+      <div class="service-icon">&#127970;</div>
       <h3 class="service-name">Commercial Cleaning</h3>
-      <p class="service-desc">Offices, hotels, healthcare facilities, and residential communities — clean, professional environments for your business.</p>
+      <p class="service-desc">Offices, hotels, healthcare facilities, and residential communities &mdash; clean, professional environments for your business.</p>
       <span class="service-tag">Commercial</span>
     </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">📦</div>
+    <div class="service-card fade-up" data-svc="3">
+      <div class="service-icon">&#128246;</div>
       <h3 class="service-name">Move In / Move Out</h3>
       <p class="service-desc">Complete property cleaning to remove accumulated dirt and debris, preparing a fresh start for new occupants.</p>
       <span class="service-tag">On-Demand</span>
     </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">🪟</div>
+    <div class="service-card fade-up" data-svc="4">
+      <div class="service-icon">&#129695;</div>
       <h3 class="service-name">Window Cleaning</h3>
-      <p class="service-desc">Crystal-clear windows inside and out — we remove dirt, streaks, and grime to let the natural light flood back in.</p>
+      <p class="service-desc">Crystal-clear windows inside and out &mdash; we remove dirt, streaks, and grime to let the natural light flood back in.</p>
       <span class="service-tag">Add-On</span>
     </div>
-    <div class="service-card fade-up">
-      <div class="service-icon">🧺</div>
+    <div class="service-card fade-up" data-svc="5">
+      <div class="service-icon">&#129514;</div>
       <h3 class="service-name">Carpet &amp; Upholstery</h3>
       <p class="service-desc">Deep carpet cleaning and upholstery care to restore freshness, remove stains, and extend the life of your furnishings.</p>
       <span class="service-tag">Specialty</span>
@@ -1600,7 +1600,7 @@
   if(detailOverlay && detailClose){
     document.addEventListener('click', function(e){
       var card = e.target.closest('[data-svc]');
-      if(card && window.innerWidth <= 768){
+      if(card && window.innerWidth <= 900){
         var i = parseInt(card.getAttribute('data-svc'));
         var svc = SVC_DATA[i];
         document.getElementById('svcDetailIcon').innerHTML = svc.icon;
