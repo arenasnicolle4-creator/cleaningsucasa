@@ -3,241 +3,639 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us — Cleaning Su Casa</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-  
-<style>
-  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-  :root{
-    --white:#ffffff;--off-white:#F3F7FF;--light-blue:#E4EDFB;
-    --dark-blue:#053574;--vivid-blue:#023f92;--cyan:#5debf1;
-    --cyan-glow:rgba(93,235,241,0.18);--cyan-line:rgba(93,235,241,0.38);
-    --amber:#F59E0B;--text-dark:#053574;--text-mid:#3A5A8A;
-    --text-soft:#6B85A8;--text-faint:#A8BCCF;--border:rgba(5,53,116,0.09);
-    --grad-blue:linear-gradient(135deg,#053574 0%,#023f92 100%);
-    --grad-dark:linear-gradient(135deg,#020f2a 0%,#053574 55%,#023f92 100%);
-    --grad-subtle:linear-gradient(160deg,#F3F7FF 0%,#e8f0fc 100%);
-  }
-  html{scroll-behavior:smooth}
-  body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden}
-  nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3.5rem;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s}
-  .nav-logo{font-family:'Playfair Display',serif;font-size:1.38rem;font-weight:700;color:var(--dark-blue);text-decoration:none;letter-spacing:-0.02em;flex-shrink:0}
-  .nav-logo span{color:var(--cyan);filter:drop-shadow(0 0 10px rgba(93,235,241,0.7))}
-  .nav-links{display:flex;align-items:center;list-style:none;gap:0;margin:0 1rem}
-  .nav-links>li{position:relative}
-  .nav-links>li>a,.nav-links>li>button{display:inline-flex;align-items:center;gap:0.28rem;text-decoration:none;background:none;border:none;cursor:pointer;color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;padding:0.5rem 0.75rem;border-radius:8px;white-space:nowrap;transition:color 0.2s,background 0.2s}
-  .nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li.open>a,.nav-links>li.open>button{color:var(--dark-blue);background:var(--light-blue)}
-  .nav-links>li>a.active{color:var(--dark-blue);font-weight:700}
-  .nav-chevron{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.25s;flex-shrink:0}
-  .nav-links>li.open .nav-chevron{transform:rotate(180deg)}
-  .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid rgba(5,53,116,0.11);border-radius:16px;padding:0.45rem;box-shadow:0 16px 48px rgba(5,53,116,0.14);min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:300}
-  .nav-links>li.open .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
-  .nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:white;border-left:1px solid rgba(5,53,116,0.11);border-top:1px solid rgba(5,53,116,0.11);transform:translateX(-50%) rotate(45deg);border-radius:2px 0 0 0}
-  .nav-dropdown a{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border-radius:10px;text-decoration:none;color:var(--text-mid);font-size:0.84rem;font-weight:500;transition:background 0.18s,color 0.18s}
-  .nav-dropdown a:hover{background:var(--light-blue);color:var(--dark-blue)}
-  .nav-dropdown a .dd-icon{width:34px;height:34px;border-radius:9px;flex-shrink:0;background:var(--light-blue);display:flex;align-items:center;justify-content:center;font-size:1rem;transition:background 0.18s}
-  .nav-dropdown a:hover .dd-icon{background:rgba(93,235,241,0.22)}
-  .nav-dropdown a .dd-title{font-weight:600;color:var(--dark-blue);font-size:0.84rem;display:block}
-  .nav-dropdown a .dd-sub{font-size:0.73rem;color:var(--text-soft);display:block;margin-top:0.05rem}
-  .dd-divider{height:1px;background:var(--border);margin:0.3rem 0.5rem}
-  .nav-cta{background:var(--grad-blue);color:white;padding:0.65rem 1.45rem;border-radius:50px;font-size:0.78rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;transition:all 0.25s;box-shadow:0 4px 18px rgba(5,53,116,0.28);white-space:nowrap;flex-shrink:0;text-decoration:none;display:inline-block}
-  .nav-cta:hover{box-shadow:0 6px 28px rgba(5,53,116,0.44);transform:translateY(-1px)}
-  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none}
-  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--dark-blue);border-radius:2px;transition:all 0.3s}
-  .nav-mobile{display:none;position:fixed;top:72px;left:0;right:0;bottom:0;background:white;z-index:199;overflow-y:auto;padding:1rem 1.5rem 3rem;flex-direction:column}
-  .nav-mobile.open{display:flex}
-  .nav-mobile a,.nav-mobile button{display:block;width:100%;text-align:left;background:none;border:none;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:500;color:var(--text-mid);text-decoration:none;cursor:pointer;padding:0.85rem 1rem;border-radius:10px;transition:all 0.18s}
-  .nav-mobile a:hover,.nav-mobile button:hover{background:var(--light-blue);color:var(--dark-blue)}
-  .mob-section{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-faint);padding:1rem 1rem 0.3rem}
-  .mob-indent{padding-left:2.2rem!important}
-  .mob-cta{background:var(--grad-blue)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-  @media(max-width:1100px){nav{padding:0 1.6rem}.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
-  /* Page body */
-  .page-hero{padding:9rem 5.5rem 6rem;background:var(--grad-dark);position:relative;overflow:hidden}
-  .page-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 20% 50%,rgba(93,235,241,0.1) 0%,transparent 55%);pointer-events:none}
-  .page-hero-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;gap:0.5rem}
-  .page-hero-tag::before{content:'';width:20px;height:2px;background:var(--cyan);border-radius:2px;display:block}
-  .page-hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.8rem,5vw,4.5rem);font-weight:900;color:white;line-height:1.08;letter-spacing:-0.025em;margin-bottom:1.4rem}
-  .page-hero h1 em{font-style:italic;color:var(--cyan)}
-  .page-hero p{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.62);max-width:560px;font-weight:300;margin-bottom:2.5rem}
-  .btn-primary{background:var(--grad-blue);color:white;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:600;transition:all 0.25s;box-shadow:0 4px 22px rgba(5,53,116,0.32);display:inline-block}
-  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(5,53,116,0.44)}
-  .btn-cyan{background:var(--cyan);color:var(--dark-blue);padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(93,235,241,0.3);display:inline-block}
-  .btn-cyan:hover{background:white;transform:translateY(-2px)}
-  .content-section{padding:6rem 5.5rem}
-  .content-section.alt{background:var(--grad-subtle)}
-  .section-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vivid-blue);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
-  .section-tag::before{content:'';width:20px;height:2px;background:var(--cyan);border-radius:2px;display:block}
-  .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--dark-blue);margin-bottom:1.5rem}
-  .section-title em{font-style:italic;color:var(--vivid-blue)}
-  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:3rem}
-  .feature-card{border-radius:20px;padding:2.2rem;border:1.5px solid var(--border);transition:all 0.3s;position:relative;overflow:hidden}
-  .feature-card:nth-child(odd){background:linear-gradient(145deg,#ffffff,#EBF3FF)}
-  .feature-card:nth-child(even){background:var(--grad-blue);border-color:transparent}
-  .feature-card:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(5,53,116,0.12)}
-  .feature-card .fc-icon{font-size:2rem;margin-bottom:1rem}
-  .feature-card .fc-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;margin-bottom:0.6rem;color:var(--dark-blue)}
-  .feature-card:nth-child(even) .fc-title{color:white}
-  .feature-card .fc-desc{font-size:0.88rem;line-height:1.7;color:var(--text-mid)}
-  .feature-card:nth-child(even) .fc-desc{color:rgba(255,255,255,0.62)}
-  .cta-strip{padding:5rem 5.5rem;background:var(--grad-blue);display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap}
-  .cta-strip h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.6rem);font-weight:700;color:white;line-height:1.2}
-  .cta-strip h2 em{font-style:italic;color:var(--cyan)}
-  footer{background:var(--dark-blue);color:white;padding:3.5rem 5.5rem 2rem}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.3);padding-top:2rem;border-top:1px solid rgba(93,235,241,0.13);margin-top:2rem}
-  @media(max-width:900px){.content-section,.page-hero,.cta-strip{padding:5rem 2rem}.feature-grid{grid-template-columns:1fr 1fr}}
-  @media(max-width:580px){.feature-grid{grid-template-columns:1fr}.footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}}
-</style>
+  <title>Meet the Team &mdash; Cleaning Su Casa</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500;600&family=Oswald:wght@300;400&family=Allura&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    :root{
+      --white:#ffffff; --off-white:#F3F7FF; --light-blue:#E4EDFB;
+      --dark-blue:#053574; --vivid-blue:#023f92; --cyan:#5debf1;
+      --text-dark:#0d1f3c; --text-mid:#3a4f6e; --text-soft:#6b82a0;
+      --border:rgba(5,53,116,0.10);
+      --grad-blue:linear-gradient(135deg,#053574,#023f92);
+      --grad-dark:linear-gradient(135deg,#020f2a,#053574,#023f92);
+      --grad-subtle:linear-gradient(160deg,#F3F7FF 0%,#e8f0fc 100%);
+    }
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;color:var(--text-dark);overflow-x:hidden;background:var(--white);}
 
+    /* NAV */
+    nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 2rem;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid var(--border);transition:box-shadow 0.3s;}
+    .nav-links{display:flex;align-items:center;list-style:none;flex:1;justify-content:center;gap:0;}
+    .nav-links>li{position:relative;}
+    .nav-links>li>a,.nav-links>li>button{display:inline-flex;align-items:center;gap:0.28rem;text-decoration:none;background:none;border:none;cursor:pointer;color:var(--text-mid);font-family:'DM Sans',sans-serif;font-size:0.82rem;font-weight:500;letter-spacing:0.04em;text-transform:uppercase;padding:0.52rem 0.8rem;border-radius:8px;white-space:nowrap;transition:color 0.2s,background 0.2s;}
+    .nav-links>li>a:hover,.nav-links>li>button:hover,.nav-links>li.open>button{color:var(--dark-blue);background:var(--light-blue);}
+    .nav-links>li>a.active{color:var(--dark-blue);font-weight:700;}
+    .nav-chevron{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;transition:transform 0.25s;flex-shrink:0;}
+    .nav-links>li.open .nav-chevron{transform:rotate(180deg);}
+    .nav-dropdown{position:absolute;top:calc(100% + 10px);left:50%;transform:translateX(-50%) translateY(-6px);background:white;border:1px solid rgba(5,53,116,0.11);border-radius:16px;padding:0.45rem;box-shadow:0 16px 48px rgba(5,53,116,0.14);min-width:230px;opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:300;}
+    .nav-links>li.open .nav-dropdown{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0);}
+    .nav-dropdown::before{content:'';position:absolute;top:-6px;left:50%;width:12px;height:12px;background:white;border-left:1px solid rgba(5,53,116,0.11);border-top:1px solid rgba(5,53,116,0.11);transform:translateX(-50%) rotate(45deg);border-radius:2px 0 0 0;}
+    .nav-dropdown a{display:flex;align-items:center;gap:0.7rem;padding:0.7rem 0.9rem;border-radius:10px;text-decoration:none;color:var(--text-mid);font-size:0.84rem;font-weight:500;transition:background 0.18s,color 0.18s;}
+    .nav-dropdown a:hover{background:var(--light-blue);color:var(--dark-blue);}
+    .nav-dropdown a .dd-icon{width:34px;height:34px;border-radius:9px;background:var(--light-blue);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+    .dd-title{display:block;font-weight:600;color:var(--text-dark);font-size:0.84rem;}
+    .dd-sub{display:block;font-size:0.75rem;color:var(--text-soft);margin-top:0.08rem;}
+    .dd-divider{height:1px;background:var(--border);margin:0.3rem 0.5rem;}
+    .nav-cta{background:var(--grad-blue);color:white;text-decoration:none;padding:0.52rem 1.25rem;border-radius:50px;font-size:0.82rem;font-weight:600;letter-spacing:0.04em;text-transform:uppercase;transition:opacity 0.2s,transform 0.2s;flex-shrink:0;}
+    .nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0;}
+    .nav-hamburger span{display:block;width:24px;height:2px;background:var(--dark-blue);border-radius:2px;transition:all 0.3s;}
+    .nav-mobile{display:none;position:fixed;inset:0;z-index:190;background:rgba(255,255,255,0.99);backdrop-filter:blur(20px);flex-direction:column;padding:6rem 2rem 3rem;overflow-y:auto;}
+    .nav-mobile.open{display:flex;}
+    .nav-mobile a,.nav-mobile button{display:block;padding:0.9rem 0;font-size:1.1rem;font-weight:500;color:var(--text-dark);text-decoration:none;background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;text-align:left;width:100%;}
+    .nav-mobile .sub-link{font-size:0.95rem;color:var(--text-mid);padding-left:1rem;}
+    .nav-mobile .book-link{margin-top:1.5rem;background:var(--grad-blue);color:white;padding:1rem;border-radius:12px;text-align:center;border:none;font-weight:600;}
+
+    /* HERO */
+    .hero{min-height:52vh;background-color:#020c1f;background-image:radial-gradient(circle at 20% 30%,rgba(5,53,116,0.58) 0%,transparent 45%),radial-gradient(circle at 80% 65%,rgba(10,79,168,0.42) 0%,transparent 40%),radial-gradient(circle at 55% 5%,rgba(93,235,241,0.06) 0%,transparent 30%),radial-gradient(ellipse at 5% 88%,rgba(5,53,116,0.38) 0%,transparent 40%),radial-gradient(circle 1px at center,rgba(255,255,255,0.07) 0%,transparent 100%);background-size:100% 100%,100% 100%,100% 100%,100% 100%,26px 26px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:9rem 5.5rem 5rem;text-align:center;}
+    .hero-orb{position:absolute;border-radius:50%;pointer-events:none;}
+    .hero-orb-1{width:560px;height:560px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(5,53,116,0.16) 0%,transparent 70%);animation:orb1 8s ease-in-out infinite;}
+    .hero-orb-2{width:300px;height:300px;top:5%;right:8%;background:radial-gradient(circle,rgba(5,53,116,0.12) 0%,transparent 70%);animation:orb2 10s ease-in-out infinite reverse;}
+    @keyframes orb1{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:1}50%{transform:translate(-50%,-50%) scale(1.1);opacity:0.7}}
+    @keyframes orb2{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.2);opacity:0.6}}
+    .hero-rings{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+    .hero-dots{position:absolute;inset:0;pointer-events:none;}
+    .hero-dot{position:absolute;border-radius:50%;background:#7dd3fc;opacity:0.18;animation:dotdrift linear infinite;}
+    @keyframes dotdrift{0%{opacity:0;transform:translateY(0)}10%{opacity:0.2}90%{opacity:0.1}100%{opacity:0;transform:translateY(-80px)}}
+    .hero-content{position:relative;z-index:2;max-width:640px;}
+    .hero-eyebrow{display:inline-flex;align-items:center;gap:0.55rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.2rem;}
+    .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--cyan);opacity:0.5;}
+    .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:white;line-height:1.12;margin-bottom:1.2rem;}
+    .hero-h1 em{font-style:italic;color:#7dd3fc;}
+    .hero-desc{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,0.52);font-weight:300;max-width:500px;margin:0 auto;}
+
+    /* STATS BAND */
+    .stats-band{background:var(--dark-blue);padding:2.2rem 5.5rem;display:flex;gap:0;align-items:center;justify-content:center;}
+    .stat-item{flex:1;text-align:center;padding:0 2rem;border-right:1px solid rgba(93,235,241,0.15);}
+    .stat-item:last-child{border-right:none;}
+    .stat-num{font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:white;line-height:1;}
+    .stat-lbl{font-size:0.72rem;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.1em;margin-top:0.3rem;}
+
+    /* FOUNDER SPOTLIGHT */
+    .founder{padding:6rem 5.5rem;background:var(--grad-subtle);display:grid;grid-template-columns:auto 1fr;gap:5rem;align-items:center;}
+    .founder-avatar{width:200px;height:200px;border-radius:50%;background:linear-gradient(135deg,#020c1f,#053574);display:flex;align-items:center;justify-content:center;flex-shrink:0;position:relative;box-shadow:0 20px 60px rgba(5,53,116,0.25);}
+    .founder-avatar-inner{width:180px;height:180px;border-radius:50%;background:linear-gradient(135deg,#031d4a,#0a4fa8);display:flex;align-items:center;justify-content:center;font-family:'Allura',cursive;font-size:4.5rem;color:#7dd3fc;letter-spacing:1px;}
+    .founder-badge{position:absolute;bottom:-8px;right:-8px;background:var(--cyan);color:var(--dark-blue);font-size:0.65rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;padding:0.32rem 0.7rem;border-radius:50px;}
+    .founder-label{font-size:0.72rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vivid-blue);margin-bottom:0.7rem;display:flex;align-items:center;gap:0.6rem;}
+    .founder-label::before{content:'';display:block;width:20px;height:2px;background:var(--vivid-blue);border-radius:2px;}
+    .founder-name{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:700;color:var(--dark-blue);line-height:1.15;margin-bottom:0.4rem;}
+    .founder-title{font-size:0.84rem;font-weight:600;color:var(--text-soft);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:1.4rem;}
+    .founder-bio{font-size:1rem;line-height:1.82;color:var(--text-mid);font-weight:300;max-width:560px;margin-bottom:1.6rem;}
+    .founder-pills{display:flex;gap:0.6rem;flex-wrap:wrap;}
+    .founder-pill{background:rgba(5,53,116,0.07);border:1px solid rgba(5,53,116,0.13);color:var(--dark-blue);font-size:0.76rem;font-weight:600;padding:0.35rem 0.9rem;border-radius:50px;}
+
+    /* TEAM SECTION */
+    .team{padding:6rem 5.5rem;background:var(--white);}
+    .team-header{text-align:center;margin-bottom:4rem;}
+    .section-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vivid-blue);margin-bottom:0.75rem;display:flex;align-items:center;justify-content:center;gap:0.7rem;}
+    .section-tag::before,.section-tag::after{content:'';display:block;width:32px;height:1px;background:var(--vivid-blue);opacity:0.4;}
+    .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3.2vw,2.9rem);font-weight:700;line-height:1.15;color:var(--dark-blue);margin-bottom:1rem;}
+    .section-sub{font-size:1rem;color:var(--text-soft);max-width:500px;margin:0 auto;}
+
+    /* TEAM GRID */
+    .team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem;}
+    .team-card{border-radius:22px;overflow:hidden;border:1px solid rgba(5,53,116,0.09);background:var(--white);transition:transform 0.35s,box-shadow 0.35s;}
+    .team-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(5,53,116,0.12);}
+    .tc-avatar{height:170px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+    .tc-initials{font-family:'Playfair Display',serif;font-size:3rem;font-weight:700;color:white;position:relative;z-index:1;letter-spacing:1px;text-shadow:0 2px 12px rgba(0,0,0,0.18);}
+    .tc-body{padding:1.4rem 1.3rem 1.5rem;}
+    .tc-name{font-family:'Playfair Display',serif;font-size:1.08rem;font-weight:700;color:var(--dark-blue);margin-bottom:0.18rem;}
+    .tc-role{font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-soft);margin-bottom:0.9rem;}
+    .tc-tags{display:flex;gap:0.4rem;flex-wrap:wrap;}
+    .tc-tag{font-size:0.68rem;font-weight:600;padding:0.22rem 0.6rem;border-radius:50px;letter-spacing:0.04em;}
+    .tc-tag-blue{background:rgba(5,53,116,0.07);border:1px solid rgba(5,53,116,0.12);color:var(--dark-blue);}
+    .tc-tag-cyan{background:rgba(93,235,241,0.1);border:1px solid rgba(93,235,241,0.25);color:#047a7e;}
+
+    /* CTA BAND */
+    .cta-band{padding:5.5rem 5.5rem;background:var(--grad-dark);position:relative;overflow:hidden;text-align:center;}
+    .cta-orb{position:absolute;border-radius:50%;pointer-events:none;}
+    .cta-orb-1{width:500px;height:500px;top:50%;left:50%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(5,53,116,0.18) 0%,transparent 70%);animation:orb1 9s ease-in-out infinite;}
+    .cta-rings{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+    .cta-content{position:relative;z-index:2;}
+    .cta-label{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:0.7rem;}
+    .cta-label::before,.cta-label::after{content:'';display:block;width:28px;height:1px;background:var(--cyan);opacity:0.5;}
+    .cta-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:white;line-height:1.2;margin-bottom:1rem;}
+    .cta-title em{font-style:italic;color:#7dd3fc;}
+    .cta-sub{font-size:1rem;color:rgba(255,255,255,0.48);max-width:440px;margin:0 auto 2.5rem;line-height:1.7;}
+    .btn-primary{display:inline-block;background:white;color:var(--dark-blue);padding:0.9rem 2.2rem;border-radius:50px;text-decoration:none;font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:transform 0.2s,box-shadow 0.2s;}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,0.2);}
+
+    /* FOOTER */
+    footer{background:var(--dark-blue);color:white;padding:4rem 5.5rem 2.5rem;}
+    .footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:4rem;padding-bottom:3rem;border-bottom:1px solid rgba(93,235,241,0.13);margin-bottom:2.5rem;}
+    .footer-brand{font-family:'Playfair Display',serif;font-size:1.45rem;font-weight:700;margin-bottom:0.9rem;}
+    .footer-brand span{color:var(--cyan);}
+    .footer-tagline{font-size:0.87rem;line-height:1.72;color:rgba(255,255,255,0.36);max-width:260px;}
+    .footer-col h4{font-size:0.73rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.2rem;}
+    .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:0.7rem;}
+    .footer-col ul a{color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.87rem;transition:color 0.2s;}
+    .footer-col ul a:hover{color:var(--cyan);}
+    .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.22);}
+
+    /* ANIMATIONS */
+    .fade-up{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease;}
+    .fade-up.visible{opacity:1;transform:translateY(0);}
+    .fade-up:nth-child(2){transition-delay:0.08s}
+    .fade-up:nth-child(3){transition-delay:0.16s}
+    .fade-up:nth-child(4){transition-delay:0.24s}
+    .fade-up:nth-child(5){transition-delay:0.32s}
+    .fade-up:nth-child(6){transition-delay:0.40s}
+    .fade-up:nth-child(7){transition-delay:0.08s}
+    .fade-up:nth-child(8){transition-delay:0.16s}
+
+    /* RESPONSIVE */
+    @media(max-width:860px){.nav-links,.nav-cta{display:none;}.nav-hamburger{display:flex;}}
+    @media(max-width:900px){
+      nav{padding:0 1.2rem;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(5,53,116,0.08);overflow:hidden;}
+      nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.18);pointer-events:none;}
+      nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.18);pointer-events:none;}
+      .nav-links,.nav-cta{display:none;}
+      .nav-hamburger{display:flex;}
+      .nav-hamburger span{background:#053574;}
+      .nav-deco-rings{display:block!important;}
+      .hero{padding:8rem 1.6rem 4rem;min-height:auto;}
+      .stats-band{padding:2rem 1.6rem;flex-wrap:wrap;gap:1.5rem;}
+      .stat-item{flex:1;min-width:120px;border-right:none;border-bottom:1px solid rgba(93,235,241,0.12);padding-bottom:1.2rem;}
+      .stat-item:last-child{border-bottom:none;padding-bottom:0;}
+      .founder{grid-template-columns:1fr;gap:2.5rem;padding:5rem 1.6rem;text-align:center;}
+      .founder-avatar{margin:0 auto;}
+      .founder-label{justify-content:center;}
+      .founder-pills{justify-content:center;}
+      .team{padding:5rem 1.6rem;}
+      .team-grid{grid-template-columns:1fr 1fr;gap:1.2rem;}
+      .cta-band{padding:5rem 1.6rem;}
+      footer{padding:3.5rem 1.6rem 2rem;}
+      .footer-top{grid-template-columns:1fr 1fr;gap:2rem;}
+    }
+    @media(max-width:620px){
+      .hero{padding:7rem 1.2rem 3.5rem;}
+      .team{padding:4rem 1.2rem;}
+      .team-grid{grid-template-columns:1fr 1fr;gap:1rem;}
+      .tc-avatar{height:140px;}
+      .tc-initials{font-size:2.4rem;}
+      .tc-body{padding:1.1rem 1rem 1.2rem;}
+      .founder{padding:4rem 1.2rem;}
+      .cta-band{padding:4rem 1.2rem;}
+      .footer-top{grid-template-columns:1fr;}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center;}
+    }
+    @media(max-width:400px){
+      .team-grid{grid-template-columns:1fr;}
+    }
+  </style>
 </head>
 <body>
+
 <nav id="mainNav">
-  <a href="index.html" class="nav-logo">Cleaning <span>Su Casa</span></a>
+  <svg class="nav-deco-rings" width="160" height="160" viewBox="0 0 160 160" style="position:absolute;top:-70px;right:60px;pointer-events:none;display:none;">
+    <circle cx="80" cy="80" r="70" fill="none" stroke="#053574" stroke-width="1" opacity="0.7"/>
+    <circle cx="80" cy="80" r="48" fill="none" stroke="#053574" stroke-width="0.6" opacity="0.45"/>
+    <circle cx="80" cy="80" r="26" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.25"/>
+  </svg>
+  <svg class="nav-deco-rings" width="90" height="90" viewBox="0 0 90 90" style="position:absolute;top:-20px;right:10px;pointer-events:none;display:none;">
+    <circle cx="45" cy="45" r="38" fill="none" stroke="#053574" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="45" cy="45" r="22" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.2"/>
+  </svg>
   <ul class="nav-links">
-    <li><a href="index.html" class="">Home</a></li>
+    <li><a href="index.html">Home</a></li>
     <li id="navServices">
-      <button data-toggle="navServices" aria-expanded="false">
-        Services<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <button data-toggle="navServices" aria-expanded="false">Services
+        <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="nav-dropdown">
-        <a href="airbnb.html"><span class="dd-icon">🏨</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
-        <a href="residential.html"><span class="dd-icon">🏡</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
-        <a href="commercial.html"><span class="dd-icon">🏢</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+        <a href="airbnb.html"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="residential.html"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="commercial.html"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
       </div>
     </li>
-    <li><a href="https://book.cleaningsucasa.com/" class="">Schedule Service</a></li>
-    <li><a href="jobs.html" class="">Job Openings</a></li>
-    <li><a href="products.html" class="">Products</a></li>
+    <li><a href="https://book.cleaningsucasa.com/">Schedule Service</a></li>
+    <li><a href="jobs.html">Job Openings</a></li>
+    <li><a href="products.html">Products</a></li>
     <li id="navMore">
-      <button data-toggle="navMore" aria-expanded="false">
-        More<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      <button data-toggle="navMore" aria-expanded="false">More
+        <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="nav-dropdown">
-        <a href="about.html"><span class="dd-icon">✨</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="nicol.html"><span class="dd-icon">👤</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <a href="about.html"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="nicol.html"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">🏢</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
       </div>
     </li>
   </ul>
   <a href="https://book.cleaningsucasa.com/" class="nav-cta">Book Now</a>
-  <button class="nav-hamburger" id="hamburger"  aria-label="Menu">
+  <button class="nav-hamburger" id="hamburger" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
 </nav>
-<div class="nav-mobile" id="mobileMenu">
+
+<div class="nav-mobile" id="mobileNav">
   <a href="index.html">Home</a>
-  <div class="mob-section">Services</div>
-  <a href="airbnb.html" class="mob-indent">🏨 &nbsp;Airbnb Cleaning</a>
-  <a href="residential.html" class="mob-indent">🏡 &nbsp;Residential Cleaning</a>
-  <a href="commercial.html" class="mob-indent">🏢 &nbsp;Commercial Cleaning</a>
+  <a href="residential.html" class="sub-link">&#8212; Residential Cleaning</a>
+  <a href="airbnb.html" class="sub-link">&#8212; Airbnb Cleaning</a>
+  <a href="commercial.html" class="sub-link">&#8212; Commercial Cleaning</a>
   <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
   <a href="jobs.html">Job Openings</a>
   <a href="products.html">Products</a>
-  <div class="mob-section">More</div>
-  <a href="about.html" class="mob-indent">About Us</a>
-  <a href="nicol.html" class="mob-indent">Meet Nicol</a>
-  <a href="https://cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
-  <a href="https://book.cleaningsucasa.com/" class="mob-cta">Book a Cleaning</a>
+  <a href="about.html" class="active">About Us</a>
+  <a href="nicol.html">Meet Nicol</a>
+  <a href="https://cleaningsuoficina.com" target="_blank">Cleaning Su Oficina &#8599;</a>
+  <a href="https://book.cleaningsucasa.com/" class="book-link">Book a Cleaning</a>
 </div>
 
-<section class="page-hero">
-  <div class="page-hero-tag">Our Story</div>
-  <h1>Built on Trust,<br><em>Driven by Care</em></h1>
-  <p>Cleaning Su Casa was founded in 2020 with a simple belief: everyone deserves to come home to a clean, comfortable space. From day one, we've built every relationship on reliability, quality, and genuine care.</p>
-  <a href="https://book.cleaningsucasa.com/" class="btn-cyan">Book a Cleaning →</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-rings">
+    <svg width="480" height="480" style="position:absolute;top:-130px;left:-100px;opacity:0.38;" viewBox="0 0 480 480">
+      <circle cx="240" cy="240" r="210" fill="none" stroke="#053574" stroke-width="1"/>
+      <circle cx="240" cy="240" r="163" fill="none" stroke="#053574" stroke-width="0.6"/>
+      <circle cx="240" cy="240" r="112" fill="none" stroke="#5debf1" stroke-width="0.4" opacity="0.5"/>
+    </svg>
+    <svg width="320" height="320" style="position:absolute;bottom:-60px;right:-50px;opacity:0.30;" viewBox="0 0 320 320">
+      <circle cx="160" cy="160" r="140" fill="none" stroke="#053574" stroke-width="1"/>
+      <circle cx="160" cy="160" r="96" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.5"/>
+      <circle cx="160" cy="160" r="52" fill="none" stroke="#053574" stroke-width="0.5"/>
+    </svg>
+  </div>
+  <div class="hero-dots">
+    <div class="hero-dot" style="width:4px;height:4px;left:12%;bottom:20%;animation-duration:7s;animation-delay:0s;"></div>
+    <div class="hero-dot" style="width:3px;height:3px;left:38%;bottom:25%;animation-duration:9s;animation-delay:1.5s;"></div>
+    <div class="hero-dot" style="width:5px;height:5px;left:68%;bottom:14%;animation-duration:8s;animation-delay:0.7s;"></div>
+    <div class="hero-dot" style="width:2px;height:2px;left:82%;bottom:32%;animation-duration:6.5s;animation-delay:3s;"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Cleaning Su Casa</div>
+    <h1 class="hero-h1">The People Behind<br><em>Every Spotless Home</em></h1>
+    <p class="hero-desc">A dedicated team of professionals who bring care, consistency, and pride to every single visit &mdash; right here in Anchorage.</p>
+  </div>
 </section>
 
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="stat-item">
+    <div class="stat-num">2020</div>
+    <div class="stat-lbl">Founded in Anchorage</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">100%</div>
+    <div class="stat-lbl">Satisfaction Guaranteed</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">5+</div>
+    <div class="stat-lbl">Years of Service</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">AK</div>
+    <div class="stat-lbl">Anchorage Based</div>
+  </div>
+</div>
 
-  <section class="content-section">
-    <div class="section-tag">Who We Are</div>
-    <h2 class="section-title">Anchorage's Trusted<br><em>Cleaning Team</em></h2>
-    <p style="font-size:1rem;line-height:1.78;color:var(--text-mid);max-width:600px;font-weight:300">We're a locally-owned cleaning company rooted in Anchorage, Alaska. Our team is hand-selected, background-checked, and trained to deliver consistent, exceptional results.</p>
-    <div class="feature-grid">
-        <div class="feature-card">
-          <div class="fc-icon">📍</div>
-          <div class="fc-title">Locally Owned</div>
-          <div class="fc-desc">We're not a franchise — we're your neighbors. Anchorage-based, community-focused, and proud of it.</div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">🤝</div>
-          <div class="fc-title">Relationship First</div>
-          <div class="fc-desc">We take time to understand your needs. Communication, trust, and consistency are at the core of how we work.</div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">⭐</div>
-          <div class="fc-title">100% Satisfaction</div>
-          <div class="fc-desc">We stand behind every clean. If you're not satisfied, we'll make it right — no questions asked.</div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">🧹</div>
-          <div class="fc-title">Trained Professionals</div>
-          <div class="fc-desc">Every team member is trained, background-checked, and held to high standards of quality and professionalism.</div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">🌿</div>
-          <div class="fc-title">Safe Products</div>
-          <div class="fc-desc">We use products that are effective and safer for your family, pets, and the environment wherever possible.</div>
-        </div>
-        <div class="feature-card">
-          <div class="fc-icon">📅</div>
-          <div class="fc-title">Reliable Scheduling</div>
-          <div class="fc-desc">We show up when we say we will. No surprises, no no-shows — just consistent, dependable service.</div>
-        </div>
+<!-- FOUNDER SPOTLIGHT -->
+<section class="founder">
+  <div class="founder-avatar fade-up">
+    <div class="founder-avatar-inner">N</div>
+    <span class="founder-badge">Founder</span>
+  </div>
+  <div class="fade-up">
+    <div class="founder-label">Meet the Founder</div>
+    <div class="founder-name">Nicol Gilbert</div>
+    <div class="founder-title">Owner &amp; Founder &nbsp;&#183;&nbsp; Cleaning Su Casa</div>
+    <p class="founder-bio">Born in Bogot&#225;, Colombia and based in Anchorage since 2018, Nicol built Cleaning Su Casa from the ground up with nothing but a passion for clean spaces and an unwavering commitment to her clients. What started as a few homes quickly grew into one of Anchorage&#39;s most trusted cleaning services &mdash; built entirely on word of mouth, reliability, and results you can see.</p>
+    <div class="founder-pills">
+      <span class="founder-pill">Bogot&#225;, Colombia</span>
+      <span class="founder-pill">In Anchorage Since 2018</span>
+      <span class="founder-pill">Founded 2020</span>
+      <span class="founder-pill">Fully Insured &amp; Bonded</span>
     </div>
-  </section>
-
-<section class="cta-strip">
-  <h2>Ready for a <em>Cleaner Space?</em></h2>
-  <a href="https://book.cleaningsucasa.com/" class="btn-cyan" style="flex-shrink:0">Book Now →</a>
+  </div>
 </section>
 
+<!-- TEAM GRID -->
+<section class="team" id="team">
+  <div class="team-header">
+    <p class="section-tag">Our Crew</p>
+    <h2 class="section-title">The Team That Makes It Happen</h2>
+    <p class="section-sub">Every member of our crew is background-checked, trained, and genuinely passionate about the work they do.</p>
+  </div>
+  <div class="team-grid" id="teamGrid">
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-band">
+  <div class="cta-orb cta-orb-1"></div>
+  <div class="cta-rings">
+    <svg width="420" height="420" style="position:absolute;top:-100px;right:-80px;opacity:0.22;" viewBox="0 0 420 420">
+      <circle cx="210" cy="210" r="188" fill="none" stroke="#5debf1" stroke-width="0.8"/>
+      <circle cx="210" cy="210" r="140" fill="none" stroke="#053574" stroke-width="1"/>
+      <circle cx="210" cy="210" r="90" fill="none" stroke="#5debf1" stroke-width="0.5"/>
+    </svg>
+    <svg width="240" height="240" style="position:absolute;bottom:-40px;left:-30px;opacity:0.18;" viewBox="0 0 240 240">
+      <circle cx="120" cy="120" r="105" fill="none" stroke="#053574" stroke-width="1"/>
+      <circle cx="120" cy="120" r="65" fill="none" stroke="#5debf1" stroke-width="0.6"/>
+    </svg>
+  </div>
+  <div class="cta-content fade-up">
+    <div class="cta-label">Ready for a Clean Home?</div>
+    <h2 class="cta-title">Let Our Team Take<br><em>Care of the Rest</em></h2>
+    <p class="cta-sub">Book online in minutes and let Anchorage&#39;s most trusted cleaning crew handle everything.</p>
+    <a href="https://book.cleaningsucasa.com/" class="btn-primary">Book a Cleaning</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;padding-bottom:0">
+  <div class="footer-top">
     <div>
-      <div style="font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem">Cleaning <span style="color:var(--cyan)">Su Casa</span></div>
-      <p style="font-size:0.87rem;line-height:1.7;color:rgba(255,255,255,0.38);max-width:240px">Anchorage's trusted cleaning service since 2020. We clean with pride so you can live in comfort.</p>
+      <div class="footer-brand">Cleaning <span>Su Casa</span></div>
+      <p class="footer-tagline">Anchorage&#39;s trusted home and commercial cleaning service since 2020. We clean with pride so you can live in comfort.</p>
     </div>
-    <div>
-      <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">Services</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
-        <li><a href="residential.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem;transition:color 0.2s" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Residential</a></li>
-        <li><a href="airbnb.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Airbnb Turnover</a></li>
-        <li><a href="commercial.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Commercial</a></li>
-        <li><a href="https://book.cleaningsucasa.com/" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Move In/Out</a></li>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="residential.html">Residential</a></li>
+        <li><a href="airbnb.html">Airbnb Turnover</a></li>
+        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="https://book.cleaningsucasa.com/">Deep Cleaning</a></li>
+        <li><a href="https://book.cleaningsucasa.com/">Move In/Out</a></li>
       </ul>
     </div>
-    <div>
-      <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">Company</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
-        <li><a href="about.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">About Us</a></li>
-        <li><a href="nicol.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Meet Nicol</a></li>
-        <li><a href="jobs.html" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Job Openings</a></li>
-        <li><a href="https://cleaningsuoficina.com" target="_blank" style="color:rgba(255,255,255,0.5);text-decoration:none;font-size:0.86rem" onmouseover="this.style.color='#5debf1'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">Su Oficina</a></li>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="nicol.html">Meet Nicol</a></li>
+        <li><a href="https://book.cleaningsucasa.com/">Book Now</a></li>
+        <li><a href="https://cleaningsuoficina.com">Su Oficina</a></li>
       </ul>
     </div>
-    <div>
-      <h4 style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem">Contact</h4>
-      <ul style="list-style:none;display:flex;flex-direction:column;gap:0.6rem">
-        <li><a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></li>
-        <li style="color:rgba(255,255,255,0.5);font-size:0.86rem">Anchorage, Alaska</li>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="/cdn-cgi/l/email-protection#cb8aa088a7aeaaa5a2a5ac98be88aab8aa8baca6aaa2a7e5a8a4a6"><span class="__cf_email__" data-cfemail="226349614e47434c4b4c4571576143514362454f434b4e0c414d4f">[email&#160;protected]</span></a></li>
+        <li><a href="#">Anchorage, Alaska</a></li>
+        <li><a href="https://www.yelp.com/biz/cleaning-su-casa-anchorage">Reviews</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Cleaning Su Casa. All Rights Reserved.</span>
-    <span>Made with care in Anchorage, AK 💙</span>
+    <span>&copy; 2025 Cleaning Su Casa. All Rights Reserved.</span>
+    <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-<script>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 (function(){
+
+  // -- TEAM DATA (default) --
+  var DEFAULT_TEAM = [
+    {name:"Tatiana G.", role:"Lead Cleaner", tags:["Deep Clean","Residential"], grad:"linear-gradient(135deg,#031d4a,#0a4fa8)"},
+    {name:"Emily M.", role:"Senior Cleaner", tags:["Move In/Out","Airbnb"], grad:"linear-gradient(135deg,#053574,#1a6bbf)"},
+    {name:"Alondra L.", role:"Cleaner", tags:["Residential","Windows"], grad:"linear-gradient(135deg,#020f2a,#053574)"},
+    {name:"Angie R.", role:"Cleaner", tags:["Commercial","Deep Clean"], grad:"linear-gradient(135deg,#023f92,#0a4fa8)"},
+    {name:"Sofia V.", role:"Cleaner", tags:["Airbnb","Residential"], grad:"linear-gradient(135deg,#031d4a,#0660b8)"},
+    {name:"Daniela C.", role:"Cleaner", tags:["Carpet","Deep Clean"], grad:"linear-gradient(135deg,#0a2d6e,#1555a8)"},
+    {name:"Valentina T.", role:"Cleaner", tags:["Residential","Move In/Out"], grad:"linear-gradient(135deg,#020c1f,#053574)"},
+    {name:"Maria R.", role:"Cleaner", tags:["Commercial","Windows"], grad:"linear-gradient(135deg,#053574,#0a4fa8)"},
+    {name:"Camila H.", role:"Cleaner", tags:["Airbnb","Residential"], grad:"linear-gradient(135deg,#031d4a,#023f92)"},
+    {name:"Isabella S.", role:"Cleaner", tags:["Deep Clean","Carpet"], grad:"linear-gradient(135deg,#020f2a,#0a4fa8)"},
+    {name:"Lucia P.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#053574,#1a6bbf)"},
+    {name:"Alejandra F.", role:"Cleaner", tags:["Move In/Out","Commercial"], grad:"linear-gradient(135deg,#023f92,#031d4a)"},
+    {name:"Natalia B.", role:"Cleaner", tags:["Residential","Deep Clean"], grad:"linear-gradient(135deg,#0a2d6e,#053574)"},
+    {name:"Andrea N.", role:"Cleaner", tags:["Windows","Residential"], grad:"linear-gradient(135deg,#020c1f,#0a4fa8)"}
+  ];
+
+  var ADMIN_PASSWORD = "SuCasa2024!";
+  var STORAGE_KEY = "csc_team_data";
+  var TAG_COLORS = ["Residential","Airbnb","Windows","Carpet","Commercial","Move In/Out","Deep Clean"];
+
+  function getInitials(name) {
+    return name.split(' ').slice(0,2).map(function(w){return w[0];}).join('').toUpperCase();
+  }
+
+  function loadTeam() {
+    try {
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored) return JSON.parse(stored);
+    } catch(e) {}
+    return DEFAULT_TEAM;
+  }
+
+  function saveTeam(team) {
+    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(team)); } catch(e) {}
+  }
+
+  function renderTeam() {
+    var team = loadTeam();
+    var grid = document.getElementById('teamGrid');
+    if (!grid) return;
+    grid.innerHTML = team.map(function(m, i) {
+      var initials = getInitials(m.name);
+      var tags = (m.tags || []).map(function(t, ti) {
+        var cls = ti === 0 ? 'tc-tag-blue' : 'tc-tag-cyan';
+        return '<span class="tc-tag '+cls+'">'+t+'</span>';
+      }).join('');
+      return '<div class="team-card fade-up"><div class="tc-avatar" style="background:'+m.grad+'"><div class="tc-initials">'+initials+'</div></div><div class="tc-body"><div class="tc-name">'+m.name+'</div><div class="tc-role">'+m.role+'</div><div class="tc-tags">'+tags+'</div></div></div>';
+    }).join('');
+    // re-observe fade-ups
+    if (window._fadeObs) {
+      grid.querySelectorAll('.fade-up').forEach(function(el){ window._fadeObs.observe(el); });
+    } else {
+      grid.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
+    }
+  }
+
+  // -- ADMIN PANEL --
+  function buildAdminPanel() {
+    var panel = document.createElement('div');
+    panel.id = 'adminPanel';
+    panel.style.cssText = 'display:none;position:fixed;inset:0;z-index:9000;background:rgba(2,12,31,0.97);backdrop-filter:blur(16px);overflow-y:auto;padding:2rem;';
+    panel.innerHTML = `
+      <div style="max-width:700px;margin:0 auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+          <div>
+            <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:white;">Team Manager</div>
+            <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem;">Cleaning Su Casa &mdash; Admin</div>
+          </div>
+          <button onclick="document.getElementById('adminPanel').style.display='none'" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;padding:0.5rem 1.2rem;border-radius:8px;cursor:pointer;font-size:0.85rem;">Close</button>
+        </div>
+        <div id="adminList" style="display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem;"></div>
+        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(93,235,241,0.2);border-radius:16px;padding:1.5rem;">
+          <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5debf1;margin-bottom:1.2rem;">Add New Team Member</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem;">
+            <input id="newName" placeholder="Full Name (e.g. Sofia V.)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
+            <input id="newRole" placeholder="Role (e.g. Cleaner)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;">
+            <input id="newTag1" placeholder="Specialty 1 (e.g. Residential)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
+            <input id="newTag2" placeholder="Specialty 2 (e.g. Airbnb)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
+          </div>
+          <button onclick="adminAdd()" style="background:linear-gradient(135deg,#053574,#023f92);color:white;border:none;padding:0.75rem 2rem;border-radius:10px;cursor:pointer;font-weight:600;font-size:0.88rem;width:100%;">+ Add Member</button>
+        </div>
+        <div style="margin-top:1rem;text-align:center;">
+          <button onclick="adminReset()" style="background:none;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.35);padding:0.4rem 1rem;border-radius:8px;cursor:pointer;font-size:0.75rem;">Reset to Defaults</button>
+        </div>
+      </div>`;
+    document.body.appendChild(panel);
+  }
+
+  function renderAdminList() {
+    var team = loadTeam();
+    var list = document.getElementById('adminList');
+    if (!list) return;
+    list.innerHTML = team.map(function(m, i) {
+      return '<div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;">'
+        +'<div style="flex:1;">'
+        +'<div style="color:white;font-weight:600;font-size:0.95rem;">'+m.name+'</div>'
+        +'<div style="color:rgba(255,255,255,0.4);font-size:0.78rem;margin-top:0.15rem;">'+m.role+' &nbsp;&middot;&nbsp; '+(m.tags||[]).join(', ')+'</div>'
+        +'</div>'
+        +'<button onclick="adminEdit('+i+')" style="background:rgba(93,235,241,0.1);border:1px solid rgba(93,235,241,0.25);color:#5debf1;padding:0.35rem 0.9rem;border-radius:8px;cursor:pointer;font-size:0.78rem;">Edit</button>'
+        +'<button onclick="adminDelete('+i+')" style="background:rgba(220,50,50,0.12);border:1px solid rgba(220,50,50,0.25);color:#f87171;padding:0.35rem 0.9rem;border-radius:8px;cursor:pointer;font-size:0.78rem;">Remove</button>'
+        +'</div>';
+    }).join('');
+  }
+
+  window.adminDelete = function(i) {
+    if (!confirm('Remove this team member?')) return;
+    var team = loadTeam();
+    team.splice(i, 1);
+    saveTeam(team);
+    renderTeam();
+    renderAdminList();
+  };
+
+  window.adminEdit = function(i) {
+    var team = loadTeam();
+    var m = team[i];
+    var newName = prompt('Name:', m.name);
+    if (newName === null) return;
+    var newRole = prompt('Role:', m.role);
+    if (newRole === null) return;
+    var newTag1 = prompt('Specialty 1:', (m.tags||[])[0]||'');
+    var newTag2 = prompt('Specialty 2:', (m.tags||[])[1]||'');
+    team[i] = {name:newName.trim(), role:newRole.trim(), tags:[newTag1.trim(), newTag2.trim()].filter(Boolean), grad:m.grad};
+    saveTeam(team);
+    renderTeam();
+    renderAdminList();
+  };
+
+  window.adminAdd = function() {
+    var name = document.getElementById('newName').value.trim();
+    var role = document.getElementById('newRole').value.trim();
+    var t1 = document.getElementById('newTag1').value.trim();
+    var t2 = document.getElementById('newTag2').value.trim();
+    if (!name) { alert('Please enter a name.'); return; }
+    var grads = ['linear-gradient(135deg,#031d4a,#0a4fa8)','linear-gradient(135deg,#053574,#1a6bbf)','linear-gradient(135deg,#020f2a,#053574)','linear-gradient(135deg,#023f92,#0a4fa8)','linear-gradient(135deg,#031d4a,#0660b8)','linear-gradient(135deg,#0a2d6e,#1555a8)'];
+    var team = loadTeam();
+    team.push({name:name, role:role||'Cleaner', tags:[t1,t2].filter(Boolean), grad:grads[team.length % grads.length]});
+    saveTeam(team);
+    renderTeam();
+    renderAdminList();
+    document.getElementById('newName').value='';
+    document.getElementById('newRole').value='';
+    document.getElementById('newTag1').value='';
+    document.getElementById('newTag2').value='';
+  };
+
+  window.adminReset = function() {
+    if (!confirm('Reset to original team? This will remove any changes.')) return;
+    localStorage.removeItem(STORAGE_KEY);
+    renderTeam();
+    renderAdminList();
+  };
+
+  function openAdmin() {
+    var panel = document.getElementById('adminPanel');
+    if (!panel) { buildAdminPanel(); panel = document.getElementById('adminPanel'); }
+    renderAdminList();
+    panel.style.display = 'block';
+  }
+
+  // -- LOGIN PROMPT --
+  function checkAdminAccess() {
+    var authed = sessionStorage.getItem('csc_admin');
+    if (authed === '1') { openAdmin(); return; }
+    var pw = prompt('Enter admin password:');
+    if (pw === ADMIN_PASSWORD) {
+      sessionStorage.setItem('csc_admin', '1');
+      openAdmin();
+    } else if (pw !== null) {
+      alert('Incorrect password.');
+    }
+  }
+
+  // -- SECRET TRIGGER: click footer copyright text 3 times --
+  var clickCount = 0;
+  var clickTimer = null;
+  var trigger = document.querySelector('.footer-bottom span');
+  if (trigger) {
+    trigger.style.cursor = 'default';
+    trigger.addEventListener('click', function() {
+      clickCount++;
+      clearTimeout(clickTimer);
+      clickTimer = setTimeout(function(){ clickCount = 0; }, 1500);
+      if (clickCount >= 3) { clickCount = 0; checkAdminAccess(); }
+    });
+  }
+
+  // Also open via URL hash
+  if (window.location.hash === '#admin') {
+    window.addEventListener('load', function(){ checkAdminAccess(); });
+  }
+
+  // -- NAV --
   document.addEventListener('click',function(e){
-    var t=e.target.closest('[data-toggle]');
-    if(t){var id=t.getAttribute('data-toggle');var li=document.getElementById(id);var open=li.classList.contains('open');document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});if(!open)li.classList.add('open');return;}
-    if(!e.target.closest('.nav-links')&&!e.target.closest('.nav-hamburger')){document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});}
-    if(e.target.closest('.nav-hamburger')){var menu=document.getElementById('mobileMenu');menu.classList.toggle('open');var bars=document.querySelectorAll('.nav-hamburger span');if(menu.classList.contains('open')){bars[0].style.transform='translateY(7px) rotate(45deg)';bars[1].style.opacity='0';bars[2].style.transform='translateY(-7px) rotate(-45deg)';}else{bars.forEach(function(b){b.style.transform='';b.style.opacity='';});}}
+    var toggleBtn=e.target.closest('[data-toggle]');
+    if(toggleBtn){
+      var id=toggleBtn.getAttribute('data-toggle');
+      var li=document.getElementById(id);
+      var isOpen=li.classList.contains('open');
+      document.querySelectorAll('.nav-links > li').forEach(function(el){el.classList.remove('open');});
+      if(!isOpen)li.classList.add('open');
+      return;
+    }
+    if(!e.target.closest('.nav-links')&&!e.target.closest('.nav-hamburger')){
+      document.querySelectorAll('.nav-links > li').forEach(function(el){el.classList.remove('open');});
+    }
   });
-  window.addEventListener('scroll',function(){var nav=document.querySelector('nav');if(nav)nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(5,53,116,0.10)':'none';});
+  var hamburger=document.getElementById('hamburger');
+  var mobileNav=document.getElementById('mobileNav');
+  if(hamburger&&mobileNav){
+    hamburger.addEventListener('click',function(){
+      var open=mobileNav.classList.toggle('open');
+      var bars=hamburger.querySelectorAll('span');
+      if(open){bars[0].style.transform='translateY(7px) rotate(45deg)';bars[1].style.opacity='0';bars[2].style.transform='translateY(-7px) rotate(-45deg)';}
+      else{bars.forEach(function(b){b.style.transform='';b.style.opacity='';});}
+    });
+  }
+
+  // -- FADE UP --
+  var fadeEls = document.querySelectorAll('.fade-up:not(#teamGrid .fade-up)');
+  if('IntersectionObserver' in window){
+    window._fadeObs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){entry.target.classList.add('visible');window._fadeObs.unobserve(entry.target);}
+      });
+    },{threshold:0.08});
+    fadeEls.forEach(function(el){window._fadeObs.observe(el);});
+  } else {
+    fadeEls.forEach(function(el){el.classList.add('visible');});
+  }
+
+  // -- NAV SCROLL --
+  window.addEventListener('scroll',function(){
+    var nav=document.querySelector('nav');
+    if(nav)nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(5,53,116,0.10)':'none';
+  });
+
+  // -- INIT --
+  renderTeam();
+
 })();
 </script>
 </body>
