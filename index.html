@@ -800,9 +800,38 @@
       .about-visual-panel{grid-template-columns:1fr;}
       .avp-card:nth-child(1),.avp-card:nth-child(4){grid-column:span 1;}
       .marquee-item{font-size:0.78rem;}
-      .section-tag{font-size:1.5rem!important;font-weight:800!important;letter-spacing:-0.01em!important;text-transform:none!important;color:var(--dark-blue)!important;margin-bottom:0.35rem!important;display:block!important;}
-      .section-tag::before,.section-tag::after{display:none!important;}
-      .section-title{font-size:0.95rem!important;font-weight:400!important;color:var(--text-soft)!important;font-family:"DM Sans",sans-serif!important;letter-spacing:0!important;font-style:normal!important;}
+      .section-tag{
+        font-size:1.7rem!important;
+        font-weight:800!important;
+        letter-spacing:-0.02em!important;
+        text-transform:none!important;
+        color:var(--dark-blue)!important;
+        margin-bottom:0.3rem!important;
+        display:block!important;
+        line-height:1.1!important;
+        font-family:'Playfair Display',serif!important;
+      }
+      .section-tag::before{
+        content:''!important;
+        display:block!important;
+        width:28px!important;
+        height:3px!important;
+        background:linear-gradient(90deg,var(--cyan),var(--vivid-blue))!important;
+        border-radius:2px!important;
+        margin-bottom:0.55rem!important;
+      }
+      .section-tag::after{display:none!important;}
+      .section-title{
+        font-size:0.78rem!important;
+        font-weight:600!important;
+        color:var(--vivid-blue)!important;
+        font-family:'DM Sans',sans-serif!important;
+        letter-spacing:0.13em!important;
+        text-transform:uppercase!important;
+        font-style:normal!important;
+        opacity:0.75!important;
+        margin-bottom:0!important;
+      }
       .section-title em{font-style:normal!important;color:inherit!important;}
       .pricing,.services,.about,.process,.testimonials,.cta-band{padding:3.5rem 1.2rem;}
     }
