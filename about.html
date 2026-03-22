@@ -64,7 +64,7 @@
     .hero-eyebrow{display:inline-flex;align-items:center;gap:0.55rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.2rem;}
     .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--cyan);opacity:0.5;}
     .hero-h1{font-family:'Playfair Display',serif;font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;color:white;line-height:1.12;margin-bottom:1.2rem;}
-    .hero-h1 em{font-style:italic;color:#7dd3fc;}
+    .hero-h1 em{background:linear-gradient(180deg,#e0f2fe 0%,#7dd3fc 25%,#0ea5e9 50%,#7dd3fc 75%,#e0f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic}
     .hero-desc{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,0.52);font-weight:300;max-width:500px;margin:0 auto;}
 
     /* STATS BAND */
@@ -121,7 +121,7 @@
     .cta-title em{font-style:italic;color:#7dd3fc;}
     .cta-sub{font-size:1rem;color:rgba(255,255,255,0.48);max-width:440px;margin:0 auto 2.5rem;line-height:1.7;}
     .btn-primary{display:inline-block;background:white;color:var(--dark-blue);padding:0.9rem 2.2rem;border-radius:50px;text-decoration:none;font-size:0.88rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;transition:transform 0.2s,box-shadow 0.2s;}
-    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,0.2);}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,0.2);,0 0 18px rgba(125,211,252,0.35)}
 
     /* FOOTER */
     footer{background:var(--dark-blue);color:white;padding:4rem 5.5rem 2.5rem;}
@@ -147,12 +147,12 @@
     .fade-up:nth-child(8){transition-delay:0.16s}
 
     /* RESPONSIVE */
-    @media(max-width:860px){.nav-links,.nav-cta{display:none;}.nav-hamburger{display:flex;}}
+    @media(max-width:860px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
     @media(max-width:900px){
       nav{padding:0 1.2rem;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(5,53,116,0.08);overflow:hidden;}
       nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.18);pointer-events:none;}
       nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.18);pointer-events:none;}
-      .nav-links,.nav-cta{display:none;}
+      .nav-links{display:none;}
       .nav-hamburger{display:flex;}
       .nav-hamburger span{background:#053574;}
       .nav-deco-rings{display:block!important;}
@@ -185,6 +185,39 @@
     @media(max-width:400px){
       .team-grid{grid-template-columns:1fr;}
     }
+  
+    .nav-cta{background:linear-gradient(135deg,#053574 0%,#023f92 100%) !important;color:white !important;box-shadow:0 4px 18px rgba(5,53,116,0.38),inset 0 1px 0 rgba(93,235,241,0.20) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(5,53,116,0.55),inset 0 1px 0 rgba(93,235,241,0.20) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(93,235,241,0.35);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(93,235,241,0.10),0 0 0 28px rgba(93,235,241,0.05)}
+    .nav-cta::after{content:none}
+    .mob-cta{background:linear-gradient(135deg,#053574 0%,#023f92 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
+    .btn-primary{position:relative;overflow:hidden}
+    .btn-primary::before{content:'';position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.40);top:-30px;left:-20px;pointer-events:none;box-shadow:0 0 0 18px rgba(255,255,255,0.12),0 0 0 36px rgba(255,255,255,0.05)}
+    .btn-primary::after{content:none}
+  
+    @media(max-width:480px){
+      .hero{padding:6rem 1.2rem 3rem;min-height:auto}
+      .hero-h1{font-size:clamp(2.2rem,11vw,3.2rem)!important;line-height:1.1}
+      .hero-desc{font-size:0.9rem}
+      .stats-band{padding:2rem 1.2rem;gap:1.5rem;flex-wrap:wrap}
+      .stat-item{min-width:calc(50% - 0.75rem)}
+      .founder{padding:3.5rem 1.2rem;grid-template-columns:1fr;gap:2rem;text-align:left}
+      .founder-avatar{width:90px;height:90px}
+      .founder-name{font-size:clamp(1.8rem,8vw,2.4rem)}
+      .team{padding:3.5rem 1.2rem}
+      .team-grid{grid-template-columns:1fr 1fr;gap:0.9rem}
+      .tc-avatar{height:120px}
+      .tc-initials{font-size:2rem}
+      .tc-body{padding:0.9rem 0.8rem 1rem}
+      .tc-name{font-size:0.92rem}
+      .cta-band{padding:3.5rem 1.2rem}
+      footer{padding:3rem 1.2rem 1.5rem}
+      .footer-top{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+    }
+    @media(max-width:360px){
+      .team-grid{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -200,29 +233,29 @@
     <circle cx="45" cy="45" r="22" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.2"/>
   </svg>
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="https://home.cleaningsucasa.com">Home</a></li>
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services
         <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="nav-dropdown">
-        <a href="airbnb.html"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
-        <a href="residential.html"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
-        <a href="commercial.html"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+        <a href="https://airbnb.cleaningsucasa.com"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="https://residential.cleaningsucasa.com"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="https://commercial.cleaningsucasa.com"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
       </div>
     </li>
     <li><a href="https://book.cleaningsucasa.com/">Schedule Service</a></li>
-    <li><a href="jobs.html">Job Openings</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+    <li><a href="https://products.cleaningsucasa.com">Products</a></li>
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More
         <svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
       </button>
       <div class="nav-dropdown">
-        <a href="about.html"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="nicol.html"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <a href="https://about.cleaningsucasa.com"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="https://nicol.cleaningsucasa.com"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+        <a href="https://home.cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
       </div>
     </li>
   </ul>
@@ -233,16 +266,16 @@
 </nav>
 
 <div class="nav-mobile" id="mobileNav">
-  <a href="index.html">Home</a>
-  <a href="residential.html" class="sub-link">&#8212; Residential Cleaning</a>
-  <a href="airbnb.html" class="sub-link">&#8212; Airbnb Cleaning</a>
-  <a href="commercial.html" class="sub-link">&#8212; Commercial Cleaning</a>
+  <a href="https://home.cleaningsucasa.com">Home</a>
+  <a href="https://residential.cleaningsucasa.com" class="sub-link">&#8212; Residential Cleaning</a>
+  <a href="https://airbnb.cleaningsucasa.com" class="sub-link">&#8212; Airbnb Cleaning</a>
+  <a href="https://commercial.cleaningsucasa.com" class="sub-link">&#8212; Commercial Cleaning</a>
   <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
-  <a href="jobs.html">Job Openings</a>
-  <a href="products.html">Products</a>
-  <a href="about.html" class="active">About Us</a>
-  <a href="nicol.html">Meet Nicol</a>
-  <a href="https://cleaningsuoficina.com" target="_blank">Cleaning Su Oficina &#8599;</a>
+  <a href="https://jobs.cleaningsucasa.com">Job Openings</a>
+  <a href="https://products.cleaningsucasa.com">Products</a>
+  <a href="https://about.cleaningsucasa.com" class="active">About Us</a>
+  <a href="https://nicol.cleaningsucasa.com">Meet Nicol</a>
+  <a href="https://home.cleaningsuoficina.com" target="_blank">Cleaning Su Oficina &#8599;</a>
   <a href="https://book.cleaningsucasa.com/" class="book-link">Book a Cleaning</a>
 </div>
 
@@ -322,7 +355,21 @@
     <h2 class="section-title">The Team That Makes It Happen</h2>
     <p class="section-sub">Every member of our crew is background-checked, trained, and genuinely passionate about the work they do.</p>
   </div>
-  <div class="team-grid" id="teamGrid">
+    <div class="team-grid" id="teamGrid">
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#020f2a 0%,#053574 60%,#0a4fa8 100%);"><span class="tc-initials">NG</span></div><div class="tc-body"><div class="tc-name">Nicol Gilbert</div><div class="tc-role">Owner & Founder</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Leadership</span><span class="tc-tag tc-tag-cyan">Operations</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#023f92 0%,#0a4fa8 60%,#0d6abf 100%);"><span class="tc-initials">MS</span></div><div class="tc-body"><div class="tc-name">Maria Santos</div><div class="tc-role">Lead Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Deep Clean</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#053574 0%,#0f5fa8 60%,#5debf1 100%);"><span class="tc-initials">JR</span></div><div class="tc-body"><div class="tc-name">Jessica Reyes</div><div class="tc-role">Lead Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Airbnb</span><span class="tc-tag tc-tag-cyan">Turnovers</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#020f2a 0%,#053574 55%,#023f92 100%);"><span class="tc-initials">AK</span></div><div class="tc-body"><div class="tc-name">Amber Kowalski</div><div class="tc-role">Lead Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Deep Clean</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#023f92 0%,#0a4fa8 50%,#0d6abf 100%);"><span class="tc-initials">DF</span></div><div class="tc-body"><div class="tc-name">Diana Flores</div><div class="tc-role">Residential Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Move In/Out</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#053574 0%,#0a4fa8 60%,#5debf1 100%);"><span class="tc-initials">KT</span></div><div class="tc-body"><div class="tc-name">Keisha Thompson</div><div class="tc-role">Residential Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Deep Clean</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#020f2a 0%,#053574 55%,#023f92 100%);"><span class="tc-initials">PN</span></div><div class="tc-body"><div class="tc-name">Priya Nair</div><div class="tc-role">Commercial Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Commercial</span><span class="tc-tag tc-tag-cyan">Office</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#023f92 0%,#0d6abf 60%,#5debf1 100%);"><span class="tc-initials">TR</span></div><div class="tc-body"><div class="tc-name">Tatiana Ruiz</div><div class="tc-role">Commercial Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Commercial</span><span class="tc-tag tc-tag-cyan">Airbnb</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#031d4a 0%,#053574 50%,#0a4fa8 100%);"><span class="tc-initials">SM</span></div><div class="tc-body"><div class="tc-name">Sofia Mendez</div><div class="tc-role">Residential Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Airbnb</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#020f2a 0%,#0a4fa8 55%,#5debf1 100%);"><span class="tc-initials">LH</span></div><div class="tc-body"><div class="tc-name">Layla Hassan</div><div class="tc-role">Residential Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Move In/Out</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#053574 0%,#023f92 50%,#0d6abf 100%);"><span class="tc-initials">BC</span></div><div class="tc-body"><div class="tc-name">Brianna Cole</div><div class="tc-role">Commercial Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Commercial</span><span class="tc-tag tc-tag-cyan">Office</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#020f2a 0%,#031d4a 40%,#0f5fa8 100%);"><span class="tc-initials">NI</span></div><div class="tc-body"><div class="tc-name">Natasha Ivanova</div><div class="tc-role">Residential Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Deep Clean</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#023f92 0%,#0d6abf 50%,#5debf1 100%);"><span class="tc-initials">CV</span></div><div class="tc-body"><div class="tc-name">Carmen Vasquez</div><div class="tc-role">Commercial Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Commercial</span><span class="tc-tag tc-tag-cyan">Airbnb</span></div></div></div>
+    <div class="team-card"><div class="tc-avatar" style="background:linear-gradient(135deg,#020f2a 0%,#053574 45%,#0f5fa8 100%);"><span class="tc-initials">OP</span></div><div class="tc-body"><div class="tc-name">Olivia Park</div><div class="tc-role">Residential Cleaner</div><div class="tc-tags"><span class="tc-tag tc-tag-blue">Residential</span><span class="tc-tag tc-tag-cyan">Airbnb</span></div></div></div>
   </div>
 </section>
 
@@ -358,9 +405,9 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="residential.html">Residential</a></li>
-        <li><a href="airbnb.html">Airbnb Turnover</a></li>
-        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="https://residential.cleaningsucasa.com">Residential</a></li>
+        <li><a href="https://airbnb.cleaningsucasa.com">Airbnb Turnover</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Commercial</a></li>
         <li><a href="https://book.cleaningsucasa.com/">Deep Cleaning</a></li>
         <li><a href="https://book.cleaningsucasa.com/">Move In/Out</a></li>
       </ul>
@@ -368,10 +415,10 @@
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="nicol.html">Meet Nicol</a></li>
+        <li><a href="https://about.cleaningsucasa.com">About Us</a></li>
+        <li><a href="https://nicol.cleaningsucasa.com">Meet Nicol</a></li>
         <li><a href="https://book.cleaningsucasa.com/">Book Now</a></li>
-        <li><a href="https://cleaningsuoficina.com">Su Oficina</a></li>
+        <li><a href="https://home.cleaningsuoficina.com">Su Oficina</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -384,259 +431,51 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&copy; 2025 Cleaning Su Casa. All Rights Reserved.</span>
+    <span>&copy; 2020 Cleaning Su Casa. All Rights Reserved.</span>
     <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
-
-  // -- TEAM DATA (default) --
-  var DEFAULT_TEAM = [
-    {name:"Tatiana G.", role:"Lead Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#031d4a,#0a4fa8)"},
-    {name:"Emily M.", role:"Senior Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#053574,#1a6bbf)"},
-    {name:"Alondra L.", role:"Senior Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#020f2a,#053574)"},
-    {name:"Angie R.", role:"Senior Cleaner", tags:["Commercial","Residential"], grad:"linear-gradient(135deg,#023f92,#0a4fa8)"},
-    {name:"Sofia A.", role:"Senior Cleaner", tags:["Commercial","Residential"], grad:"linear-gradient(135deg,#031d4a,#0660b8)"},
-    {name:"Daniela C.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#0a2d6e,#1555a8)"},
-    {name:"Valentina T.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#020c1f,#053574)"},
-    {name:"Maria R.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#053574,#0a4fa8)"},
-    {name:"Camila H.", role:"Cleaner", tags:["Commercial","Residential"], grad:"linear-gradient(135deg,#031d4a,#023f92)"},
-    {name:"Isabella S.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#020f2a,#0a4fa8)"},
-    {name:"Lucia P.", role:"Cleaner", tags:["Commercial","Residential"], grad:"linear-gradient(135deg,#053574,#1a6bbf)"},
-    {name:"Alejandra F.", role:"Cleaner", tags:["Commercial","Residential"], grad:"linear-gradient(135deg,#023f92,#031d4a)"},
-    {name:"Natalia B.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#0a2d6e,#053574)"},
-    {name:"Andrea N.", role:"Cleaner", tags:["Residential","Airbnb"], grad:"linear-gradient(135deg,#020c1f,#0a4fa8)"}
-  ];
-
-  var ADMIN_PASSWORD = "SuCasa2024!";
-  var STORAGE_KEY = "csc_team_data";
-  var TAG_COLORS = ["Residential","Airbnb","Windows","Carpet","Commercial","Move In/Out","Deep Clean"];
-
-  function getInitials(name) {
-    return name.split(' ').slice(0,2).map(function(w){return w[0];}).join('').toUpperCase();
-  }
-
-  function loadTeam() {
-    try {
-      var stored = localStorage.getItem(STORAGE_KEY);
-      if (stored) return JSON.parse(stored);
-    } catch(e) {}
-    return DEFAULT_TEAM;
-  }
-
-  function saveTeam(team) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(team)); } catch(e) {}
-  }
-
-  function renderTeam() {
-    var team = loadTeam();
-    var grid = document.getElementById('teamGrid');
-    if (!grid) return;
-    grid.innerHTML = team.map(function(m, i) {
-      var initials = getInitials(m.name);
-      var tags = (m.tags || []).map(function(t, ti) {
-        var cls = ti === 0 ? 'tc-tag-blue' : 'tc-tag-cyan';
-        return '<span class="tc-tag '+cls+'">'+t+'</span>';
-      }).join('');
-      return '<div class="team-card fade-up"><div class="tc-avatar" style="background:'+m.grad+'"><div class="tc-initials">'+initials+'</div></div><div class="tc-body"><div class="tc-name">'+m.name+'</div><div class="tc-role">'+m.role+'</div><div class="tc-tags">'+tags+'</div></div></div>';
-    }).join('');
-    // re-observe fade-ups
-    if (window._fadeObs) {
-      grid.querySelectorAll('.fade-up').forEach(function(el){ window._fadeObs.observe(el); });
-    } else {
-      grid.querySelectorAll('.fade-up').forEach(function(el){ el.classList.add('visible'); });
-    }
-  }
-
-  // -- ADMIN PANEL --
-  function buildAdminPanel() {
-    var panel = document.createElement('div');
-    panel.id = 'adminPanel';
-    panel.style.cssText = 'display:none;position:fixed;inset:0;z-index:9000;background:rgba(2,12,31,0.97);backdrop-filter:blur(16px);overflow-y:auto;padding:2rem;';
-    panel.innerHTML = `
-      <div style="max-width:700px;margin:0 auto;">
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
-          <div>
-            <div style="font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:700;color:white;">Team Manager</div>
-            <div style="font-size:0.78rem;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-top:0.2rem;">Cleaning Su Casa &mdash; Admin</div>
-          </div>
-          <button onclick="document.getElementById('adminPanel').style.display='none'" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:white;padding:0.5rem 1.2rem;border-radius:8px;cursor:pointer;font-size:0.85rem;">Close</button>
-        </div>
-        <div id="adminList" style="display:flex;flex-direction:column;gap:0.8rem;margin-bottom:2rem;"></div>
-        <div style="background:rgba(255,255,255,0.05);border:1px solid rgba(93,235,241,0.2);border-radius:16px;padding:1.5rem;">
-          <div style="font-size:0.78rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:#5debf1;margin-bottom:1.2rem;">Add New Team Member</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem;">
-            <input id="newName" placeholder="Full Name (e.g. Sofia V.)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
-            <input id="newRole" placeholder="Role (e.g. Cleaner)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
-          </div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:1rem;">
-            <input id="newTag1" placeholder="Specialty 1 (e.g. Residential)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
-            <input id="newTag2" placeholder="Specialty 2 (e.g. Airbnb)" style="padding:0.7rem 1rem;border-radius:10px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:white;font-size:0.9rem;outline:none;"/>
-          </div>
-          <button onclick="adminAdd()" style="background:linear-gradient(135deg,#053574,#023f92);color:white;border:none;padding:0.75rem 2rem;border-radius:10px;cursor:pointer;font-weight:600;font-size:0.88rem;width:100%;">+ Add Member</button>
-        </div>
-        <div style="margin-top:1rem;text-align:center;">
-          <button onclick="adminReset()" style="background:none;border:1px solid rgba(255,255,255,0.12);color:rgba(255,255,255,0.35);padding:0.4rem 1rem;border-radius:8px;cursor:pointer;font-size:0.75rem;">Reset to Defaults</button>
-        </div>
-      </div>`;
-    document.body.appendChild(panel);
-  }
-
-  function renderAdminList() {
-    var team = loadTeam();
-    var list = document.getElementById('adminList');
-    if (!list) return;
-    list.innerHTML = team.map(function(m, i) {
-      return '<div style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:1rem 1.2rem;display:flex;align-items:center;gap:1rem;">'
-        +'<div style="flex:1;">'
-        +'<div style="color:white;font-weight:600;font-size:0.95rem;">'+m.name+'</div>'
-        +'<div style="color:rgba(255,255,255,0.4);font-size:0.78rem;margin-top:0.15rem;">'+m.role+' &nbsp;&middot;&nbsp; '+(m.tags||[]).join(', ')+'</div>'
-        +'</div>'
-        +'<button onclick="adminEdit('+i+')" style="background:rgba(93,235,241,0.1);border:1px solid rgba(93,235,241,0.25);color:#5debf1;padding:0.35rem 0.9rem;border-radius:8px;cursor:pointer;font-size:0.78rem;">Edit</button>'
-        +'<button onclick="adminDelete('+i+')" style="background:rgba(220,50,50,0.12);border:1px solid rgba(220,50,50,0.25);color:#f87171;padding:0.35rem 0.9rem;border-radius:8px;cursor:pointer;font-size:0.78rem;">Remove</button>'
-        +'</div>';
-    }).join('');
-  }
-
-  window.adminDelete = function(i) {
-    if (!confirm('Remove this team member?')) return;
-    var team = loadTeam();
-    team.splice(i, 1);
-    saveTeam(team);
-    renderTeam();
-    renderAdminList();
-  };
-
-  window.adminEdit = function(i) {
-    var team = loadTeam();
-    var m = team[i];
-    var newName = prompt('Name:', m.name);
-    if (newName === null) return;
-    var newRole = prompt('Role:', m.role);
-    if (newRole === null) return;
-    var newTag1 = prompt('Specialty 1:', (m.tags||[])[0]||'');
-    var newTag2 = prompt('Specialty 2:', (m.tags||[])[1]||'');
-    team[i] = {name:newName.trim(), role:newRole.trim(), tags:[newTag1.trim(), newTag2.trim()].filter(Boolean), grad:m.grad};
-    saveTeam(team);
-    renderTeam();
-    renderAdminList();
-  };
-
-  window.adminAdd = function() {
-    var name = document.getElementById('newName').value.trim();
-    var role = document.getElementById('newRole').value.trim();
-    var t1 = document.getElementById('newTag1').value.trim();
-    var t2 = document.getElementById('newTag2').value.trim();
-    if (!name) { alert('Please enter a name.'); return; }
-    var grads = ['linear-gradient(135deg,#031d4a,#0a4fa8)','linear-gradient(135deg,#053574,#1a6bbf)','linear-gradient(135deg,#020f2a,#053574)','linear-gradient(135deg,#023f92,#0a4fa8)','linear-gradient(135deg,#031d4a,#0660b8)','linear-gradient(135deg,#0a2d6e,#1555a8)'];
-    var team = loadTeam();
-    team.push({name:name, role:role||'Cleaner', tags:[t1,t2].filter(Boolean), grad:grads[team.length % grads.length]});
-    saveTeam(team);
-    renderTeam();
-    renderAdminList();
-    document.getElementById('newName').value='';
-    document.getElementById('newRole').value='';
-    document.getElementById('newTag1').value='';
-    document.getElementById('newTag2').value='';
-  };
-
-  window.adminReset = function() {
-    if (!confirm('Reset to original team? This will remove any changes.')) return;
-    localStorage.removeItem(STORAGE_KEY);
-    renderTeam();
-    renderAdminList();
-  };
-
-  function openAdmin() {
-    var panel = document.getElementById('adminPanel');
-    if (!panel) { buildAdminPanel(); panel = document.getElementById('adminPanel'); }
-    renderAdminList();
-    panel.style.display = 'block';
-  }
-
-  // -- LOGIN PROMPT --
-  function checkAdminAccess() {
-    var authed = sessionStorage.getItem('csc_admin');
-    if (authed === '1') { openAdmin(); return; }
-    var pw = prompt('Enter admin password:');
-    if (pw === ADMIN_PASSWORD) {
-      sessionStorage.setItem('csc_admin', '1');
-      openAdmin();
-    } else if (pw !== null) {
-      alert('Incorrect password.');
-    }
-  }
-
-  // -- SECRET TRIGGER: click footer copyright text 3 times --
-  var clickCount = 0;
-  var clickTimer = null;
-  var trigger = document.querySelector('.footer-bottom span');
-  if (trigger) {
-    trigger.style.cursor = 'default';
-    trigger.addEventListener('click', function() {
-      clickCount++;
-      clearTimeout(clickTimer);
-      clickTimer = setTimeout(function(){ clickCount = 0; }, 1500);
-      if (clickCount >= 3) { clickCount = 0; checkAdminAccess(); }
-    });
-  }
-
-  // Also open via URL hash
-  if (window.location.hash === '#admin') {
-    window.addEventListener('load', function(){ checkAdminAccess(); });
-  }
-
-  // -- NAV --
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  window.scrollTo(0,0);
+  window.addEventListener('load', function(){ window.scrollTo(0,0); });
   document.addEventListener('click',function(e){
-    var toggleBtn=e.target.closest('[data-toggle]');
-    if(toggleBtn){
-      var id=toggleBtn.getAttribute('data-toggle');
+    var t=e.target.closest('[data-toggle]');
+    if(t){
+      var id=t.getAttribute('data-toggle');
       var li=document.getElementById(id);
-      var isOpen=li.classList.contains('open');
-      document.querySelectorAll('.nav-links > li').forEach(function(el){el.classList.remove('open');});
-      if(!isOpen)li.classList.add('open');
+      var open=li.classList.contains('open');
+      document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});
+      if(!open){li.classList.add('open');}
       return;
     }
     if(!e.target.closest('.nav-links')&&!e.target.closest('.nav-hamburger')){
-      document.querySelectorAll('.nav-links > li').forEach(function(el){el.classList.remove('open');});
+      document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});
+    }
+    if(e.target.closest('.nav-hamburger')){
+      var menu=document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+      var bars=document.querySelectorAll('.nav-hamburger span');
+      if(menu.classList.contains('open')){
+        bars[0].style.transform='translateY(7px) rotate(45deg)';
+        bars[1].style.opacity='0';
+        bars[2].style.transform='translateY(-7px) rotate(-45deg)';
+      } else {
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+      }
     }
   });
-  var hamburger=document.getElementById('hamburger');
-  var mobileNav=document.getElementById('mobileNav');
-  if(hamburger&&mobileNav){
-    hamburger.addEventListener('click',function(){
-      var open=mobileNav.classList.toggle('open');
-      var bars=hamburger.querySelectorAll('span');
-      if(open){bars[0].style.transform='translateY(7px) rotate(45deg)';bars[1].style.opacity='0';bars[2].style.transform='translateY(-7px) rotate(-45deg)';}
-      else{bars.forEach(function(b){b.style.transform='';b.style.opacity='';});}
-    });
-  }
-
-  // -- FADE UP --
-  var fadeEls = document.querySelectorAll('.fade-up:not(#teamGrid .fade-up)');
+  var fadeEls=document.querySelectorAll('.fade-up');
   if('IntersectionObserver' in window){
-    window._fadeObs = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if(entry.isIntersecting){entry.target.classList.add('visible');window._fadeObs.unobserve(entry.target);}
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}
       });
-    },{threshold:0.08});
-    fadeEls.forEach(function(el){window._fadeObs.observe(el);});
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){obs.observe(el);});
   } else {
     fadeEls.forEach(function(el){el.classList.add('visible');});
   }
-
-  // -- NAV SCROLL --
-  window.addEventListener('scroll',function(){
-    var nav=document.querySelector('nav');
-    if(nav)nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(5,53,116,0.10)':'none';
-  });
-
-  // -- INIT --
-  renderTeam();
-
 })();
-</script>
-</body>
-</html>
+</script></body></html>
