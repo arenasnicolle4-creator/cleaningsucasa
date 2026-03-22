@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/index.html", "has": [{ "type": "host", "value": "home.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/index.html", "has": [{ "type": "host", "value": "home.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/airbnb.html", "has": [{ "type": "host", "value": "airbnb.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/airbnb.html", "has": [{ "type": "host", "value": "airbnb.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/residential.html", "has": [{ "type": "host", "value": "residential.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/residential.html", "has": [{ "type": "host", "value": "residential.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/commercial.html", "has": [{ "type": "host", "value": "commercial.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/commercial.html", "has": [{ "type": "host", "value": "commercial.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/about.html", "has": [{ "type": "host", "value": "about.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/about.html", "has": [{ "type": "host", "value": "about.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/products.html", "has": [{ "type": "host", "value": "products.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/products.html", "has": [{ "type": "host", "value": "products.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/jobs.html", "has": [{ "type": "host", "value": "jobs.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/jobs.html", "has": [{ "type": "host", "value": "jobs.cleaningsucasa.com" }] },
+
+    { "source": "/", "destination": "/nicol.html", "has": [{ "type": "host", "value": "nicol.cleaningsucasa.com" }] },
+    { "source": "/(.*)", "destination": "/nicol.html", "has": [{ "type": "host", "value": "nicol.cleaningsucasa.com" }] }
+  ]
+}
