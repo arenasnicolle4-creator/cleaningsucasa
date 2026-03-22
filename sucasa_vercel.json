@@ -1,0 +1,44 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "home.cleaningsucasa.com" }],
+      "destination": "/index.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "airbnb.cleaningsucasa.com" }],
+      "destination": "/airbnb.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "residential.cleaningsucasa.com" }],
+      "destination": "/residential.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "commercial.cleaningsucasa.com" }],
+      "destination": "/commercial.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "about.cleaningsucasa.com" }],
+      "destination": "/about.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "products.cleaningsucasa.com" }],
+      "destination": "/products.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "jobs.cleaningsucasa.com" }],
+      "destination": "/jobs.html"
+    },
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "nicol.cleaningsucasa.com" }],
+      "destination": "/nicol.html"
+    }
+  ]
+}
