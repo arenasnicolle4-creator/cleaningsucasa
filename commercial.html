@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Commercial Cleaning — Cleaning Su Casa</title>
+  <title>Commercial Cleaning &#8212; Cleaning Su Casa</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Oswald:wght@300;400&family=Allura&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -24,7 +24,7 @@
     html{scroll-behavior:smooth}
     body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text-dark);overflow-x:hidden}
 
-    /* ── NAV ── */
+    /* -- NAV -- */
     nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 2rem;height:72px;display:flex;justify-content:space-between;align-items:center;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(46,58,71,0.1);transition:box-shadow 0.3s}
     .nav-links{display:flex;align-items:center;list-style:none;flex:1;justify-content:center;gap:0}
     .nav-links>li{position:relative}
@@ -53,9 +53,9 @@
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
     .mob-cta{background:var(--grad-steel)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
 
-    /* ── HERO ── */
+    /* -- HERO -- */
     .hero{min-height:88vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;
       background-color:#060c11;
       background-image:
@@ -87,26 +87,26 @@
     .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(143,170,184,0.9);margin-bottom:1.4rem}
     .hero-eyebrow::before{content:'';width:24px;height:2px;background:#8FAAB8;border-radius:2px;display:block}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3.2rem,6vw,5.8rem);font-weight:900;line-height:1.08;letter-spacing:-0.03em;color:white;margin-bottom:1.4rem}
-    .hero h1 em{font-style:italic;color:#8FAAB8}
-    .hero h1 .copper{color:#D4955A}
+    .hero h1 em{background:linear-gradient(180deg,#dce8f0 0%,#8FAAB8 25%,#4a7a98 50%,#8FAAB8 75%,#dce8f0 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic}
+    .hero h1 .copper{background:linear-gradient(180deg,#f5e8d5 0%,#D4955A 25%,#B87333 50%,#D4955A 75%,#f5e8d5 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero-sub{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.48);max-width:620px;font-weight:300;margin-bottom:2.8rem}
     .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
     .btn-steel{background:var(--grad-steel);color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 22px rgba(26,37,47,0.38);display:inline-block}
     .btn-steel:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(26,37,47,0.52)}
-    .btn-copper{background:var(--grad-copper);color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 22px rgba(184,115,51,0.32);display:inline-block}
-    .btn-copper:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,115,51,0.48)}
+    .btn-copper{background:var(--grad-copper);color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 22px rgba(184,115,51,0.32);display:inline-block;border:1px solid rgba(100,60,10,0.22)}
+    .btn-copper:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(184,115,51,0.48),0 0 18px rgba(184,115,51,0.35)}
     .hero-pills{display:flex;gap:0.6rem;flex-wrap:wrap}
     .hero-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:50px;padding:0.45rem 1rem;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.65);letter-spacing:0.04em}
     .hero-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:#8FAAB8;flex-shrink:0}
 
-    /* ── SHARED ── */
+    /* -- SHARED -- */
     .section-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--steel-mid);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
     .section-tag::before{content:'';width:20px;height:2px;background:var(--copper);border-radius:2px;display:block}
     .section-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:700;line-height:1.15;letter-spacing:-0.02em;color:var(--text-dark);margin-bottom:1.2rem}
     .section-title em{font-style:italic;color:var(--steel-mid)}
     .section-title .copper{color:var(--copper)}
 
-    /* ── INTRO ── */
+    /* -- INTRO -- */
     .offer-intro{padding:6rem 5.5rem;background:white;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
     .offer-intro-text p{font-size:1rem;line-height:1.8;color:var(--text-mid);font-weight:300;margin-bottom:1.2rem}
     .offer-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
@@ -118,7 +118,7 @@
     .offer-stat-lbl{font-size:0.74rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-soft)}
     .offer-stat:nth-child(1) .offer-stat-lbl{color:rgba(255,255,255,0.6)}
 
-    /* ── INDUSTRIES ── */
+    /* -- INDUSTRIES -- */
     .industries{padding:6rem 5.5rem;background:var(--grad-dark);position:relative;overflow:hidden}
     .industries::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 92% 50%,rgba(184,115,51,0.08) 0%,transparent 55%);pointer-events:none}
     .industries-inner{position:relative;z-index:1}
@@ -140,7 +140,7 @@
     .ind-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:#8FAAB8;flex-shrink:0}
     .ind-card.featured .ind-list li::before{background:#D4955A}
 
-    /* ── TABS (service lists) ── */
+    /* -- TABS (service lists) -- */
     .service-lists{padding:6rem 5.5rem;background:var(--grad-subtle)}
     .tab-header{display:flex;gap:0;margin-bottom:3rem;border-bottom:2px solid rgba(46,58,71,0.12);width:fit-content}
     .tab-btn{background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;letter-spacing:0.04em;color:var(--text-soft);padding:0.85rem 1.8rem;border-bottom:3px solid transparent;margin-bottom:-2px;transition:all 0.2s;text-transform:uppercase}
@@ -156,7 +156,7 @@
     .list-title{font-size:0.9rem;font-weight:600;color:var(--text-dark);margin-bottom:0.25rem}
     .list-desc{font-size:0.81rem;line-height:1.62;color:var(--text-soft)}
 
-    /* ── FEATURED SERVICES ── */
+    /* -- FEATURED SERVICES -- */
     .services-section{padding:6rem 5.5rem;background:white}
     .section-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem}
     .section-link{color:var(--steel-mid);text-decoration:none;font-size:0.88rem;font-weight:600;border-bottom:1.5px solid var(--copper);padding-bottom:2px;transition:all 0.2s}
@@ -166,8 +166,8 @@
     .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--chrome),var(--copper));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
     .svc:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(26,37,47,0.10);border-color:rgba(184,115,51,0.3)}
     .svc:hover::after{transform:scaleX(1)}
-    .svc.dark{background:var(--grad-steel);border-color:transparent}
-    .svc.dark:hover{box-shadow:0 18px 44px rgba(26,37,47,0.3)}
+    .svc.dark{background:linear-gradient(135deg,#020f2a 0%,#053574 55%,#023f92 100%);border-color:transparent}
+    .svc.dark:hover{box-shadow:0 18px 44px rgba(2,15,42,0.45)}
     .svc.copper-card{background:var(--grad-copper);border-color:transparent}
     .svc.copper-card:hover{box-shadow:0 18px 44px rgba(184,115,51,0.3)}
     .svc-icon{font-size:1.9rem;margin-bottom:1rem}
@@ -179,7 +179,7 @@
     .svc.dark .svc-tag{background:rgba(143,170,184,0.15);color:#8FAAB8}
     .svc.copper-card .svc-tag{background:rgba(255,255,255,0.18);color:white}
 
-    /* ── CTA ── */
+    /* -- CTA -- */
     .cta-band{padding:5.5rem 5.5rem;background:var(--grad-dark);display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;position:relative;overflow:hidden}
     .cta-band::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 10% 50%,rgba(184,115,51,0.10) 0%,transparent 50%);pointer-events:none}
     .cta-band::after{content:'Su Oficina';font-family:'Allura',cursive;font-size:13rem;font-weight:400;color:rgba(255,255,255,0.025);position:absolute;right:-1rem;top:50%;transform:translateY(-50%);white-space:nowrap;pointer-events:none}
@@ -191,7 +191,7 @@
     .cta-actions{display:flex;flex-direction:column;gap:0.8rem;align-items:flex-end;flex-shrink:0}
     .cta-note{font-size:0.8rem;color:rgba(255,255,255,0.38);text-align:right}
 
-    /* ── FOOTER ── */
+    /* -- FOOTER -- */
     footer{background:var(--slate-deep);color:white;padding:3.5rem 5.5rem 2rem}
     .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem}
     .footer-brand{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;margin-bottom:0.8rem}
@@ -203,7 +203,7 @@
     .footer-col ul a:hover{color:#D4955A}
     .footer-bottom{display:flex;justify-content:space-between;align-items:center;font-size:0.78rem;color:rgba(255,255,255,0.25);padding-top:2rem;border-top:1px solid rgba(184,115,51,0.15);margin-top:2rem}
 
-    /* ── RESPONSIVE ── */
+    /* -- RESPONSIVE -- */
     @media(max-width:1000px){
       .hero,.offer-intro,.services-section,.service-lists,.cta-band,.industries{padding:5rem 2rem}
       .offer-intro{grid-template-columns:1fr}
@@ -230,31 +230,68 @@
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
   
+  
+    .nav-cta{background:linear-gradient(135deg,#8a5523 0%,#B87333 60%,#D4955A 100%) !important;color:white !important;box-shadow:0 4px 18px rgba(184,115,51,0.38) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(184,115,51,0.55) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(255,240,210,0.40);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(255,240,210,0.12),0 0 0 28px rgba(255,240,210,0.05)}
+    .nav-cta::after{content:none}
+    .mob-cta{background:linear-gradient(135deg,#8a5523 0%,#B87333 60%,#D4955A 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
+    .btn-copper{position:relative;overflow:hidden}
+    .btn-copper::before{content:'';position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid rgba(255,240,210,0.40);top:-30px;left:-20px;pointer-events:none;box-shadow:0 0 0 18px rgba(255,240,210,0.12),0 0 0 36px rgba(255,240,210,0.05)}
+    .btn-copper::after{content:none}
+  
+    @media(max-width:480px){
+      .hero{padding:6rem 1.2rem 3rem}
+      .hero h1{font-size:clamp(2.2rem,12vw,3.4rem)!important;line-height:1.08}
+      .hero-sub{font-size:0.9rem;margin-bottom:2rem}
+      .hero-actions{flex-direction:column;gap:0.75rem}
+      .hero-actions a{text-align:center;width:100%}
+      .hero-pills{gap:0.35rem}
+      .hero-pill{font-size:0.7rem;padding:0.32rem 0.7rem}
+      .offer-intro{padding:3.5rem 1.2rem;grid-template-columns:1fr;gap:2rem}
+      .offer-stats{grid-template-columns:1fr 1fr}
+      .industries{padding:3.5rem 1.2rem}
+      .ind-grid{grid-template-columns:1fr 1fr}
+      .services-section{padding:3.5rem 1.2rem}
+      .section-header{flex-direction:column;align-items:flex-start;gap:1rem}
+      .services-grid{grid-template-columns:1fr}
+      .service-lists{padding:3.5rem 1.2rem}
+      .tab-header{flex-wrap:wrap;gap:0.3rem;border-bottom:none;margin-bottom:1.5rem}
+      .tab-btn{font-size:0.76rem;padding:0.55rem 0.9rem;border:1px solid rgba(46,58,71,0.2);border-radius:50px;border-bottom:none;margin-bottom:0.3rem}
+      .tab-btn.active{background:var(--grad-steel);color:white;border-color:transparent}
+      .list-grid{grid-template-columns:1fr}
+      .cta-band{padding:3.5rem 1.2rem;flex-direction:column;gap:2rem}
+      .cta-actions{align-items:flex-start;width:100%}
+      .cta-actions a{width:100%;text-align:center}
+      footer{padding:3rem 1.2rem 1.5rem}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+    }
   </style>
 </head>
 <body>
 
 <nav id="mainNav">
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="https://home.cleaningsucasa.com">Home</a></li>
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="airbnb.html"><span class="dd-icon">🏨</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
-        <a href="residential.html"><span class="dd-icon">🏡</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
-        <a href="commercial.html"><span class="dd-icon">🏢</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+        <a href="https://airbnb.cleaningsucasa.com"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="https://residential.cleaningsucasa.com"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="https://commercial.cleaningsucasa.com"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
       </div>
     </li>
     <li><a href="https://book.cleaningsucasa.com/">Schedule Service</a></li>
-    <li><a href="jobs.html">Job Openings</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+    <li><a href="https://products.cleaningsucasa.com">Products</a></li>
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="about.html"><span class="dd-icon">✨</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="nicol.html"><span class="dd-icon">👤</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <a href="https://about.cleaningsucasa.com"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="https://nicol.cleaningsucasa.com"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">🏢</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+        <a href="https://home.cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
       </div>
     </li>
   </ul>
@@ -262,18 +299,18 @@
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="https://home.cleaningsucasa.com">Home</a>
   <div class="mob-section">Services</div>
-  <a href="airbnb.html" class="mob-indent">🏨 &nbsp;Airbnb Cleaning</a>
-  <a href="residential.html" class="mob-indent">🏡 &nbsp;Residential Cleaning</a>
-  <a href="commercial.html" class="mob-indent">🏢 &nbsp;Commercial Cleaning</a>
+  <a href="https://airbnb.cleaningsucasa.com" class="mob-indent">&#127976; &nbsp;Airbnb Cleaning</a>
+  <a href="https://residential.cleaningsucasa.com" class="mob-indent">&#127969; &nbsp;Residential Cleaning</a>
+  <a href="https://commercial.cleaningsucasa.com" class="mob-indent">&#127970; &nbsp;Commercial Cleaning</a>
   <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
-  <a href="jobs.html">Job Openings</a>
-  <a href="products.html">Products</a>
+  <a href="https://jobs.cleaningsucasa.com">Job Openings</a>
+  <a href="https://products.cleaningsucasa.com">Products</a>
   <div class="mob-section">More</div>
-  <a href="about.html" class="mob-indent">About Us</a>
-  <a href="nicol.html" class="mob-indent">Meet Nicol</a>
-  <a href="https://cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
+  <a href="https://about.cleaningsucasa.com" class="mob-indent">About Us</a>
+  <a href="https://nicol.cleaningsucasa.com" class="mob-indent">Meet Nicol</a>
+  <a href="https://home.cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
   <a href="https://book.cleaningsucasa.com/" class="mob-cta">Get a Quote</a>
 </div>
 
@@ -302,11 +339,11 @@
     <div class="dot-p" style="width:2px;height:2px;left:58%;bottom:6%;animation-duration:11s;animation-delay:0.4s;"></div>
   </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Commercial Cleaning — Anchorage, AK</p>
+    <p class="hero-eyebrow">Commercial Cleaning &#8212; Anchorage, AK</p>
     <h1>Built for <em>Business.</em><br>Cleaned to <span class="copper">Spec.</span></h1>
-    <p class="hero-sub">From corporate office floors to hotel lobbies to healthcare exam rooms — Cleaning Su Casa delivers meticulous, reliable commercial cleaning across every industry we serve. Punctual. Professional. Precise.</p>
+    <p class="hero-sub">From corporate office floors to hotel lobbies to healthcare exam rooms &#8212; Cleaning Su Casa delivers meticulous, reliable commercial cleaning across every industry we serve. Punctual. Professional. Precise.</p>
     <div class="hero-actions">
-      <a href="https://book.cleaningsucasa.com/" class="btn-copper">Get a Commercial Quote →</a>
+      <a href="https://book.cleaningsucasa.com/" class="btn-copper">Get a Commercial Quote &#8594;</a>
       <a href="#industries-section" class="btn-steel">View Industries</a>
     </div>
     <div class="hero-pills">
@@ -323,8 +360,8 @@
   <div class="offer-intro-text">
     <p class="section-tag">Who We Serve</p>
     <h2 class="section-title">Commercial Spaces<br><em>Cleaned with Precision</em></h2>
-    <p>Cleaning Su Casa — operating commercially as <strong>Cleaning Su Oficina</strong> — delivers exceptional cleaning for office buildings, apartment complexes, hotels, motels, hostels, healthcare facilities, and more. Our team is known for meticulous attention to detail and consistent reliability.</p>
-    <p>Our innovative scheduling system integrates directly with management calendars to guarantee timely appointments and seamless service — every single time, without exception.</p>
+    <p>Cleaning Su Casa &#8212; operating commercially as <strong>Cleaning Su Oficina</strong> &#8212; delivers exceptional cleaning for office buildings, apartment complexes, hotels, motels, hostels, healthcare facilities, and more. Our team is known for meticulous attention to detail and consistent reliability.</p>
+    <p>Our innovative scheduling system integrates directly with management calendars to guarantee timely appointments and seamless service &#8212; every single time, without exception.</p>
   </div>
   <div class="offer-stats">
     <div class="offer-stat">
@@ -341,7 +378,7 @@
     </div>
     <div class="offer-stat">
       <div class="offer-stat-num">Est.</div>
-      <div class="offer-stat-lbl">2020 — Locally Owned</div>
+      <div class="offer-stat-lbl">2020 &#8212; Locally Owned</div>
     </div>
   </div>
 </section>
@@ -353,7 +390,7 @@
     <h2 class="section-title">Three Verticals,<br><em>One Standard</em> of <span class="copper">Excellence</span></h2>
     <div class="ind-grid">
       <div class="ind-card">
-        <div class="ind-icon">🏢</div>
+        <div class="ind-icon">&#127970;</div>
         <div class="ind-title">Office Buildings</div>
         <ul class="ind-list">
           <li>Corporate Offices</li>
@@ -365,7 +402,7 @@
         </ul>
       </div>
       <div class="ind-card featured">
-        <div class="ind-icon">🏨</div>
+        <div class="ind-icon">&#127976;</div>
         <div class="ind-title">Hospitality</div>
         <ul class="ind-list">
           <li>Hotels &amp; Motels</li>
@@ -377,7 +414,7 @@
         </ul>
       </div>
       <div class="ind-card">
-        <div class="ind-icon">🏥</div>
+        <div class="ind-icon">&#127973;</div>
         <div class="ind-title">Healthcare</div>
         <ul class="ind-list">
           <li>Dental Offices</li>
@@ -399,41 +436,41 @@
       <p class="section-tag">What We Do Best</p>
       <h2 class="section-title">Commercial <em>Capabilities</em></h2>
     </div>
-    <a href="https://book.cleaningsucasa.com/" class="section-link">Get a Quote →</a>
+    <a href="https://book.cleaningsucasa.com/" class="section-link">Get a Quote &#8594;</a>
   </div>
   <div class="services-grid">
     <div class="svc">
-      <div class="svc-icon">🖥️</div>
+      <div class="svc-icon">&#128421;</div>
       <div class="svc-title">Workstation Sanitizing</div>
-      <div class="svc-desc">Desks, keyboards, monitors, phones, and high-touch surfaces wiped down and sanitized — keeping your team healthy and productive.</div>
+      <div class="svc-desc">Desks, keyboards, monitors, phones, and high-touch surfaces wiped down and sanitized &#8212; keeping your team healthy and productive.</div>
       <span class="svc-tag">Office</span>
     </div>
-    <div class="svc dark">
-      <div class="svc-icon">🏥</div>
+    <div class="svc copper-card">
+      <div class="svc-icon">&#127973;</div>
       <div class="svc-title">Healthcare Cleaning</div>
-      <div class="svc-desc">Exam rooms, waiting areas, and medical equipment sanitized to healthcare-grade standards — protecting patients and staff alike.</div>
+      <div class="svc-desc">Exam rooms, waiting areas, and medical equipment sanitized to healthcare-grade standards &#8212; protecting patients and staff alike.</div>
       <span class="svc-tag">Healthcare</span>
     </div>
     <div class="svc">
-      <div class="svc-icon">🛏️</div>
+      <div class="svc-icon">&#128207;</div>
       <div class="svc-title">Hospitality Turnovers</div>
-      <div class="svc-desc">Full room turnovers for hotels, motels, and short-term rentals — beds made, bathrooms sanitized, amenities restocked, and quality inspected.</div>
+      <div class="svc-desc">Full room turnovers for hotels, motels, and short-term rentals &#8212; beds made, bathrooms sanitized, amenities restocked, and quality inspected.</div>
       <span class="svc-tag">Hospitality</span>
     </div>
     <div class="svc">
-      <div class="svc-icon">🏛️</div>
+      <div class="svc-icon">&#127963;</div>
       <div class="svc-title">Common Area Cleaning</div>
-      <div class="svc-desc">Lobbies, hallways, break rooms, conference rooms, and reception areas kept pristine — creating a great first impression every day.</div>
+      <div class="svc-desc">Lobbies, hallways, break rooms, conference rooms, and reception areas kept pristine &#8212; creating a great first impression every day.</div>
       <span class="svc-tag">All Verticals</span>
     </div>
     <div class="svc copper-card">
-      <div class="svc-icon">📅</div>
+      <div class="svc-icon">&#128197;</div>
       <div class="svc-title">Calendar-Synced Scheduling</div>
-      <div class="svc-desc">We integrate with your management calendar for automated, on-time scheduling — no calls, no missed appointments, no stress.</div>
+      <div class="svc-desc">We integrate with your management calendar for automated, on-time scheduling &#8212; no calls, no missed appointments, no stress.</div>
       <span class="svc-tag">Smart Scheduling</span>
     </div>
     <div class="svc">
-      <div class="svc-icon">🔍</div>
+      <div class="svc-icon">&#128269;</div>
       <div class="svc-title">Quality Inspection</div>
       <div class="svc-desc">Every visit ends with a final walkthrough to ensure the property meets our cleanliness standard before we leave.</div>
       <span class="svc-tag">Every Visit</span>
@@ -448,25 +485,25 @@
   <p style="font-size:0.95rem;line-height:1.78;color:var(--text-mid);font-weight:300;margin-top:0.5rem;margin-bottom:2.5rem;max-width:580px;">Each list is fully customizable based on your facility's specific needs and requirements.</p>
 
   <div class="tab-header">
-    <button class="tab-btn active" data-tab="office">🏢 &nbsp;Office Buildings</button>
-    <button class="tab-btn" data-tab="hospitality">🏨 &nbsp;Hospitality</button>
-    <button class="tab-btn" data-tab="healthcare">🏥 &nbsp;Healthcare</button>
+    <button class="tab-btn active" data-tab="office">&#127970; &nbsp;Office Buildings</button>
+    <button class="tab-btn" data-tab="hospitality">&#127976; &nbsp;Hospitality</button>
+    <button class="tab-btn" data-tab="healthcare">&#127973; &nbsp;Healthcare</button>
   </div>
 
   <!-- OFFICE -->
   <div class="tab-panel active" id="tab-office">
     <p class="tab-intro">Tailored for corporate offices, law firms, co-working spaces, call centers, and small businesses of all sizes.</p>
     <div class="list-grid">
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Workstation Cleaning & Sanitizing</div><div class="list-desc">Desks, keyboards, and monitors wiped down; high-touch areas like phones and doorknobs sanitized.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, and mirrors scrubbed; soap, paper towels, and toilet paper restocked.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Emptying Trash Bins</div><div class="list-desc">Trash removed from workstations, common areas, and bathrooms; liners replaced throughout.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors — carpet and hard surface — vacuumed and mopped clean across every area.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, shelves, and décor wiped down to remove dust and dirt throughout the office.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Cleaning Common Areas</div><div class="list-desc">Break rooms, conference rooms, and reception areas tidied and sanitized — tables and chairs wiped down.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Restocking Supplies</div><div class="list-desc">Hand sanitizer, tissues, and kitchen supplies refilled so the office is always stocked and ready.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Window & Glass Surfaces</div><div class="list-desc">Interior windows, glass partitions, and doors cleaned to remove fingerprints and smudges.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Kitchen Area Maintenance</div><div class="list-desc">Sinks, countertops, microwaves, and refrigerators cleaned; dishes washed and trash emptied.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough to confirm the office meets cleanliness standards before we leave.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Workstation Cleaning & Sanitizing</div><div class="list-desc">Desks, keyboards, and monitors wiped down; high-touch areas like phones and doorknobs sanitized.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, and mirrors scrubbed; soap, paper towels, and toilet paper restocked.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Emptying Trash Bins</div><div class="list-desc">Trash removed from workstations, common areas, and bathrooms; liners replaced throughout.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors &#8212; carpet and hard surface &#8212; vacuumed and mopped clean across every area.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, shelves, and d&#233;cor wiped down to remove dust and dirt throughout the office.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Cleaning Common Areas</div><div class="list-desc">Break rooms, conference rooms, and reception areas tidied and sanitized &#8212; tables and chairs wiped down.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Restocking Supplies</div><div class="list-desc">Hand sanitizer, tissues, and kitchen supplies refilled so the office is always stocked and ready.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Window & Glass Surfaces</div><div class="list-desc">Interior windows, glass partitions, and doors cleaned to remove fingerprints and smudges.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Kitchen Area Maintenance</div><div class="list-desc">Sinks, countertops, microwaves, and refrigerators cleaned; dishes washed and trash emptied.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough to confirm the office meets cleanliness standards before we leave.</div></div></div>
     </div>
   </div>
 
@@ -474,17 +511,17 @@
   <div class="tab-panel" id="tab-hospitality">
     <p class="tab-intro">Tailored for hotels, motels, apartment complexes, hostels, Airbnb, B&Bs, resorts, and event venues.</p>
     <div class="list-grid">
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Kitchen Cleaning & Sanitizing</div><div class="list-desc">Countertops, appliances, and surfaces wiped down; dishes washed and trash emptied.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, showers, and tubs scrubbed; toiletries and towels replenished for each guest.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Making Beds & Changing Linens</div><div class="list-desc">Fresh linens changed, bedding straightened, and pillows arranged neatly in every room.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors vacuumed and mopped clean — every room and common area, every turnover.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, and décor wiped down to remove dust and dirt throughout the property.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Cleaning Common Areas</div><div class="list-desc">Lobbies, hallways, and recreational areas tidied; tables and chairs sanitized throughout.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Restocking Amenities</div><div class="list-desc">Toiletries refilled, fresh towels supplied, and basic amenities restocked for the next guest.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Checking for Damages</div><div class="list-desc">Property inspected for damages or issues — management notified immediately of anything found.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Checking for Lost Items</div><div class="list-desc">Items left behind by previous guests located and management notified right away.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Special Requests</div><div class="list-desc">Any specific cleaning preferences from management or guests accommodated without hassle.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough before we leave to ensure the property meets cleanliness standards.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Kitchen Cleaning & Sanitizing</div><div class="list-desc">Countertops, appliances, and surfaces wiped down; dishes washed and trash emptied.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, showers, and tubs scrubbed; toiletries and towels replenished for each guest.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Making Beds & Changing Linens</div><div class="list-desc">Fresh linens changed, bedding straightened, and pillows arranged neatly in every room.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors vacuumed and mopped clean &#8212; every room and common area, every turnover.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, and d&#233;cor wiped down to remove dust and dirt throughout the property.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Cleaning Common Areas</div><div class="list-desc">Lobbies, hallways, and recreational areas tidied; tables and chairs sanitized throughout.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Restocking Amenities</div><div class="list-desc">Toiletries refilled, fresh towels supplied, and basic amenities restocked for the next guest.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Checking for Damages</div><div class="list-desc">Property inspected for damages or issues &#8212; management notified immediately of anything found.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Checking for Lost Items</div><div class="list-desc">Items left behind by previous guests located and management notified right away.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Special Requests</div><div class="list-desc">Any specific cleaning preferences from management or guests accommodated without hassle.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough before we leave to ensure the property meets cleanliness standards.</div></div></div>
     </div>
   </div>
 
@@ -492,17 +529,17 @@
   <div class="tab-panel" id="tab-healthcare">
     <p class="tab-intro">Tailored for dental offices, physical therapy centers, optometrist offices, medical clinics, and urgent care centers.</p>
     <div class="list-grid">
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Exam Room Cleaning & Sanitizing</div><div class="list-desc">Examination tables, chairs, and medical equipment wiped down; high-touch surfaces sanitized thoroughly.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, and mirrors scrubbed; soap, paper towels, and toilet paper replenished.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors — carpet and hard surface — cleaned and free of debris throughout the facility.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, and medical equipment wiped down to remove dust and maintain hygiene.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Restocking Medical Supplies</div><div class="list-desc">Gloves, masks, hand sanitizer, and other necessary supplies refilled and kept accessible.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Waiting Area Cleaning</div><div class="list-desc">Seating sanitized, tables wiped, and informational materials neatly organized for patients.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Break Room Cleaning</div><div class="list-desc">Sinks, countertops, microwaves, and refrigerators cleaned; dishes washed and trash emptied.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Checking for Damages</div><div class="list-desc">Facility inspected for damages or issues — management notified of anything found immediately.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Checking for Lost Items</div><div class="list-desc">Items left by patients or staff located and appropriate personnel notified right away.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Special Requests</div><div class="list-desc">Any specific cleaning preferences or facility requirements accommodated on request.</div></div></div>
-      <div class="list-item"><div class="list-check">✓</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough to ensure the facility meets cleanliness and hygiene standards before completion.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Exam Room Cleaning & Sanitizing</div><div class="list-desc">Examination tables, chairs, and medical equipment wiped down; high-touch surfaces sanitized thoroughly.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, and mirrors scrubbed; soap, paper towels, and toilet paper replenished.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors &#8212; carpet and hard surface &#8212; cleaned and free of debris throughout the facility.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, and medical equipment wiped down to remove dust and maintain hygiene.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Restocking Medical Supplies</div><div class="list-desc">Gloves, masks, hand sanitizer, and other necessary supplies refilled and kept accessible.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Waiting Area Cleaning</div><div class="list-desc">Seating sanitized, tables wiped, and informational materials neatly organized for patients.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Break Room Cleaning</div><div class="list-desc">Sinks, countertops, microwaves, and refrigerators cleaned; dishes washed and trash emptied.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Checking for Damages</div><div class="list-desc">Facility inspected for damages or issues &#8212; management notified of anything found immediately.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Checking for Lost Items</div><div class="list-desc">Items left by patients or staff located and appropriate personnel notified right away.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Special Requests</div><div class="list-desc">Any specific cleaning preferences or facility requirements accommodated on request.</div></div></div>
+      <div class="list-item"><div class="list-check">&#10003;</div><div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough to ensure the facility meets cleanliness and hygiene standards before completion.</div></div></div>
     </div>
   </div>
 </section>
@@ -514,7 +551,7 @@
     <h2>Let's Talk About<br><em>Your Property</em></h2>
   </div>
   <div class="cta-actions">
-    <a href="https://book.cleaningsucasa.com/" class="btn-copper">Get a Commercial Quote →</a>
+    <a href="https://book.cleaningsucasa.com/" class="btn-copper">Get a Commercial Quote &#8594;</a>
     <p class="cta-note">100% satisfaction guaranteed on every visit</p>
   </div>
 </section>
@@ -529,19 +566,19 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="commercial.html">Office Buildings</a></li>
-        <li><a href="commercial.html">Hospitality</a></li>
-        <li><a href="commercial.html">Healthcare</a></li>
-        <li><a href="https://cleaningsuoficina.com" target="_blank">Su Oficina Site</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Office Buildings</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Hospitality</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Healthcare</a></li>
+        <li><a href="https://home.cleaningsuoficina.com" target="_blank">Su Oficina Site</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="nicol.html">Meet Nicol</a></li>
-        <li><a href="jobs.html">Job Openings</a></li>
-        <li><a href="index.html">Su Casa (Residential)</a></li>
+        <li><a href="https://about.cleaningsucasa.com">About Us</a></li>
+        <li><a href="https://nicol.cleaningsucasa.com">Meet Nicol</a></li>
+        <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+        <li><a href="https://home.cleaningsucasa.com">Su Casa (Residential)</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -553,13 +590,15 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Cleaning Su Casa / Su Oficina. All Rights Reserved.</span>
-    <span>Made with care in Anchorage, AK 💙</span>
+    <span>&#169; 2020 Cleaning Su Casa / Su Oficina. All Rights Reserved.</span>
+    <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  window.scrollTo(0,0);
+  window.addEventListener('load', function(){ window.scrollTo(0,0); });
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-toggle]');
     if(t){
@@ -586,20 +625,28 @@
       }
     }
   });
-  window.addEventListener('scroll',function(){
-    var nav=document.querySelector('nav');
-    if(nav){nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(26,37,47,0.12)':'none';}
-  });
+  var fadeEls=document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){obs.observe(el);});
+  } else {
+    fadeEls.forEach(function(el){el.classList.add('visible');});
+  }
+
   // Tab switching
   document.querySelectorAll('.tab-btn').forEach(function(btn){
     btn.addEventListener('click',function(){
+      var tab=btn.getAttribute('data-tab');
       document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
       document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
       btn.classList.add('active');
-      document.getElementById('tab-'+btn.getAttribute('data-tab')).classList.add('active');
+      var panel=document.getElementById('tab-'+tab);
+      if(panel){panel.classList.add('active');}
     });
   });
 })();
-</script>
-</body>
-</html>
+</script></body></html>
