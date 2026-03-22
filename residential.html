@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Residential Cleaning — Cleaning Su Casa</title>
+  <title>Residential Cleaning &#8212; Cleaning Su Casa</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Oswald:wght@300;400&family=Allura&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -50,7 +50,7 @@
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
     .mob-cta{background:var(--grad-blue)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
 
     /* HERO */
     .hero{min-height:88vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;
@@ -88,11 +88,11 @@
     .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(125,211,252,0.8);margin-bottom:1.4rem}
     .hero-eyebrow::before{content:'';width:24px;height:2px;background:#7dd3fc;border-radius:2px;display:block}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;line-height:1.06;letter-spacing:-0.025em;color:white;margin-bottom:1.4rem}
-    .hero h1 em{font-style:italic;color:#7dd3fc}
+    .hero h1 em{background:linear-gradient(180deg,#e0f2fe 0%,#7dd3fc 25%,#0ea5e9 50%,#7dd3fc 75%,#e0f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic}
     .hero-sub{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.58);max-width:580px;font-weight:300;margin-bottom:2.8rem}
     .hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
-    .btn-cyan{background:#7dd3fc;color:var(--dark-blue);padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(125,211,252,0.3);display:inline-block}
-    .btn-cyan:hover{background:white;transform:translateY(-2px)}
+    .btn-cyan{background:#7dd3fc;color:var(--dark-blue);padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(125,211,252,0.3);display:inline-block;border:1px solid rgba(2,42,74,0.18)}
+    .btn-cyan:hover{background:white;transform:translateY(-2px);box-shadow:0 8px 32px rgba(14,165,233,0.45),0 0 18px rgba(125,211,252,0.35)}
     .home-types{display:flex;gap:0.6rem;flex-wrap:wrap}
     .home-type-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.14);border-radius:50px;padding:0.45rem 1rem;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.72);letter-spacing:0.04em}
     .home-type-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:#7dd3fc;flex-shrink:0}
@@ -125,7 +125,7 @@
     .svc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--cyan),var(--vivid-blue));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
     .svc:hover{transform:translateY(-5px);box-shadow:0 18px 44px rgba(5,53,116,0.10);border-color:var(--cyan-line)}
     .svc:hover::after{transform:scaleX(1)}
-    .svc.dark{background:var(--grad-blue);border-color:transparent}
+    .svc.dark{background:linear-gradient(135deg,#020f2a 0%,#053574 55%,#023f92 100%);border-color:transparent}
     .svc.dark:hover{box-shadow:0 18px 44px rgba(5,53,116,0.3)}
     .svc-icon{font-size:1.9rem;margin-bottom:1rem}
     .svc-title{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:0.5rem;color:var(--dark-blue)}
@@ -194,31 +194,63 @@
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
   
+  
+    .nav-cta{background:#7dd3fc !important;color:var(--dark-blue) !important;box-shadow:0 4px 18px rgba(125,211,252,0.38) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(125,211,252,0.55) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(2,42,74,0.22);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(2,42,74,0.08),0 0 0 28px rgba(2,42,74,0.04)}
+    .nav-cta::after{content:none}
+    .mob-cta{background:#7dd3fc !important;color:var(--dark-blue) !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
+    .btn-cyan{position:relative;overflow:hidden}
+    .btn-cyan::before{content:'';position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid rgba(2,42,74,0.22);top:-30px;left:-20px;pointer-events:none;box-shadow:0 0 0 18px rgba(2,42,74,0.08),0 0 0 36px rgba(2,42,74,0.04)}
+    .btn-cyan::after{content:none}
+  
+    @media(max-width:480px){
+      .hero{padding:6rem 1.2rem 3rem}
+      .hero h1{font-size:clamp(2.4rem,13vw,3.6rem)!important;line-height:1.08}
+      .hero-sub{font-size:0.9rem;margin-bottom:2rem}
+      .hero-actions{flex-direction:column;gap:0.75rem}
+      .hero-actions a{text-align:center;width:100%}
+      .home-types{gap:0.35rem}
+      .home-type-pill{font-size:0.7rem;padding:0.32rem 0.7rem}
+      .offer-intro{padding:3.5rem 1.2rem;grid-template-columns:1fr;gap:2rem}
+      .offer-stats{grid-template-columns:1fr 1fr}
+      .services-section{padding:3.5rem 1.2rem}
+      .section-header{flex-direction:column;align-items:flex-start;gap:1rem}
+      .services-grid{grid-template-columns:1fr}
+      .full-list{padding:3.5rem 1.2rem}
+      .full-list-grid{grid-template-columns:1fr}
+      .cta-band{padding:3.5rem 1.2rem;flex-direction:column;gap:2rem}
+      .cta-actions{align-items:flex-start;width:100%}
+      .cta-actions a{width:100%;text-align:center}
+      footer{padding:3rem 1.2rem 1.5rem}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+    }
   </style>
 </head>
 <body>
 
 <nav id="mainNav">
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="https://home.cleaningsucasa.com">Home</a></li>
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="airbnb.html"><span class="dd-icon">🏨</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
-        <a href="residential.html"><span class="dd-icon">🏡</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
-        <a href="commercial.html"><span class="dd-icon">🏢</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+        <a href="https://airbnb.cleaningsucasa.com"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="https://residential.cleaningsucasa.com"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="https://commercial.cleaningsucasa.com"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
       </div>
     </li>
     <li><a href="https://book.cleaningsucasa.com/">Schedule Service</a></li>
-    <li><a href="jobs.html">Job Openings</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+    <li><a href="https://products.cleaningsucasa.com">Products</a></li>
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="about.html"><span class="dd-icon">✨</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="nicol.html"><span class="dd-icon">👤</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <a href="https://about.cleaningsucasa.com"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="https://nicol.cleaningsucasa.com"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">🏢</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+        <a href="https://home.cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
       </div>
     </li>
   </ul>
@@ -226,18 +258,18 @@
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="https://home.cleaningsucasa.com">Home</a>
   <div class="mob-section">Services</div>
-  <a href="airbnb.html" class="mob-indent">🏨 &nbsp;Airbnb Cleaning</a>
-  <a href="residential.html" class="mob-indent">🏡 &nbsp;Residential Cleaning</a>
-  <a href="commercial.html" class="mob-indent">🏢 &nbsp;Commercial Cleaning</a>
+  <a href="https://airbnb.cleaningsucasa.com" class="mob-indent">&#127976; &nbsp;Airbnb Cleaning</a>
+  <a href="https://residential.cleaningsucasa.com" class="mob-indent">&#127969; &nbsp;Residential Cleaning</a>
+  <a href="https://commercial.cleaningsucasa.com" class="mob-indent">&#127970; &nbsp;Commercial Cleaning</a>
   <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
-  <a href="jobs.html">Job Openings</a>
-  <a href="products.html">Products</a>
+  <a href="https://jobs.cleaningsucasa.com">Job Openings</a>
+  <a href="https://products.cleaningsucasa.com">Products</a>
   <div class="mob-section">More</div>
-  <a href="about.html" class="mob-indent">About Us</a>
-  <a href="nicol.html" class="mob-indent">Meet Nicol</a>
-  <a href="https://cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
+  <a href="https://about.cleaningsucasa.com" class="mob-indent">About Us</a>
+  <a href="https://nicol.cleaningsucasa.com" class="mob-indent">Meet Nicol</a>
+  <a href="https://home.cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
   <a href="https://book.cleaningsucasa.com/" class="mob-cta">Book a Cleaning</a>
 </div>
 
@@ -269,11 +301,11 @@
     <div class="dot-p" style="width:2px;height:2px;left:58%;bottom:6%;animation-duration:11s;animation-delay:0.4s;"></div>
   </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Residential Cleaning — Anchorage, AK</p>
+    <p class="hero-eyebrow">Residential Cleaning &#8212; Anchorage, AK</p>
     <h1>Your Home,<br><em>Spotless</em><br>Every Time.</h1>
-    <p class="hero-sub">From weekly upkeep to deep seasonal cleans, we bring professional-grade care to every corner of your home — tailored to your space, your schedule, and your standards.</p>
+    <p class="hero-sub">From weekly upkeep to deep seasonal cleans, we bring professional-grade care to every corner of your home &#8212; tailored to your space, your schedule, and your standards.</p>
     <div class="hero-actions">
-      <a href="https://book.cleaningsucasa.com/" class="btn-cyan">Get a Quote →</a>
+      <a href="https://book.cleaningsucasa.com/" class="btn-cyan">Get a Quote &#8594;</a>
     </div>
     <div class="home-types">
       <span class="home-type-pill">Single Family</span>
@@ -291,7 +323,7 @@
   <div class="offer-intro-text">
     <p class="section-tag">Who We Serve</p>
     <h2 class="section-title">Cleaning Built for<br><em>Every Home</em></h2>
-    <p>Cleaning Su Casa specializes in residential cleaning tailored to the unique needs of every living space — from apartments to full estates. Our expert team focuses on the areas that matter most: kitchens, bathrooms, living rooms, and bedrooms.</p>
+    <p>Cleaning Su Casa specializes in residential cleaning tailored to the unique needs of every living space &#8212; from apartments to full estates. Our expert team focuses on the areas that matter most: kitchens, bathrooms, living rooms, and bedrooms.</p>
     <p>We use high-quality, effective products and proven techniques to ensure every visit leaves your home spotless, fresh, and welcoming for you and your family.</p>
   </div>
   <div class="offer-stats">
@@ -309,7 +341,7 @@
     </div>
     <div class="offer-stat">
       <div class="offer-stat-num">Est.</div>
-      <div class="offer-stat-lbl">2020 — Locally Owned</div>
+      <div class="offer-stat-lbl">2020 &#8212; Locally Owned</div>
     </div>
   </div>
 </section>
@@ -321,43 +353,43 @@
       <p class="section-tag">Featured Services</p>
       <h2 class="section-title">What We <em>Do Best</em></h2>
     </div>
-    <a href="https://book.cleaningsucasa.com/" class="section-link">Get a Quote →</a>
+    <a href="https://book.cleaningsucasa.com/" class="section-link">Get a Quote &#8594;</a>
   </div>
   <div class="services-grid">
     <div class="svc">
-      <div class="svc-icon">🔄</div>
+      <div class="svc-icon">&#128260;</div>
       <div class="svc-title">Recurring Cleaning</div>
       <div class="svc-desc">Weekly, biweekly, or monthly service with a consistent team that knows your home. Recurring clients receive discounted rates.</div>
       <span class="svc-tag">Most Popular</span>
     </div>
     <div class="svc dark">
-      <div class="svc-icon">🔬</div>
+      <div class="svc-icon">&#128300;</div>
       <div class="svc-title">Deep Cleaning</div>
       <div class="svc-desc">Thorough top-to-bottom clean including baseboards, window sills, inside cabinets, and behind appliances. Perfect as a first-time or seasonal reset.</div>
       <span class="svc-tag">Recommended First Visit</span>
     </div>
     <div class="svc">
-      <div class="svc-icon">📦</div>
+      <div class="svc-icon">&#128230;</div>
       <div class="svc-title">Move In / Move Out</div>
-      <div class="svc-desc">Complete property cleaning before or after a move — leaving your old space spotless or your new one fresh and ready.</div>
+      <div class="svc-desc">Complete property cleaning before or after a move &#8212; leaving your old space spotless or your new one fresh and ready.</div>
       <span class="svc-tag">On-Demand</span>
     </div>
     <div class="svc">
-      <div class="svc-icon">🪟</div>
+      <div class="svc-icon">&#129695;</div>
       <div class="svc-title">Window Cleaning</div>
-      <div class="svc-desc">Interior and exterior window washing to remove dirt, streaks, and grime — letting natural light flood back in.</div>
+      <div class="svc-desc">Interior and exterior window washing to remove dirt, streaks, and grime &#8212; letting natural light flood back in.</div>
       <span class="svc-tag">Add-On</span>
     </div>
     <div class="svc dark">
-      <div class="svc-icon">🧺</div>
+      <div class="svc-icon">&#129530;</div>
       <div class="svc-title">Carpet & Upholstery</div>
-      <div class="svc-desc">Deep cleaning for carpets and upholstered furniture — restore freshness, lift stains, and extend the life of your home's surfaces.</div>
+      <div class="svc-desc">Deep cleaning for carpets and upholstered furniture &#8212; restore freshness, lift stains, and extend the life of your home's surfaces.</div>
       <span class="svc-tag">Specialty</span>
     </div>
     <div class="svc">
-      <div class="svc-icon">🎄</div>
+      <div class="svc-icon">&#127876;</div>
       <div class="svc-title">Holiday & Event Cleaning</div>
-      <div class="svc-desc">Preparing your home for holiday gatherings and special events — so you can focus on hosting, not cleaning.</div>
+      <div class="svc-desc">Preparing your home for holiday gatherings and special events &#8212; so you can focus on hosting, not cleaning.</div>
       <span class="svc-tag">Seasonal</span>
     </div>
   </div>
@@ -370,67 +402,67 @@
   <p class="full-list-intro">Every clean is tailored to the specific needs of your home. Mix and match services to build the perfect clean for your space.</p>
   <div class="full-list-grid">
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Basic Cleaning</div><div class="list-desc">Dusting, vacuuming, sweeping, mopping, and tidying all living areas and bedrooms.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Deep Cleaning</div><div class="list-desc">Thorough clean including baseboards, window sills, inside cabinets, and inside appliances.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Kitchen Cleaning & Sanitizing</div><div class="list-desc">Countertops, sinks, and appliances cleaned; dishes washed and trash emptied.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Bathroom Cleaning & Sanitizing</div><div class="list-desc">Toilets, sinks, showers, and tubs scrubbed; toiletries and towels replenished.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Bed Making & Linen Change</div><div class="list-desc">Fresh linens, straightened bedding, and neatly arranged pillows in every bedroom.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
-      <div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors cleaned and free of debris — every room, every visit.</div></div>
+      <div class="list-check">&#10003;</div>
+      <div><div class="list-title">Vacuuming & Mopping Floors</div><div class="list-desc">All floors cleaned and free of debris &#8212; every room, every visit.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
-      <div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, and décor wiped down to remove dust and dirt throughout the home.</div></div>
+      <div class="list-check">&#10003;</div>
+      <div><div class="list-title">Dusting</div><div class="list-desc">Surfaces, furniture, and d&#233;cor wiped down to remove dust and dirt throughout the home.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Restocking Supplies</div><div class="list-desc">Toiletries refilled, fresh towels provided, and basic supplies restocked as needed.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Laundry Services</div><div class="list-desc">Washing, drying, folding, and putting away laundry so you come home to a fully fresh space.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Window Cleaning</div><div class="list-desc">Interior and exterior windows washed to a streak-free shine.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Carpet Cleaning</div><div class="list-desc">Deep cleaning of all carpeted areas to restore freshness and remove stains.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Upholstery Cleaning</div><div class="list-desc">Upholstered furniture cleaned and refreshed throughout the home.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Holiday Cleaning</div><div class="list-desc">Pre-event preparation to have your home guest-ready for holidays and gatherings.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
-      <div><div class="list-title">Move In / Move Out Cleaning</div><div class="list-desc">Full property clean before or after a move — fresh start guaranteed.</div></div>
+      <div class="list-check">&#10003;</div>
+      <div><div class="list-title">Move In / Move Out Cleaning</div><div class="list-desc">Full property clean before or after a move &#8212; fresh start guaranteed.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
-      <div><div class="list-title">Special Requests</div><div class="list-desc">Any specific preferences or custom cleaning needs accommodated — just let us know.</div></div>
+      <div class="list-check">&#10003;</div>
+      <div><div class="list-title">Special Requests</div><div class="list-desc">Any specific preferences or custom cleaning needs accommodated &#8212; just let us know.</div></div>
     </div>
     <div class="list-item">
-      <div class="list-check">✓</div>
+      <div class="list-check">&#10003;</div>
       <div><div class="list-title">Quality Inspection</div><div class="list-desc">Final walkthrough before we leave to ensure every area meets our cleanliness standard.</div></div>
     </div>
   </div>
@@ -443,7 +475,7 @@
     <h2>Build Your Quote,<br><em>See the Price Instantly</em></h2>
   </div>
   <div class="cta-actions">
-    <a href="https://book.cleaningsucasa.com/" class="btn-cyan">Request a Quote →</a>
+    <a href="https://book.cleaningsucasa.com/" class="btn-cyan">Request a Quote &#8594;</a>
     <p class="cta-note">100% satisfaction guaranteed on every visit</p>
   </div>
 </section>
@@ -458,37 +490,39 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="residential.html">Residential</a></li>
-        <li><a href="airbnb.html">Airbnb Turnover</a></li>
-        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="https://residential.cleaningsucasa.com">Residential</a></li>
+        <li><a href="https://airbnb.cleaningsucasa.com">Airbnb Turnover</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Commercial</a></li>
         <li><a href="https://book.cleaningsucasa.com/">Move In/Out</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="nicol.html">Meet Nicol</a></li>
-        <li><a href="jobs.html">Job Openings</a></li>
-        <li><a href="https://cleaningsuoficina.com" target="_blank">Su Oficina</a></li>
+        <li><a href="https://about.cleaningsucasa.com">About Us</a></li>
+        <li><a href="https://nicol.cleaningsucasa.com">Meet Nicol</a></li>
+        <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+        <li><a href="https://home.cleaningsuoficina.com" target="_blank">Su Oficina</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Contact</h4>
       <ul>
-        <li><a href="/cdn-cgi/l/email-protection#2e6f456d424b4f404740497d5b6d4f5d4f6e49434f4742004d4143"><span class="__cf_email__" data-cfemail="5d1c361e31383c3334333a0e281e3c2e3c1d3a303c3431733e3230">[email&#160;protected]</span></a></li>
+        <li><a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></li>
         <li><a href="https://book.cleaningsucasa.com/">Book Online</a></li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Cleaning Su Casa. All Rights Reserved.</span>
-    <span>Made with care in Anchorage, AK 💙</span>
+    <span>&#169; 2020 Cleaning Su Casa. All Rights Reserved.</span>
+    <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  window.scrollTo(0,0);
+  window.addEventListener('load', function(){ window.scrollTo(0,0); });
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-toggle]');
     if(t){
@@ -511,4 +545,20 @@
         bars[1].style.opacity='0';
         bars[2].style.transform='translateY(-7px) rotate(-45deg)';
       } else {
-        bars.forEach(function(b){b.style.transform='';b.sty
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+      }
+    }
+  });
+  var fadeEls=document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){obs.observe(el);});
+  } else {
+    fadeEls.forEach(function(el){el.classList.add('visible');});
+  }
+})();
+</script></body></html>
