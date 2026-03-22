@@ -4,7 +4,7 @@
   <!-- Cloudflare --><meta name="cf-2fa-verify" content="no-email-obfuscation"/>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Join Our Team — Cleaning Su Casa</title>
+  <title>Join Our Team &#8212; Cleaning Su Casa</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet"/>
   
   <style>
@@ -52,7 +52,7 @@
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
     .mob-cta{background:var(--grad-blue)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
 
     /* HERO */
     .hero{min-height:72vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;
@@ -80,13 +80,13 @@
     .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(125,211,252,0.8);margin-bottom:1.4rem}
     .hero-eyebrow::before{content:'';width:24px;height:2px;background:#7dd3fc;border-radius:2px;display:block}
     .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;line-height:1.06;letter-spacing:-0.025em;color:white;margin-bottom:1.4rem}
-    .hero h1 em{font-style:italic;color:#7dd3fc}
+    .hero h1 em{background:linear-gradient(180deg,#e0f2fe 0%,#7dd3fc 25%,#0ea5e9 50%,#7dd3fc 75%,#e0f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic}
     .hero-sub{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.52);max-width:600px;font-weight:300;margin-bottom:2.8rem}
     .hero-pills{display:flex;gap:0.6rem;flex-wrap:wrap}
     .hero-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:50px;padding:0.45rem 1rem;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.04em}
     .hero-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:#7dd3fc;flex-shrink:0}
-    .btn-cyan{background:#7dd3fc;color:var(--dark-blue);padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(125,211,252,0.3);display:inline-block}
-    .btn-cyan:hover{background:white;transform:translateY(-2px)}
+    .btn-cyan{background:#7dd3fc;color:var(--dark-blue);padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(125,211,252,0.3);display:inline-block;border:1px solid rgba(2,42,74,0.18)}
+    .btn-cyan:hover{background:white;transform:translateY(-2px),0 0 18px rgba(125,211,252,0.35)}
 
     /* SHARED */
     .section-tag{font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--vivid-blue);margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem}
@@ -105,7 +105,7 @@
     .job-section h3::before{content:'';width:14px;height:14px;border-radius:4px;background:var(--cyan-glow);border:1px solid var(--cyan-line);flex-shrink:0}
     .job-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
     .job-list li{display:flex;align-items:flex-start;gap:0.7rem;font-size:0.9rem;color:var(--text-mid);line-height:1.6}
-    .job-list li::before{content:'✓';color:var(--vivid-blue);font-weight:700;font-size:0.75rem;flex-shrink:0;margin-top:3px;width:16px;height:16px;background:var(--cyan-glow);border-radius:50%;display:flex;align-items:center;justify-content:center}
+    .job-list li::before{content:'\2713';color:var(--vivid-blue);font-weight:700;font-size:0.75rem;flex-shrink:0;margin-top:3px;width:16px;height:16px;background:var(--cyan-glow);border-radius:50%;display:flex;align-items:center;justify-content:center}
     .offer-pills{display:flex;flex-wrap:wrap;gap:0.55rem;margin-top:0.2rem}
     .offer-pill{display:inline-flex;align-items:center;gap:0.4rem;background:var(--light-blue);color:var(--vivid-blue);border:1px solid rgba(5,53,116,0.12);border-radius:50px;padding:0.45rem 1rem;font-size:0.78rem;font-weight:600}
     .offer-pill::before{content:'★';font-size:0.62rem}
@@ -189,31 +189,62 @@
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
   
+  
+    .nav-cta{background:linear-gradient(135deg,#053574 0%,#023f92 100%) !important;color:white !important;box-shadow:0 4px 18px rgba(5,53,116,0.38),inset 0 1px 0 rgba(93,235,241,0.20) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(5,53,116,0.55),inset 0 1px 0 rgba(93,235,241,0.20) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(93,235,241,0.35);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(93,235,241,0.10),0 0 0 28px rgba(93,235,241,0.05)}
+    .nav-cta::after{content:none}
+    .mob-cta{background:linear-gradient(135deg,#053574 0%,#023f92 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
+    .btn-cyan{position:relative;overflow:hidden}
+    .btn-cyan::before{content:'';position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid rgba(2,42,74,0.22);top:-30px;left:-20px;pointer-events:none;box-shadow:0 0 0 18px rgba(2,42,74,0.08),0 0 0 36px rgba(2,42,74,0.04)}
+    .btn-cyan::after{content:none}
+  
+    @media(max-width:480px){
+      .hero{padding:6rem 1.2rem 3rem}
+      .hero h1{font-size:clamp(2.4rem,13vw,3.6rem)!important;line-height:1.08}
+      .hero-sub{font-size:0.9rem;margin-bottom:2rem}
+      .hero-pills{gap:0.35rem}
+      .hero-pill{font-size:0.7rem;padding:0.32rem 0.7rem}
+      .job-details{padding:3.5rem 1.2rem;grid-template-columns:1fr;gap:2rem}
+      .job-section{margin-bottom:1.5rem}
+      .job-section h3{font-size:1rem}
+      .job-list li{font-size:0.86rem}
+      .offer-pills{gap:0.4rem}
+      .offer-pill{font-size:0.74rem;padding:0.38rem 0.8rem}
+      .form-wrap{padding:1.5rem 1.2rem;border-radius:16px}
+      .field-row{grid-template-columns:1fr}
+      .cta-band{padding:3.5rem 1.2rem;flex-direction:column;gap:2rem}
+      .cta-actions{align-items:flex-start;width:100%}
+      .cta-actions a{width:100%;text-align:center}
+      footer{padding:3rem 1.2rem 1.5rem}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+    }
   </style>
 </head>
 <body>
 
 <nav id="mainNav">
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="https://home.cleaningsucasa.com">Home</a></li>
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="airbnb.html"><span class="dd-icon">🏨</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
-        <a href="residential.html"><span class="dd-icon">🏡</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
-        <a href="commercial.html"><span class="dd-icon">🏢</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+        <a href="https://airbnb.cleaningsucasa.com"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="https://residential.cleaningsucasa.com"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="https://commercial.cleaningsucasa.com"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
       </div>
     </li>
     <li><a href="https://book.cleaningsucasa.com/">Schedule Service</a></li>
-    <li><a href="jobs.html" class="active">Job Openings</a></li>
-    <li><a href="products.html">Products</a></li>
+    <li><a href="https://jobs.cleaningsucasa.com" class="active">Job Openings</a></li>
+    <li><a href="https://products.cleaningsucasa.com">Products</a></li>
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="about.html"><span class="dd-icon">✨</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="nicol.html"><span class="dd-icon">👤</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <a href="https://about.cleaningsucasa.com"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="https://nicol.cleaningsucasa.com"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">🏢</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+        <a href="https://home.cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
       </div>
     </li>
   </ul>
@@ -221,18 +252,18 @@
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="https://home.cleaningsucasa.com">Home</a>
   <div class="mob-section">Services</div>
-  <a href="airbnb.html" class="mob-indent">🏨 &nbsp;Airbnb Cleaning</a>
-  <a href="residential.html" class="mob-indent">🏡 &nbsp;Residential Cleaning</a>
-  <a href="commercial.html" class="mob-indent">🏢 &nbsp;Commercial Cleaning</a>
+  <a href="https://airbnb.cleaningsucasa.com" class="mob-indent">&#127976; &nbsp;Airbnb Cleaning</a>
+  <a href="https://residential.cleaningsucasa.com" class="mob-indent">&#127969; &nbsp;Residential Cleaning</a>
+  <a href="https://commercial.cleaningsucasa.com" class="mob-indent">&#127970; &nbsp;Commercial Cleaning</a>
   <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
-  <a href="jobs.html">Job Openings</a>
-  <a href="products.html">Products</a>
+  <a href="https://jobs.cleaningsucasa.com">Job Openings</a>
+  <a href="https://products.cleaningsucasa.com">Products</a>
   <div class="mob-section">More</div>
-  <a href="about.html" class="mob-indent">About Us</a>
-  <a href="nicol.html" class="mob-indent">Meet Nicol</a>
-  <a href="https://cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
+  <a href="https://about.cleaningsucasa.com" class="mob-indent">About Us</a>
+  <a href="https://nicol.cleaningsucasa.com" class="mob-indent">Meet Nicol</a>
+  <a href="https://home.cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
   <a href="https://book.cleaningsucasa.com/" class="mob-cta">Book a Cleaning</a>
 </div>
 
@@ -260,11 +291,11 @@
     <div class="dot-p" style="width:4px;height:4px;left:82%;bottom:28%;animation-duration:7.5s;animation-delay:3s;"></div>
   </div>
   <div class="hero-content">
-    <p class="hero-eyebrow">Now Hiring — Anchorage, AK</p>
+    <p class="hero-eyebrow">Now Hiring &#8212; Anchorage, AK</p>
     <h1>Join a Team That<br><em>Takes Pride</em><br>in Every Clean.</h1>
     <p class="hero-sub">We're looking for reliable, detail-oriented cleaners to join the Cleaning Su Casa family. Flexible hours, competitive pay, and a team that actually has your back.</p>
     <div style="margin-bottom:2.8rem">
-      <a href="#apply" class="btn-cyan">Apply Now →</a>
+      <a href="#apply" class="btn-cyan">Apply Now &#8594;</a>
     </div>
     <div class="hero-pills">
       <span class="hero-pill">Part-time &amp; Full-time</span>
@@ -283,15 +314,15 @@
     <h2 class="section-title">Residential <em>Cleaner</em></h2>
 
     <div class="job-meta">
-      <div class="job-meta-item"><span class="job-meta-icon">📍</span><span><span class="job-meta-label">Location: </span>Greater Anchorage Area</span></div>
-      <div class="job-meta-item"><span class="job-meta-icon">⏱️</span><span><span class="job-meta-label">Type: </span>Part-time / Full-time</span></div>
-      <div class="job-meta-item"><span class="job-meta-icon">📅</span><span><span class="job-meta-label">Schedule: </span>Flexible, weekends available</span></div>
-      <div class="job-meta-item"><span class="job-meta-icon">🏢</span><span><span class="job-meta-label">Company: </span>Cleaning Su Casa</span></div>
+      <div class="job-meta-item"><span class="job-meta-icon">&#128205;</span><span><span class="job-meta-label">Location: </span>Greater Anchorage Area</span></div>
+      <div class="job-meta-item"><span class="job-meta-icon">&#9201;&#65039;</span><span><span class="job-meta-label">Type: </span>Part-time / Full-time</span></div>
+      <div class="job-meta-item"><span class="job-meta-icon">&#128197;</span><span><span class="job-meta-label">Schedule: </span>Flexible, weekends available</span></div>
+      <div class="job-meta-item"><span class="job-meta-icon">&#127970;</span><span><span class="job-meta-label">Company: </span>Cleaning Su Casa</span></div>
     </div>
 
     <div class="job-section">
       <h3>About the Role</h3>
-      <p style="font-size:0.92rem;line-height:1.75;color:var(--text-mid);font-weight:300;">As a cleaner at Cleaning Su Casa, you'll be responsible for ensuring our clients' homes are spotless and welcoming. You'll be part of a supportive team that takes quality seriously — and celebrates the people who deliver it.</p>
+      <p style="font-size:0.92rem;line-height:1.75;color:var(--text-mid);font-weight:300;">As a cleaner at Cleaning Su Casa, you'll be responsible for ensuring our clients' homes are spotless and welcoming. You'll be part of a supportive team that takes quality seriously &#8212; and celebrates the people who deliver it.</p>
     </div>
 
     <div class="job-section">
@@ -309,7 +340,7 @@
     <div class="job-section">
       <h3>What We're Looking For</h3>
       <ul class="job-list">
-        <li>Previous cleaning experience preferred — but not required, we train</li>
+        <li>Previous cleaning experience preferred &#8212; but not required, we train</li>
         <li>Strong attention to detail and organizational skills</li>
         <li>Ability to work independently and as part of a team</li>
         <li>Excellent time management and reliability</li>
@@ -387,23 +418,23 @@
         <div class="field">
           <label>Resume (optional)</label>
           <label class="file-label" id="file-drop">
-            <span class="file-icon">📎</span>
+            <span class="file-icon">&#128206;</span>
             <span>Click to attach resume (PDF, DOC)</span>
             <input type="file" id="resume" accept=".pdf,.doc,.docx"/>
           </label>
           <div class="file-name" id="file-name-display"></div>
         </div>
 
-        <button class="btn-submit" id="submitBtn">Submit Application →</button>
-        <p class="required-note">* Required fields. We'll respond within 1–2 business days.</p>
+        <button class="btn-submit" id="submitBtn">Submit Application &#8594;</button>
+        <p class="required-note">* Required fields. We'll respond within 1&#8211;2 business days.</p>
       </div>
 
       <!-- Confirmation message -->
       <div class="confirmation" id="confirmation">
-        <div class="conf-icon">🎉</div>
+        <div class="conf-icon">&#127881;</div>
         <div class="conf-title">Application Received!</div>
-        <p class="conf-sub">Thanks for applying to Cleaning Su Casa! We've received your application and will be in touch within 1–2 business days. We're excited to meet you.</p>
-        <a href="index.html" class="conf-btn">Back to Home</a>
+        <p class="conf-sub">Thanks for applying to Cleaning Su Casa! We've received your application and will be in touch within 1&#8211;2 business days. We're excited to meet you.</p>
+        <a href="https://home.cleaningsucasa.com" class="conf-btn">Back to Home</a>
       </div>
     </div>
   </div>
@@ -413,11 +444,11 @@
 <section class="cta-band">
   <div>
     <p class="cta-tag">Questions Before Applying?</p>
-    <h2>Reach Out —<br><em>We'd Love to Chat</em></h2>
+    <h2>Reach Out &#8212;<br><em>We'd Love to Chat</em></h2>
   </div>
   <div class="cta-actions">
     <a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a>
-    <p class="cta-note">We respond within 1–2 business days</p>
+    <p class="cta-note">We respond within 1&#8211;2 business days</p>
   </div>
 </section>
 
@@ -431,21 +462,22 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="residential.html">Residential</a></li>
-        <li><a href="airbnb.html">Airbnb Turnover</a></li>
-        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="https://residential.cleaningsucasa.com">Residential</a></li>
+        <li><a href="https://airbnb.cleaningsucasa.com">Airbnb Turnover</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Commercial</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="nicol.html">Meet Nicol</a></li>
-        <li><a href="jobs.html">Job Openings</a></li>
-        <li><a href="https://cleaningsuoficina.com" target="_blank">Su Oficina</a></li>
+        <li><a href="https://about.cleaningsucasa.com">About Us</a></li>
+        <li><a href="https://nicol.cleaningsucasa.com">Meet Nicol</a></li>
+        <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+        <li><a href="https://home.cleaningsuoficina.com" target="_blank">Su Oficina</a></li>
       </ul>
     </div>
     <div class="footer-col">
+      
       <h4>Contact</h4>
       <ul>
         <li><a href="mailto:AkCleaningSuCasa@gmail.com">AkCleaningSuCasa@gmail.com</a></li>
@@ -454,13 +486,52 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2025 Cleaning Su Casa. All Rights Reserved.</span>
-    <span>Made with care in Anchorage, AK 💙</span>
+    <span>&#169; 2020 Cleaning Su Casa. All Rights Reserved.</span>
+    <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script src="jobs.js"></script>
-</body>
-</html>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+(function(){
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  window.scrollTo(0,0);
+  window.addEventListener('load', function(){ window.scrollTo(0,0); });
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('[data-toggle]');
+    if(t){
+      var id=t.getAttribute('data-toggle');
+      var li=document.getElementById(id);
+      var open=li.classList.contains('open');
+      document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});
+      if(!open){li.classList.add('open');}
+      return;
+    }
+    if(!e.target.closest('.nav-links')&&!e.target.closest('.nav-hamburger')){
+      document.querySelectorAll('.nav-links>li').forEach(function(el){el.classList.remove('open');});
+    }
+    if(e.target.closest('.nav-hamburger')){
+      var menu=document.getElementById('mobileMenu');
+      menu.classList.toggle('open');
+      var bars=document.querySelectorAll('.nav-hamburger span');
+      if(menu.classList.contains('open')){
+        bars[0].style.transform='translateY(7px) rotate(45deg)';
+        bars[1].style.opacity='0';
+        bars[2].style.transform='translateY(-7px) rotate(-45deg)';
+      } else {
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
+      }
+    }
+  });
+  var fadeEls=document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){obs.observe(el);});
+  } else {
+    fadeEls.forEach(function(el){el.classList.add('visible');});
+  }
+})();
+</script></body></html>
