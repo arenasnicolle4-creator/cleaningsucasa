@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Our Products — Cleaning Su Casa</title>
+  <title>Our Products &#8212; Cleaning Su Casa</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&family=Allura&display=swap" rel="stylesheet"/>
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -52,7 +52,7 @@
     .mob-section{font-size:0.68rem!important;font-weight:700!important;letter-spacing:0.12em!important;text-transform:uppercase;color:var(--text-faint)!important;padding:1rem 1rem 0.3rem!important}
     .mob-indent{padding-left:2.2rem!important}
     .mob-cta{background:var(--grad-forest)!important;color:white!important;text-align:center!important;border-radius:50px!important;margin-top:1rem;font-weight:600!important}
-    @media(max-width:860px){.nav-links,.nav-cta{display:none}.nav-hamburger{display:flex}}
+    @media(max-width:860px){.nav-links{display:none}.nav-hamburger{display:flex}}
 
     /* HERO */
     .hero{min-height:78vh;display:flex;align-items:center;padding:9rem 5.5rem 6rem;
@@ -78,15 +78,15 @@
     .hero-content{position:relative;z-index:1;max-width:760px}
     .hero-eyebrow{display:inline-flex;align-items:center;gap:0.6rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(168,213,181,0.85);margin-bottom:1.4rem}
     .hero-eyebrow::before{content:'';width:24px;height:2px;background:#a8d5b5;border-radius:2px;display:block}
-    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;line-height:1.08;letter-spacing:-0.025em;color:white;margin-bottom:1.4rem}
-    .hero h1 em{font-style:italic;color:#a8d5b5}
-    .hero h1 .green{color:#4caf72}
+    .hero h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,5.5vw,5.2rem);font-weight:900;line-height:1.15;letter-spacing:-0.025em;color:white;margin-bottom:1.4rem;padding-bottom:0.1em}
+    .hero h1 em{background:linear-gradient(180deg,#d4f5e2 0%,#4caf72 25%,#1a8a48 50%,#4caf72 75%,#d4f5e2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-style:italic;display:inline-block;padding-bottom:0.18em;margin-bottom:-0.18em}
+    .hero h1 .green{background:linear-gradient(180deg,#d4f5e2 0%,#4caf72 25%,#1a8a48 50%,#4caf72 75%,#d4f5e2 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
     .hero-sub{font-size:1.08rem;line-height:1.78;color:rgba(255,255,255,0.48);max-width:620px;font-weight:300;margin-bottom:2.8rem}
     .hero-pills{display:flex;gap:0.6rem;flex-wrap:wrap;margin-top:2rem}
     .hero-pill{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.13);border-radius:50px;padding:0.45rem 1rem;font-size:0.78rem;font-weight:500;color:rgba(255,255,255,0.7);letter-spacing:0.04em}
     .hero-pill::before{content:'';width:5px;height:5px;border-radius:50%;background:#4caf72;flex-shrink:0}
-    .btn-green{background:var(--grad-mint);color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(76,175,114,0.35);display:inline-block}
-    .btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(76,175,114,0.5)}
+    .btn-green{background:var(--grad-mint);color:white;padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:700;transition:all 0.25s;box-shadow:0 4px 20px rgba(76,175,114,0.35);display:inline-block;border:1px solid rgba(10,60,30,0.22)}
+    .btn-green:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(76,175,114,0.5),0 0 18px rgba(76,175,114,0.35)}
     .btn-outline{background:transparent;color:rgba(255,255,255,0.8);border:1.5px solid rgba(255,255,255,0.25);padding:1rem 2.4rem;border-radius:50px;text-decoration:none;font-size:0.92rem;font-weight:600;transition:all 0.25s;display:inline-block}
     .btn-outline:hover{background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.5)}
 
@@ -207,31 +207,64 @@
       .cta-band{flex-direction:column}.cta-actions{align-items:flex-start}
     }
   
+  
+    .nav-cta{background:linear-gradient(135deg,#2d7a4a 0%,#4caf72 100%) !important;color:white !important;box-shadow:0 4px 18px rgba(76,175,114,0.38) !important;position:relative;overflow:hidden}
+    .nav-cta:hover{box-shadow:0 4px 18px rgba(76,175,114,0.55) !important;transform:translateY(-1px)}
+    .nav-cta::before{content:'';position:absolute;width:60px;height:60px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.35);top:-22px;left:-16px;pointer-events:none;box-shadow:0 0 0 14px rgba(255,255,255,0.12),0 0 0 28px rgba(255,255,255,0.05)}
+    .nav-cta::after{content:none}
+    .mob-cta{background:linear-gradient(135deg,#2d7a4a 0%,#4caf72 100%) !important;color:white !important;text-align:center !important;border-radius:50px !important;margin-top:1rem;font-weight:600 !important}
+    .btn-green{position:relative;overflow:hidden}
+    .btn-green::before{content:'';position:absolute;width:90px;height:90px;border-radius:50%;border:1.5px solid rgba(255,255,255,0.40);top:-30px;left:-20px;pointer-events:none;box-shadow:0 0 0 18px rgba(255,255,255,0.12),0 0 0 36px rgba(255,255,255,0.05)}
+    .btn-green::after{content:none}
+  
+    @media(max-width:480px){
+      .hero{padding:6rem 1.2rem 3rem}
+      .hero h1{font-size:clamp(2.4rem,13vw,3.6rem)!important;line-height:1.15;padding-bottom:0.2em}
+      .hero-sub{font-size:0.9rem;margin-bottom:2rem}
+      .hero-actions{flex-direction:column;gap:0.75rem}
+      .hero-actions a{text-align:center;width:100%}
+      .philosophy{padding:3.5rem 1.2rem;grid-template-columns:1fr;gap:2rem}
+      .phil-stats{grid-template-columns:1fr 1fr}
+      .values{padding:3.5rem 1.2rem}
+      .values-grid{grid-template-columns:1fr}
+      .brands{padding:3.5rem 1.2rem}
+      .brands-grid{grid-template-columns:1fr}
+      .brand-card{flex-direction:row;align-items:center;gap:1rem;padding:1.2rem 1rem}
+      .dark-panel{padding:3.5rem 1.2rem}
+      .dark-panel-inner{grid-template-columns:1fr;gap:2.5rem}
+      .cert-grid{grid-template-columns:1fr 1fr}
+      .cta-band{padding:3.5rem 1.2rem;flex-direction:column;gap:2rem}
+      .cta-actions{align-items:flex-start;width:100%}
+      .cta-actions a{width:100%;text-align:center}
+      footer{padding:3rem 1.2rem 1.5rem}
+      .footer-grid{grid-template-columns:1fr;gap:2rem}
+      .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
+    }
   </style>
 </head>
 <body>
 
 <nav id="mainNav">
   <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
+    <li><a href="https://home.cleaningsucasa.com">Home</a></li>
     <li id="navServices">
       <button data-toggle="navServices" aria-expanded="false">Services<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="airbnb.html"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
-        <a href="residential.html"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
-        <a href="commercial.html"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
+        <a href="https://airbnb.cleaningsucasa.com"><span class="dd-icon">&#127976;</span><span><span class="dd-title">Airbnb Cleaning</span><span class="dd-sub">Turnover &amp; guest-ready service</span></span></a>
+        <a href="https://residential.cleaningsucasa.com"><span class="dd-icon">&#127969;</span><span><span class="dd-title">Residential Cleaning</span><span class="dd-sub">Homes, condos &amp; apartments</span></span></a>
+        <a href="https://commercial.cleaningsucasa.com"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Commercial Cleaning</span><span class="dd-sub">Offices &amp; commercial spaces</span></span></a>
       </div>
     </li>
     <li><a href="https://book.cleaningsucasa.com/">Schedule Service</a></li>
-    <li><a href="jobs.html">Job Openings</a></li>
-    <li><a href="products.html" class="active">Products</a></li>
+    <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+    <li><a href="https://products.cleaningsucasa.com" class="active">Products</a></li>
     <li id="navMore">
       <button data-toggle="navMore" aria-expanded="false">More<svg class="nav-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
       <div class="nav-dropdown">
-        <a href="about.html"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
-        <a href="nicol.html"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
+        <a href="https://about.cleaningsucasa.com"><span class="dd-icon">&#10024;</span><span><span class="dd-title">About Us</span><span class="dd-sub">Our story &amp; mission</span></span></a>
+        <a href="https://nicol.cleaningsucasa.com"><span class="dd-icon">&#128100;</span><span><span class="dd-title">Meet Nicol</span><span class="dd-sub">Owner &amp; founder</span></span></a>
         <div class="dd-divider"></div>
-        <a href="https://cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
+        <a href="https://home.cleaningsuoficina.com" target="_blank"><span class="dd-icon">&#127970;</span><span><span class="dd-title">Cleaning Su Oficina</span><span class="dd-sub">Our commercial brand</span></span></a>
       </div>
     </li>
   </ul>
@@ -239,18 +272,18 @@
   <button class="nav-hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="nav-mobile" id="mobileMenu">
-  <a href="index.html">Home</a>
+  <a href="https://home.cleaningsucasa.com">Home</a>
   <div class="mob-section">Services</div>
-  <a href="airbnb.html" class="mob-indent">Airbnb Cleaning</a>
-  <a href="residential.html" class="mob-indent">Residential Cleaning</a>
-  <a href="commercial.html" class="mob-indent">Commercial Cleaning</a>
+  <a href="https://airbnb.cleaningsucasa.com" class="mob-indent">Airbnb Cleaning</a>
+  <a href="https://residential.cleaningsucasa.com" class="mob-indent">Residential Cleaning</a>
+  <a href="https://commercial.cleaningsucasa.com" class="mob-indent">Commercial Cleaning</a>
   <a href="https://book.cleaningsucasa.com/">Schedule Service</a>
-  <a href="jobs.html">Job Openings</a>
-  <a href="products.html">Products</a>
+  <a href="https://jobs.cleaningsucasa.com">Job Openings</a>
+  <a href="https://products.cleaningsucasa.com">Products</a>
   <div class="mob-section">More</div>
-  <a href="about.html" class="mob-indent">About Us</a>
-  <a href="nicol.html" class="mob-indent">Meet Nicol</a>
-  <a href="https://cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
+  <a href="https://about.cleaningsucasa.com" class="mob-indent">About Us</a>
+  <a href="https://nicol.cleaningsucasa.com" class="mob-indent">Meet Nicol</a>
+  <a href="https://home.cleaningsuoficina.com" class="mob-indent" target="_blank">Cleaning Su Oficina</a>
   <a href="https://book.cleaningsucasa.com/" class="mob-cta">Book a Cleaning</a>
 </div>
 
@@ -280,7 +313,7 @@
   <div class="hero-content">
     <p class="hero-eyebrow">Clean Ingredients, Clean Homes</p>
     <h1>Products We're<br><em>Proud</em> to Bring<br>Into Your <span class="green">Home.</span></h1>
-    <p class="hero-sub">We don't cut corners with harsh chemicals. Every product we use is plant-based, biodegradable, and tough on dirt — without being tough on your family, your pets, or the planet.</p>
+    <p class="hero-sub">We don't cut corners with harsh chemicals. Every product we use is plant-based, biodegradable, and tough on dirt &#8212; without being tough on your family, your pets, or the planet.</p>
     <div style="display:flex;gap:1rem;flex-wrap:wrap;">
       <a href="#brands" class="btn-green">See Our Brands</a>
       <a href="https://book.cleaningsucasa.com/" class="btn-outline">Book a Cleaning</a>
@@ -300,8 +333,8 @@
   <div class="philosophy-text">
     <p class="section-tag">Our Philosophy</p>
     <h2 class="section-title">Clean Homes Shouldn't<br>Cost the <em>Earth</em></h2>
-    <p>From day one, we made a commitment to use only <strong>plant-based, non-toxic, and biodegradable</strong> cleaning products. Not because it's trendy — because it's the right thing to do for the families, pets, and spaces we care for every day.</p>
-    <p>Harsh chemicals like bleach, ammonia, and synthetic fragrances might clean fast, but they leave behind residue that can irritate skin, affect air quality, and harm the environment. Our products clean just as effectively — and leave nothing behind but fresh, clean air.</p>
+    <p>From day one, we made a commitment to use only <strong>plant-based, non-toxic, and biodegradable</strong> cleaning products. Not because it's trendy &#8212; because it's the right thing to do for the families, pets, and spaces we care for every day.</p>
+    <p>Harsh chemicals like bleach, ammonia, and synthetic fragrances might clean fast, but they leave behind residue that can irritate skin, affect air quality, and harm the environment. Our products clean just as effectively &#8212; and leave nothing behind but fresh, clean air.</p>
   </div>
   <div class="phil-stats">
     <div class="phil-stat">
@@ -318,7 +351,7 @@
     </div>
     <div class="phil-stat">
       <div class="phil-stat-num">Est.</div>
-      <div class="phil-stat-lbl">2020 — Green from Day One</div>
+      <div class="phil-stat-lbl">2020 &#8212; Green from Day One</div>
     </div>
   </div>
 </section>
@@ -341,7 +374,7 @@
     <div class="value-card">
       <div class="value-icon">&#127807;</div>
       <div class="value-title">Better Air Quality</div>
-      <div class="value-desc">No synthetic fragrances or harsh fumes — just clean air after every visit.</div>
+      <div class="value-desc">No synthetic fragrances or harsh fumes &#8212; just clean air after every visit.</div>
     </div>
     <div class="value-card">
       <div class="value-icon">&#127758;</div>
@@ -381,7 +414,7 @@
         <div class="brand-arrow">&#8599;</div>
       </div>
       <div class="brand-tagline">Plant-Based Cleaning</div>
-      <div class="brand-desc">A pioneer in eco-friendly household products. Seventh Generation uses plant-based ingredients, never tests on animals, and discloses every ingredient — because transparency matters.</div>
+      <div class="brand-desc">A pioneer in eco-friendly household products. Seventh Generation uses plant-based ingredients, never tests on animals, and discloses every ingredient &#8212; because transparency matters.</div>
       <div class="brand-tags">
         <span class="brand-tag">Plant-Based</span>
         <span class="brand-tag">Cruelty-Free</span>
@@ -396,7 +429,7 @@
         <div class="brand-arrow">&#8599;</div>
       </div>
       <div class="brand-tagline">Carbon Neutral Cleaning</div>
-      <div class="brand-desc">ECOS makes EPA Safer Choice certified cleaners that are dermatologist-tested and hypoallergenic. Their factory runs on 100% renewable energy — truly clean from start to finish.</div>
+      <div class="brand-desc">ECOS makes EPA Safer Choice certified cleaners that are dermatologist-tested and hypoallergenic. Their factory runs on 100% renewable energy &#8212; truly clean from start to finish.</div>
       <div class="brand-tags">
         <span class="brand-tag">Carbon Neutral</span>
         <span class="brand-tag">EPA Certified</span>
@@ -411,7 +444,7 @@
         <div class="brand-arrow">&#8599;</div>
       </div>
       <div class="brand-tagline">Concentrated &amp; Powerful</div>
-      <div class="brand-desc">Biokleen's concentrated, plant-based formulas are tough on grease and grime with no artificial fragrance, preservatives, or brighteners. One bottle goes a long way — less waste, more clean.</div>
+      <div class="brand-desc">Biokleen's concentrated, plant-based formulas are tough on grease and grime with no artificial fragrance, preservatives, or brighteners. One bottle goes a long way &#8212; less waste, more clean.</div>
       <div class="brand-tags">
         <span class="brand-tag">Concentrated</span>
         <span class="brand-tag">No Artificial Fragrance</span>
@@ -426,7 +459,7 @@
         <div class="brand-arrow">&#8599;</div>
       </div>
       <div class="brand-tagline">Garden-Inspired Scents</div>
-      <div class="brand-desc">Plant-derived ingredients paired with beautifully crafted garden-inspired scents. Mrs. Meyer's makes cleaning feel less like a chore — and leaves your home smelling genuinely lovely.</div>
+      <div class="brand-desc">Plant-derived ingredients paired with beautifully crafted garden-inspired scents. Mrs. Meyer's makes cleaning feel less like a chore &#8212; and leaves your home smelling genuinely lovely.</div>
       <div class="brand-tags">
         <span class="brand-tag">Plant-Derived</span>
         <span class="brand-tag">Natural Fragrance</span>
@@ -459,19 +492,19 @@
     <div>
       <p class="section-tag">Our Standards</p>
       <h2 class="section-title">What We'll <em>Never</em><br>Bring Into Your Home</h2>
-      <p>We screen every product we use against a strict no-list. If it contains any of the following, it doesn't make it through our door — and it won't make it through yours.</p>
+      <p>We screen every product we use against a strict no-list. If it contains any of the following, it doesn't make it through our door &#8212; and it won't make it through yours.</p>
       <p>We believe the cleaning products in your home should be as safe as the food in your kitchen. That's the standard we hold ourselves to, every single visit.</p>
     </div>
     <div class="cert-grid">
       <div class="cert-card">
         <div class="cert-icon">&#9940;</div>
         <div class="cert-title">No Bleach or Chlorine</div>
-        <div class="cert-desc">Corrosive and harmful to respiratory health — we leave it on the shelf.</div>
+        <div class="cert-desc">Corrosive and harmful to respiratory health &#8212; we leave it on the shelf.</div>
       </div>
       <div class="cert-card">
         <div class="cert-icon">&#9940;</div>
         <div class="cert-title">No Ammonia</div>
-        <div class="cert-desc">Toxic fumes and skin irritation — not welcome in a home we care for.</div>
+        <div class="cert-desc">Toxic fumes and skin irritation &#8212; not welcome in a home we care for.</div>
       </div>
       <div class="cert-card">
         <div class="cert-icon">&#9940;</div>
@@ -509,18 +542,18 @@
     <div class="footer-col">
       <h4>Services</h4>
       <ul>
-        <li><a href="residential.html">Residential</a></li>
-        <li><a href="airbnb.html">Airbnb Turnover</a></li>
-        <li><a href="commercial.html">Commercial</a></li>
+        <li><a href="https://residential.cleaningsucasa.com">Residential</a></li>
+        <li><a href="https://airbnb.cleaningsucasa.com">Airbnb Turnover</a></li>
+        <li><a href="https://commercial.cleaningsucasa.com">Commercial</a></li>
       </ul>
     </div>
     <div class="footer-col">
       <h4>Company</h4>
       <ul>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="nicol.html">Meet Nicol</a></li>
-        <li><a href="jobs.html">Job Openings</a></li>
-        <li><a href="https://cleaningsuoficina.com" target="_blank">Su Oficina</a></li>
+        <li><a href="https://about.cleaningsucasa.com">About Us</a></li>
+        <li><a href="https://nicol.cleaningsucasa.com">Meet Nicol</a></li>
+        <li><a href="https://jobs.cleaningsucasa.com">Job Openings</a></li>
+        <li><a href="https://home.cleaningsuoficina.com" target="_blank">Su Oficina</a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -532,13 +565,15 @@
     </div>
   </div>
   <div class="footer-bottom">
-    <span>&#169; 2025 Cleaning Su Casa. All Rights Reserved.</span>
+    <span>&#169; 2020 Cleaning Su Casa. All Rights Reserved.</span>
     <span>Made with care in Anchorage, AK &#128153;</span>
   </div>
 </footer>
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 (function(){
+  if('scrollRestoration' in history){ history.scrollRestoration = 'manual'; }
+  window.scrollTo(0,0);
+  window.addEventListener('load', function(){ window.scrollTo(0,0); });
   document.addEventListener('click',function(e){
     var t=e.target.closest('[data-toggle]');
     if(t){
@@ -561,15 +596,20 @@
         bars[1].style.opacity='0';
         bars[2].style.transform='translateY(-7px) rotate(-45deg)';
       } else {
-        bars.forEach(function(b){e.style.opacity='';});
+        bars.forEach(function(b){b.style.transform='';b.style.opacity='';});
       }
     }
   });
-  window.addEventListener('scroll',function(){
-    var nav=document.querySelector('nav');
-    if(nav){nav.style.boxShadow=window.scrollY>50?'0 4px 30px rgba(26,58,42,0.10)':'none';}
-  });
+  var fadeEls=document.querySelectorAll('.fade-up');
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){en.target.classList.add('visible');obs.unobserve(en.target);}
+      });
+    },{threshold:0.12});
+    fadeEls.forEach(function(el){obs.observe(el);});
+  } else {
+    fadeEls.forEach(function(el){el.classList.add('visible');});
+  }
 })();
-</script>
-</body>
-</html>
+</script></body></html>
