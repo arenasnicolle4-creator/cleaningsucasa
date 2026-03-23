@@ -43,7 +43,7 @@
     .nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
     .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0;}
     .nav-hamburger span{display:block;width:24px;height:2px;background:var(--dark-blue);border-radius:2px;transition:all 0.3s;}
-    .nav-mobile{display:none;position:fixed;inset:0;z-index:190;background:rgba(255,255,255,0.99);backdrop-filter:blur(20px);flex-direction:column;padding:6rem 2rem 3rem;overflow-y:auto;}
+    .nav-mobile{display:none;position:fixed;inset:0;z-index:400;background:rgba(255,255,255,0.99);backdrop-filter:blur(20px);flex-direction:column;padding:6rem 2rem 3rem;overflow-y:auto;}
     .nav-mobile.open{display:flex;}
     .nav-mobile a,.nav-mobile button{display:block;padding:0.9rem 0;font-size:1.1rem;font-weight:500;color:var(--text-dark);text-decoration:none;background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;text-align:left;width:100%;}
     .nav-mobile .sub-link{font-size:0.95rem;color:var(--text-mid);padding-left:1rem;}
@@ -149,9 +149,9 @@
     /* RESPONSIVE */
     @media(max-width:860px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
     @media(max-width:900px){
-      nav{padding:0 1.2rem;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(5,53,116,0.08);overflow:hidden;}
-      nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.18);pointer-events:none;}
-      nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.18);pointer-events:none;}
+      nav{padding:0 1.2rem;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(5,53,116,0.08);}
+      nav::before{display:none}
+      nav::after{display:none}
       .nav-links{display:none;}
       .nav-hamburger{display:flex;}
       .nav-hamburger span{background:#053574;}
@@ -202,7 +202,8 @@
       .stats-band{padding:2rem 1.2rem;gap:1.5rem;flex-wrap:wrap}
       .stat-item{min-width:calc(50% - 0.75rem)}
       .founder{padding:3.5rem 1.2rem;grid-template-columns:1fr;gap:2rem;text-align:left}
-      .founder-avatar{width:90px;height:90px}
+      .founder-avatar{width:110px;height:110px}
+      .founder-avatar-inner{width:94px;height:94px;font-size:2.8rem}
       .founder-name{font-size:clamp(1.8rem,8vw,2.4rem)}
       .team{padding:3.5rem 1.2rem}
       .team-grid{grid-template-columns:1fr 1fr;gap:0.9rem}
