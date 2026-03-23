@@ -219,6 +219,13 @@
     @media(max-width:360px){
       .team-grid{grid-template-columns:1fr}
     }
+  
+    @media(max-width:860px){
+      nav{overflow:hidden;position:relative;}
+      nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.18);pointer-events:none;}
+      nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.18);pointer-events:none;}
+      .nav-deco-rings{display:block!important;}
+    }
   </style>
 </head>
 <body>
