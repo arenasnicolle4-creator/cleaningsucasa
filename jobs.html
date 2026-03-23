@@ -220,11 +220,28 @@
       .footer-grid{grid-template-columns:1fr;gap:2rem}
       .footer-bottom{flex-direction:column;gap:0.5rem;text-align:center}
     }
+  
+    @media(max-width:860px){
+      nav{overflow:hidden;position:relative;}
+      nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.18);pointer-events:none;}
+      nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.18);pointer-events:none;}
+      .nav-deco-rings{display:block!important;}
+    }
   </style>
 </head>
 <body>
 
 <nav id="mainNav">
+    <!-- Mobile-only decorative rings -->
+  <svg class="nav-deco-rings" width="160" height="160" viewBox="0 0 160 160" style="position:absolute;top:-70px;right:60px;pointer-events:none;display:none;">
+    <circle cx="80" cy="80" r="70" fill="none" stroke="#053574" stroke-width="1" opacity="0.7"/>
+    <circle cx="80" cy="80" r="48" fill="none" stroke="#053574" stroke-width="0.6" opacity="0.45"/>
+    <circle cx="80" cy="80" r="26" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.25"/>
+  </svg>
+  <svg class="nav-deco-rings" width="90" height="90" viewBox="0 0 90 90" style="position:absolute;top:-20px;right:10px;pointer-events:none;display:none;">
+    <circle cx="45" cy="45" r="38" fill="none" stroke="#053574" stroke-width="0.8" opacity="0.5"/>
+    <circle cx="45" cy="45" r="22" fill="none" stroke="#5debf1" stroke-width="0.5" opacity="0.2"/>
+  </svg>
   <ul class="nav-links">
     <li><a href="https://home.cleaningsucasa.com">Home</a></li>
     <li id="navServices">
