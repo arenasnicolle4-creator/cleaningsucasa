@@ -43,7 +43,7 @@
     .nav-cta:hover{opacity:0.88;transform:translateY(-1px);}
     .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;background:none;border:none;flex-shrink:0;}
     .nav-hamburger span{display:block;width:24px;height:2px;background:var(--dark-blue);border-radius:2px;transition:all 0.3s;}
-    .nav-mobile{display:none;position:fixed;inset:0;z-index:190;background:rgba(255,255,255,0.99);backdrop-filter:blur(20px);flex-direction:column;padding:6rem 2rem 3rem;overflow-y:auto;}
+    .nav-mobile{display:none;position:fixed;inset:0;z-index:400;background:rgba(255,255,255,0.99);backdrop-filter:blur(20px);flex-direction:column;padding:6rem 2rem 3rem;overflow-y:auto;}
     .nav-mobile.open{display:flex;}
     .nav-mobile a,.nav-mobile button{display:block;padding:0.9rem 0;font-size:1.1rem;font-weight:500;color:var(--text-dark);text-decoration:none;background:none;border:none;border-bottom:1px solid var(--border);cursor:pointer;text-align:left;width:100%;}
     .nav-mobile .sub-link{font-size:0.95rem;color:var(--text-mid);padding-left:1rem;}
@@ -64,7 +64,7 @@
     .hero-content{position:relative;z-index:2;max-width:680px;}
     .hero-eyebrow{display:inline-flex;align-items:center;gap:0.55rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.4rem;}
     .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--cyan);opacity:0.5;}
-    .hero-name{font-family:'Allura',cursive;font-size:clamp(3.8rem,7vw,6.5rem);background:linear-gradient(180deg,#e0f2fe 0%,#7dd3fc 25%,#0ea5e9 50%,#7dd3fc 75%,#e0f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:0.2rem;letter-spacing:2px;}
+    .hero-name{font-family:'Allura',cursive;font-size:clamp(3.8rem,7vw,6.5rem);background:linear-gradient(180deg,#e0f2fe 0%,#7dd3fc 25%,#0ea5e9 50%,#7dd3fc 75%,#e0f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:0.2rem;letter-spacing:2px;display:inline-block;padding-bottom:0.12em;}
     .hero-title-line{font-family:'Oswald',sans-serif;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:300;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:2rem;}
     .hero-desc{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,0.55);font-weight:300;max-width:520px;margin:0 auto 2.5rem;}
     .hero-pills{display:flex;gap:0.7rem;justify-content:center;flex-wrap:wrap;}
@@ -125,9 +125,9 @@
     /* RESPONSIVE */
     @media(max-width:860px){.nav-links{display:none;}.nav-hamburger{display:flex;}}
     @media(max-width:900px){
-      nav{padding:0 1.2rem;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(5,53,116,0.08);overflow:hidden;}
-      nav::before{content:'';position:absolute;top:-55px;left:-55px;width:130px;height:130px;border-radius:50%;border:1px solid rgba(5,53,116,0.18);pointer-events:none;}
-      nav::after{content:'';position:absolute;top:-35px;left:-35px;width:80px;height:80px;border-radius:50%;border:0.6px solid rgba(93,235,241,0.18);pointer-events:none;}
+      nav{padding:0 1.2rem;background:rgba(255,255,255,0.97);backdrop-filter:blur(18px);border-bottom:1px solid rgba(5,53,116,0.08);}
+      nav::before{display:none}
+      nav::after{display:none}
       .nav-links{display:none;}
       .nav-hamburger{display:flex;}
       .nav-hamburger span{background:#053574;}
