@@ -38,6 +38,11 @@
     {
       "src": "/(.*)",
       "dest": "/index.html"
-    }
+    },
+    {
+  "src": "/(.*)",
+  "has": [{ "type": "host", "value": "terms.cleaningsucasa.com" }],
+  "dest": "/terms.html"
+}
   ]
 }
