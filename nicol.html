@@ -62,8 +62,8 @@
     .hero-dot{position:absolute;border-radius:50%;background:#7dd3fc;opacity:0.18;animation:dotdrift linear infinite;}
     @keyframes dotdrift{0%{opacity:0;transform:translateY(0)}10%{opacity:0.2}90%{opacity:0.1}100%{opacity:0;transform:translateY(-80px)}}
     .hero-content{position:relative;z-index:2;max-width:680px;}
-    .hero-eyebrow{display:inline-flex;align-items:center;gap:0.55rem;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1.4rem;}
-    .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:block;width:28px;height:1px;background:var(--cyan);opacity:0.5;}
+    .hero-eyebrow{display:block;text-align:center;font-size:0.74rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--cyan);margin-bottom:1rem;}
+    .hero-eyebrow::before,.hero-eyebrow::after{content:none;}
     .hero-name{font-family:'Allura',cursive;font-size:clamp(3.8rem,7vw,6.5rem);background:linear-gradient(180deg,#e0f2fe 0%,#7dd3fc 25%,#0ea5e9 50%,#7dd3fc 75%,#e0f2fe 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1.15;margin-bottom:0.2rem;letter-spacing:2px;display:inline-block;padding-bottom:0.12em;}
     .hero-title-line{font-family:'Oswald',sans-serif;font-size:clamp(1rem,1.8vw,1.3rem);font-weight:300;letter-spacing:6px;text-transform:uppercase;color:rgba(255,255,255,0.55);margin-bottom:2rem;}
     .hero-desc{font-size:1.05rem;line-height:1.78;color:rgba(255,255,255,0.55);font-weight:300;max-width:520px;margin:0 auto 2.5rem;}
